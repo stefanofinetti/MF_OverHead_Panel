@@ -1,0 +1,401 @@
+
+(rules PCB freerouting.dsn
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout on)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 1)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 4.0)
+    )
+    (layer_rule In1.Cu
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 4.0)
+    )
+    (layer_rule In2.Cu
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 4.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.2)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clearance 100.0)
+    (clearance 100.0 (type smd_to_turn_gap))
+    (clearance 25.0 (type smd))
+    (clearance 100.0 (type "kicad_default"))
+    (clearance 100.0 (type 3.3V))
+    (clearance 200.0 (type 5V))
+    (clearance 200.0 (type 9V))
+    (clearance 200.0 (type Annunciators))
+    (clearance 100.0 (type VIN))
+  )
+  (padstack "Via[0-3]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-3]_1000:300_um"
+    (shape
+      (circle F.Cu 1000.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 1000.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 1000.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 1000.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-2]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[2-3]_600:300_um"
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[1-3]_600:300_um"
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-3]_600:300_um" "Via[0-3]_600:300_um" default
+  )
+  (via 
+    "Via[0-3]_1000:300_um" "Via[0-3]_1000:300_um" default
+  )
+  (via 
+    "Via[0-2]_600:300_um" "Via[0-2]_600:300_um" default
+  )
+  (via 
+    "Via[2-3]_600:300_um" "Via[2-3]_600:300_um" default
+  )
+  (via 
+    "Via[0-1]_600:300_um" "Via[0-1]_600:300_um" default
+  )
+  (via 
+    "Via[1-3]_600:300_um" "Via[1-3]_600:300_um" default
+  )
+  (via 
+    "Via[0-3]_600:300_um-kicad_default" "Via[0-3]_600:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-3]_1000:300_um-kicad_default" "Via[0-3]_1000:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-2]_600:300_um-kicad_default" "Via[0-2]_600:300_um" "kicad_default"
+  )
+  (via 
+    "Via[2-3]_600:300_um-kicad_default" "Via[2-3]_600:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_600:300_um-kicad_default" "Via[0-1]_600:300_um" "kicad_default"
+  )
+  (via 
+    "Via[1-3]_600:300_um-kicad_default" "Via[1-3]_600:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-3]_600:300_um-3.3V" "Via[0-3]_600:300_um" 3.3V
+  )
+  (via 
+    "Via[0-3]_1000:300_um-3.3V" "Via[0-3]_1000:300_um" 3.3V
+  )
+  (via 
+    "Via[0-2]_600:300_um-3.3V" "Via[0-2]_600:300_um" 3.3V
+  )
+  (via 
+    "Via[2-3]_600:300_um-3.3V" "Via[2-3]_600:300_um" 3.3V
+  )
+  (via 
+    "Via[0-1]_600:300_um-3.3V" "Via[0-1]_600:300_um" 3.3V
+  )
+  (via 
+    "Via[1-3]_600:300_um-3.3V" "Via[1-3]_600:300_um" 3.3V
+  )
+  (via 
+    "Via[0-3]_600:300_um-5V" "Via[0-3]_600:300_um" 5V
+  )
+  (via 
+    "Via[0-3]_1000:300_um-5V" "Via[0-3]_1000:300_um" 5V
+  )
+  (via 
+    "Via[0-2]_600:300_um-5V" "Via[0-2]_600:300_um" 5V
+  )
+  (via 
+    "Via[2-3]_600:300_um-5V" "Via[2-3]_600:300_um" 5V
+  )
+  (via 
+    "Via[0-1]_600:300_um-5V" "Via[0-1]_600:300_um" 5V
+  )
+  (via 
+    "Via[1-3]_600:300_um-5V" "Via[1-3]_600:300_um" 5V
+  )
+  (via 
+    "Via[0-3]_600:300_um-9V" "Via[0-3]_600:300_um" 9V
+  )
+  (via 
+    "Via[0-3]_1000:300_um-9V" "Via[0-3]_1000:300_um" 9V
+  )
+  (via 
+    "Via[0-2]_600:300_um-9V" "Via[0-2]_600:300_um" 9V
+  )
+  (via 
+    "Via[2-3]_600:300_um-9V" "Via[2-3]_600:300_um" 9V
+  )
+  (via 
+    "Via[0-1]_600:300_um-9V" "Via[0-1]_600:300_um" 9V
+  )
+  (via 
+    "Via[1-3]_600:300_um-9V" "Via[1-3]_600:300_um" 9V
+  )
+  (via 
+    "Via[0-3]_600:300_um-Annunciators" "Via[0-3]_600:300_um" Annunciators
+  )
+  (via 
+    "Via[0-3]_1000:300_um-Annunciators" "Via[0-3]_1000:300_um" Annunciators
+  )
+  (via 
+    "Via[0-2]_600:300_um-Annunciators" "Via[0-2]_600:300_um" Annunciators
+  )
+  (via 
+    "Via[2-3]_600:300_um-Annunciators" "Via[2-3]_600:300_um" Annunciators
+  )
+  (via 
+    "Via[0-1]_600:300_um-Annunciators" "Via[0-1]_600:300_um" Annunciators
+  )
+  (via 
+    "Via[1-3]_600:300_um-Annunciators" "Via[1-3]_600:300_um" Annunciators
+  )
+  (via 
+    "Via[0-3]_600:300_um-VIN" "Via[0-3]_600:300_um" VIN
+  )
+  (via 
+    "Via[0-3]_1000:300_um-VIN" "Via[0-3]_1000:300_um" VIN
+  )
+  (via 
+    "Via[0-2]_600:300_um-VIN" "Via[0-2]_600:300_um" VIN
+  )
+  (via 
+    "Via[2-3]_600:300_um-VIN" "Via[2-3]_600:300_um" VIN
+  )
+  (via 
+    "Via[0-1]_600:300_um-VIN" "Via[0-1]_600:300_um" VIN
+  )
+  (via 
+    "Via[1-3]_600:300_um-VIN" "Via[1-3]_600:300_um" VIN
+  )
+  (via_rule
+    default "Via[0-3]_600:300_um" "Via[0-2]_600:300_um" "Via[2-3]_600:300_um" "Via[0-1]_600:300_um" "Via[1-3]_600:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-3]_600:300_um-kicad_default"
+  )
+  (via_rule
+    3.3V "Via[0-3]_600:300_um-3.3V"
+  )
+  (via_rule
+    5V "Via[0-3]_600:300_um-5V"
+  )
+  (via_rule
+    9V "Via[0-3]_1000:300_um-9V"
+  )
+  (via_rule
+    Annunciators "Via[0-3]_600:300_um-Annunciators"
+  )
+  (via_rule
+    VIN "Via[0-3]_600:300_um-VIN"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "unconnected-(SW1-Pad6)" "unconnected-(SW1-Pad4)" "unconnected-(SW1-Pad3)" "unconnected-(SW1-Pad5)" "unconnected-(SW2-Pad5)" "unconnected-(SW2-Pad6)" "unconnected-(SW2-Pad3)" "unconnected-(SW2-Pad4)"
+    "unconnected-(S5-Pad3)" "unconnected-(S6-Pad3)" "unconnected-(S7-Pad3)" "unconnected-(S8-Pad3)" RESET "Net-(U1-AREF)" "Net-(U1-XTAL2)" "Net-(U1-XTAL1)"
+    /I2C/SCL2 "unconnected-(I2C_1-SC5-Pad16)" /I2C/SCL1 "unconnected-(SW3-Pad4)" "unconnected-(SW3-Pad6)" "unconnected-(SW3-Pad5)" "unconnected-(SW3-Pad3)" "unconnected-(SW4-Pad6)"
+    "unconnected-(SW4-Pad5)" "unconnected-(SW4-Pad3)" "unconnected-(SW4-Pad4)" "unconnected-(SW5-Pad6)" "unconnected-(SW5-Pad4)" "unconnected-(SW5-Pad3)" "unconnected-(SW5-Pad5)" "unconnected-(U1-PG4-Pad29)"
+    "unconnected-(U1-PJ6-Pad69)" "unconnected-(U1-PJ5-Pad68)" "unconnected-(U1-PD5-Pad48)" "unconnected-(U1-PL6-Pad41)" "unconnected-(U1-PD6-Pad49)" "unconnected-(U1-PL7-Pad42)" "unconnected-(U1-PL1-Pad36)" "unconnected-(U1-PL4-Pad39)"
+    "unconnected-(U1-PH7-Pad27)" RXD "unconnected-(U1-PE2-Pad4)" "unconnected-(U1-PL0-Pad35)" TXD "unconnected-(U1-PE6-Pad8)" "unconnected-(U1-PD4-Pad47)" "unconnected-(U1-PJ7-Pad79)"
+    SCL "unconnected-(U1-PJ3-Pad66)" "unconnected-(U1-PJ2-Pad65)" "unconnected-(U1-PE7-Pad9)" "unconnected-(U1-PL2-Pad37)" "unconnected-(U1-PL5-Pad40)" "unconnected-(U1-PL3-Pad38)" SDA
+    "unconnected-(U1-PH2-Pad14)" "unconnected-(U1-PJ4-Pad67)" "unconnected-(U1-PG3-Pad28)" "unconnected-(U1-PB0-Pad19)" /I2C/SDA1 "unconnected-(I2C_1-SD6-Pad17)" LCH2 CLK2
+    LCH1 /I2C/SCL0 "L_LDG_LIGHT_ON" "L_LDG_LIGHT_RETR" "R_LDG_LIGHT_RETR" "R_LDG_LIGHT_ON" "NOSE_TO" "NOSE_OFF"
+    "NAV_1_OFF" "WING_ON" "BEACON_ON" "STROBE_ON" "RWY_TURN_ON" "SEATBELTS_OFF" "SEATBELTS_ON" "NOSMOKING_OFF"
+    "NOSMOKING_ON" "EMERG_OFF" "EMERG_ON" "APU_MASTER_SW" "APU_START_SW" "ANTI_ICE_WING_SW" "ANTI_ICE_ENG1_SW" "ANTI_ICE_ENG2_SW"
+    "unconnected-(SW6-Pad5)" "unconnected-(SW6-Pad3)" "unconnected-(SW6-Pad6)" "GPWS_TERR_SW" "unconnected-(SW6-Pad4)" "GPWS_SYS_SW" "unconnected-(SW7-Pad5)" "unconnected-(SW7-Pad3)"
+    "unconnected-(SW7-Pad4)" "unconnected-(SW7-Pad6)" "unconnected-(SW8-Pad3)" "GPWS_GS_SW" "unconnected-(SW8-Pad5)" "unconnected-(SW8-Pad6)" "unconnected-(SW8-Pad4)" "unconnected-(SW9-Pad4)"
+    "unconnected-(SW9-Pad3)" "unconnected-(SW9-Pad5)" "unconnected-(SW9-Pad6)" "GPWS_FLAPS3_SW" "unconnected-(SW10-Pad3)" "APU_BLEED_SW" "unconnected-(SW10-Pad4)" "unconnected-(SW10-Pad5)"
+    "unconnected-(SW10-Pad6)" "unconnected-(SW11-Pad6)" "unconnected-(SW11-Pad3)" "PACK1_SW" "unconnected-(SW11-Pad4)" "unconnected-(SW11-Pad5)" "unconnected-(SW12-Pad5)" "PACK2_SW"
+    "unconnected-(SW12-Pad4)" "unconnected-(SW12-Pad3)" "unconnected-(SW12-Pad6)" "unconnected-(SW13-Pad3)" "unconnected-(SW13-Pad6)" "unconnected-(SW13-Pad5)" "EXT_PWR_SW" "unconnected-(SW13-Pad4)"
+    "unconnected-(SW14-Pad5)" "unconnected-(SW14-Pad3)" "unconnected-(SW14-Pad4)" "OXY_CREW_SUPPLY_SW" "unconnected-(SW14-Pad6)" "unconnected-(SW15-Pad6)" "ELEC_BATT_1_SW" "unconnected-(SW15-Pad5)"
+    "unconnected-(SW15-Pad4)" "unconnected-(SW15-Pad3)" "ELEC_BATT_2_SW" "unconnected-(SW16-Pad6)" "unconnected-(SW16-Pad3)" "unconnected-(SW16-Pad5)" "unconnected-(SW16-Pad4)" "LT_TK_PUMP_1_SW"
+    "unconnected-(SW17-Pad4)" "unconnected-(SW17-Pad5)" "unconnected-(SW17-Pad3)" "unconnected-(SW17-Pad6)" "unconnected-(SW18-Pad3)" "unconnected-(SW18-Pad4)" "unconnected-(SW18-Pad5)" "unconnected-(SW18-Pad6)"
+    "LT_TK_PUMP_2_SW" "unconnected-(SW19-Pad4)" "L_XFER_SW" "unconnected-(SW19-Pad3)" "unconnected-(SW19-Pad5)" "unconnected-(SW19-Pad6)" "unconnected-(SW20-Pad6)" "unconnected-(SW20-Pad3)"
+    "XFEED_SW" "unconnected-(SW20-Pad5)" "unconnected-(SW20-Pad4)" "R_XFER_SW" "unconnected-(SW21-Pad5)" "unconnected-(SW21-Pad4)" "unconnected-(SW21-Pad3)" "unconnected-(SW21-Pad6)"
+    "unconnected-(SW22-Pad6)" "unconnected-(SW22-Pad4)" "unconnected-(SW22-Pad3)" "unconnected-(SW22-Pad5)" "RT_TK_PUMP_1_SW" "unconnected-(SW23-Pad3)" "unconnected-(SW23-Pad4)" "unconnected-(SW23-Pad5)"
+    "unconnected-(SW23-Pad6)" "RT_TK_PUMP_2_SW" "unconnected-(SW24-Pad6)" "GND_CTL_SW" "unconnected-(SW24-Pad5)" "unconnected-(SW24-Pad4)" "unconnected-(SW24-Pad3)" "unconnected-(I2C_1-SC3-Pad11)"
+    "unconnected-(I2C_1-SD3-Pad10)" "Net-(I2C_1-~{RESET})" "unconnected-(I2C_1-SD4-Pad13)" /I2C/SDA2 "unconnected-(I2C_1-SD5-Pad15)" "unconnected-(SW25-Pad1)" "ADR_1_NAV" "ADR_1_ATT"
+    "unconnected-(SW26-Pad1)" "ADR_2_ATT" "ADR_2_NAV" "unconnected-(SW27-Pad1)" "ADR_3_ATT" "ADR_3_NAV" "unconnected-(SW25-Pad7)" "unconnected-(SW25-Pad5)"
+    "unconnected-(SW25-Pad6)" "unconnected-(SW25-Pad4)" "unconnected-(SW25-Pad8)" "unconnected-(SW26-Pad8)" "unconnected-(SW26-Pad4)" "unconnected-(SW26-Pad7)" "unconnected-(SW26-Pad5)" "unconnected-(SW26-Pad6)"
+    "unconnected-(SW27-Pad6)" "unconnected-(SW27-Pad8)" "unconnected-(SW27-Pad7)" "unconnected-(SW27-Pad4)" "unconnected-(SW27-Pad5)" "Net-(U3-XI)" "Net-(U3-XO)" "Net-(U3-V3)"
+    "Net-(U3-~{DTR})" VCC "unconnected-(J5-Pad3)" UD+ "UD-" "Net-(U3-TXD)" "Net-(U3-RXD)" "unconnected-(U3-~{CTS}-Pad9)"
+    "unconnected-(U3-R232-Pad15)" "unconnected-(U3-~{RI}-Pad11)" "unconnected-(U3-~{DCD}-Pad12)" "unconnected-(U3-~{RTS}-Pad14)" "unconnected-(U3-~{DSR}-Pad10)" "unconnected-(U8-OUT2-Pad7)" "unconnected-(U5-OUT9-Pad14)" "unconnected-(U8-OUT3-Pad8)"
+    "unconnected-(U5-OUT12-Pad17)" "unconnected-(U8-OUT1-Pad6)" "unconnected-(U5-DOUT-Pad22)" "unconnected-(U5-OUT10-Pad15)" "unconnected-(U5-OUT1-Pad6)" "unconnected-(U5-OUT11-Pad16)" "unconnected-(U7-OUT12-Pad17)" "unconnected-(U7-OUT11-Pad16)"
+    "unconnected-(U7-OUT13-Pad18)" "unconnected-(U7-OUT15-Pad20)" "unconnected-(U7-OUT14-Pad19)" "unconnected-(U7-OUT10-Pad15)" "unconnected-(U7-DOUT-Pad22)" DOUT1 /I2C/SDA0 "unconnected-(I2C_1-SC4-Pad14)"
+    "NAV_1" DIN1 CLK1 DIN2 "unconnected-(I2C_1-SC7-Pad20)" "unconnected-(I2C_1-SC6-Pad18)" "unconnected-(I2C_1-SD7-Pad19)" "Net-(U4-ADJ)"
+    "unconnected-(U8-OUT0-Pad5)" "unconnected-(U7-OUT7-Pad12)" "unconnected-(U7-OUT6-Pad11)" "unconnected-(U8-OUT7-Pad12)" "unconnected-(U8-OUT15-Pad20)" "unconnected-(U8-OUT6-Pad11)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 3.3V
+    +3V3
+    (clearance_class 3.3V)
+    (via_rule 3.3V)
+    (rule
+      (width 800.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 5V
+    +5V
+    (clearance_class 5V)
+    (via_rule 5V)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 9V
+    +9V
+    (clearance_class 9V)
+    (via_rule 9V)
+    (rule
+      (width 1500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Annunciators
+    "Net-(D160-K)" "Net-(D158-K)" "Net-(D156-K)" "Net-(D154-K)" "Net-(D152-K)" "Net-(D150-K)" "Net-(D148-K)" "Net-(D146-K)"
+    "Net-(D143-K)" "Net-(D141-K)" "Net-(D139-K)" "Net-(D137-K)" "Net-(D135-K)" "Net-(D119-K)" "Net-(D117-K)" "Net-(D115-K)"
+    "Net-(D113-K)" "Net-(D111-K)" "Net-(D105-K)" "Net-(D102-K)" "Net-(D100-K)" "Net-(D97-K)" "Net-(D95-K)" "Net-(D93-K)"
+    "Net-(D86-K)" "Net-(D84-K)" "Net-(D82-K)" "Net-(D74-K)" "Net-(D72-K)" "Net-(D70-K)" "Net-(D68-K)" "/DM13-ORANGE/DOUT2"
+    "Net-(D66-K)" "Net-(D64-K)" "Net-(D62-K)" "Net-(D60-K)" "Net-(D58-K)" "Net-(D56-K)" "Net-(D54-K)" "Net-(D49-K)"
+    "Net-(D47-K)" "Net-(D45-K)" "Net-(D43-K)" "Net-(D41-K)" "Net-(D39-K)" "Net-(D37-K)" "Net-(D35-K)" "Net-(D33-K)"
+    "Net-(D31-K)" "Net-(D29-K)" "Net-(D27-K)" "Net-(D25-K)" "Net-(D145-K)" "Net-(D23-K)" "Net-(D21-K)" "Net-(D19-K)"
+    "Net-(D17-K)" "Net-(D15-K)" "Net-(D13-K)" "Net-(D11-K)" "Net-(D10-K)" "Net-(D7-K)" "Net-(D5-K)" "/DM13-ORANGE/LED_ELEC_BATT_1_FAULT"
+    "/DM13-ORANGE/LED_XFEED_OPEN" "/DM13-ORANGE/LED_ELEC_BATT_2_FAULT" "/DM13-BLUE/LED_APU_START_ON" "/DM13-ORANGE/LED_LT_TK_PUMP_1_FAULT" "/DM13-ORANGE/LED_LT_TK_PUMP_2_FAULT" "/DM13-ORANGE/LED_L_XFER_FAULT" "/DM13-ORANGE/LED_R_XFER_FAULT" "/DM13-WHITE/LED_GPWS_TERR_OFF"
+    "/DM13-ORANGE/LED_RT_TK_PUMP_1_FAULT" "/DM13-WHITE/LED_GPWS_SYS_OFF" "/DM13-WHITE/LED_GS_OFF" "/DM13-WHITE/LED_FLAPS3_OFF" "/DM13-ORANGE/LED_APU_BLEED_FAULT" "/DM13-ORANGE/LED_PACK1_FAULT" "/DM13-WHITE/LED_PACK1_OFF" "/DM13-ORANGE/LED_PACK2_FAULT"
+    "/DM13-WHITE/LED_PACK2_OFF" "/DM13-ORANGE/LED_EXT_PWR_AVAIL" "/DM13-WHITE/LED_OXY_CREW_SUPPLY_OFF" "/DM13-WHITE/LED_ELEC_BATT_1_OFF" "/DM13-WHITE/LED_ELEC_BATT_2_OFF" "/DM13-ORANGE/LED_RT_TK_PUMP_2_FAULT" "/DM13-BLUE/LED_GND_CTL_ON" "/DM13-WHITE/LED_LT_TK_PUMP_1_OFF"
+    "/DM13-WHITE/LED_LT_TK_PUMP_2_OFF" "/DM13-WHITE/LED_L_XFER_OFF" "/DM13-WHITE/LED_XFEED_ON" "/DM13-WHITE/LED_R_XFER_OFF" "/DM13-WHITE/LED_RT_TK_PUMP_1_OFF" "/DM13-BLUE/LED_EXT_PWR_ON" "/DM13-WHITE/LED_RT_TK_PUMP_2_OFF" "/DM13-ORANGE/LED_APU_AVAIL"
+    "/DM13-BLUE/LED_APU_BLEED_ON" "/DM13-BLUE/LED_APU_MASTER_ON" "/DM13-BLUE/LED_ANTI_ICE_WING_ON" "/DM13-BLUE/LED_ANTI_ICE_ENG1_ON" "/DM13-BLUE/LED_ANTI_ICE_ENG2_ON" "/DM13-ORANGE/LED_APU_MASTER_FAULT" "/DM13-ORANGE/LED_ANTI_ICE_ENG1_FAULT" "/DM13-ORANGE/LED_ANTI_ICE_WING_FAULT"
+    "/DM13-ORANGE/LED_ANTI_ICE_ENG2_FAULT" "/DM13-ORANGE/LED_GPWS_TERR_FAULT" "/DM13-ORANGE/LED_GPWS_SYS_FAULT" "Net-(D164-A)" "Net-(D163-K)" "Net-(D162-A)" "Net-(D6-K)" "Net-(D8-K)"
+    "Net-(D10-A)" "Net-(D12-K)" "Net-(D14-K)" "Net-(D16-K)" "Net-(D18-K)" "Net-(D20-K)" "Net-(D22-K)" "Net-(D24-K)"
+    "Net-(D26-K)" "Net-(D28-K)" "Net-(D30-K)" "Net-(D32-K)" "Net-(D34-K)" "Net-(D36-K)" "Net-(D38-K)" "Net-(D40-K)"
+    "Net-(D42-K)" "Net-(D44-K)" "Net-(D46-K)" "Net-(D48-K)" "Net-(D53-K)" "Net-(D55-K)" "Net-(D57-K)" "Net-(D59-K)"
+    "Net-(D61-K)" "Net-(D63-K)" "Net-(D65-K)" "Net-(D67-K)" "Net-(D69-K)" "Net-(D71-K)" "Net-(D73-K)" "Net-(D81-K)"
+    "Net-(D83-K)" "Net-(D85-K)" "Net-(D88-K)" "Net-(D94-K)" "Net-(D96-K)" "Net-(D98-K)" "Net-(D101-K)" "Net-(D104-K)"
+    "Net-(D110-K)" "Net-(D112-K)" "Net-(D114-K)" "Net-(D116-K)" "Net-(D118-K)" "Net-(D134-K)" "Net-(D136-K)" "Net-(D138-K)"
+    "Net-(D140-K)" "Net-(D142-K)" "Net-(D144-K)" "Net-(D147-K)" "Net-(D149-K)" "Net-(D151-K)" "Net-(D153-K)" "Net-(D155-K)"
+    "Net-(D157-K)" "Net-(D159-K)" "Net-(D161-K)"
+    (clearance_class Annunciators)
+    (via_rule Annunciators)
+    (rule
+      (width 300.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class VIN
+    GND VIN MISO MOSI SCK "Net-(U6-REXT)" "Net-(U5-REXT)" "Net-(U7-REXT)"
+    "Net-(U8-REXT)"
+    (clearance_class VIN)
+    (via_rule VIN)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
