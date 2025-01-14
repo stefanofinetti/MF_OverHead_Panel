@@ -1,0 +1,42 @@
+{
+  
+    "$schema": "./mfdevice.schema.json",
+    "Info": {
+      "Label": "SF OVHD Mainboard",
+      "Type": "SF_OVHD_MAINBOARD",
+      "Author": "Stefano Finetti",
+      "URL": "https://github.com",
+      "Version" : "1.0.3"
+    },
+    "Config": {
+      "Pins": [
+        "OLED"
+      ],
+      "I2C": {
+        "Enabled": true,
+        "Addresses": [
+          "0x70",
+          "0x71"
+        ]
+      }
+    },
+    "MessageTypes": [
+      {
+        "id": 0,
+        "label": "Battery 1 Voltage",
+        "description": "$ will be displayed as voltage X.YYV"
+      },
+      {
+        "id": 1,
+        "label": "Battery 2 Voltage",
+        "description": "$ will be displayed as voltage X.YYV"
+      },
+      {
+        "id": 2,
+        "label": "Adirs message",
+        "description": "$ will be displayed as text"
+      }
+
+    ]
+  }
+  

@@ -1191,6 +1191,10 @@
 		(uuid "1f248293-8389-4f88-95f8-b3f92b08211e")
 	)
 	(no_connect
+		(at 100.33 40.64)
+		(uuid "3181fe48-1fc3-42ce-99bf-4f278f6069aa")
+	)
+	(no_connect
 		(at 80.01 63.5)
 		(uuid "443db079-5123-4888-80d4-43e0a96c6bf7")
 	)
@@ -1333,16 +1337,6 @@
 			(type default)
 		)
 		(uuid "5c8aed4d-e33b-46b7-9ec9-f69d43b9db8b")
-	)
-	(wire
-		(pts
-			(xy 100.33 34.29) (xy 100.33 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5e2a6ee9-80f2-4196-a74b-3e4d3b302ba3")
 	)
 	(wire
 		(pts
@@ -2221,72 +2215,6 @@
 			(project "OverHead_v1"
 				(path "/b62c6a35-e532-4a7b-9786-2edcfc1d7d32/2f7223c5-e8c8-496f-955a-185c9039ce2e"
 					(reference "C20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 100.33 34.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "59334393-1ad6-4e12-a415-94df7781fab0")
-		(property "Reference" "#PWR0167"
-			(at 100.33 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 100.33 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 100.33 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9f5e9564-162a-42a5-9efd-cdc4521c9229")
-		)
-		(instances
-			(project "OverHead_v1"
-				(path "/b62c6a35-e532-4a7b-9786-2edcfc1d7d32/2f7223c5-e8c8-496f-955a-185c9039ce2e"
-					(reference "#PWR0167")
 					(unit 1)
 				)
 			)

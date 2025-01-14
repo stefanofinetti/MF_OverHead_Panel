@@ -956,24 +956,12 @@
 		(uuid "c4e508d2-7167-4c6a-9901-589bb3feed0b")
 	)
 	(no_connect
-		(at 55.88 44.45)
-		(uuid "c90b2b6c-47b1-41e8-99db-6c605ca48431")
-	)
-	(no_connect
 		(at 55.88 87.63)
 		(uuid "c96e4fab-25eb-4233-a3ef-be00333b862b")
 	)
 	(no_connect
 		(at 55.88 129.54)
 		(uuid "d34e5608-ece0-46e2-8984-f1236ddf15e1")
-	)
-	(no_connect
-		(at 55.88 111.76)
-		(uuid "d74d63a1-39e3-427b-b59b-9f2bea3e27a5")
-	)
-	(no_connect
-		(at 55.88 77.47)
-		(uuid "e4e52a7e-19ba-4a20-ac69-f4f4a46db0af")
 	)
 	(no_connect
 		(at 38.1 129.54)
@@ -1020,6 +1008,28 @@
 			(type default)
 		)
 		(uuid "a0147371-2e60-4e65-8bec-ae95c9bd69a1")
+	)
+	(global_label "ADR_1_OFF"
+		(shape input)
+		(at 55.88 44.45 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3583921b-72a0-4a7c-a846-afd351c97a53")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.1462 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "GND_CTL_SW"
 		(shape input)
@@ -1166,6 +1176,50 @@
 		(uuid "cde0e739-17da-4def-9e5a-f7edbb16c342")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 69.1462 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ADR_3_OFF"
+		(shape input)
+		(at 55.88 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d32e3432-d9eb-425b-934f-cd075e1a1fd2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.1462 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ADR_2_OFF"
+		(shape input)
+		(at 55.88 77.47 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e78540db-546e-4f87-99b1-00b093fcf7a5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.1462 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)

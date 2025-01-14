@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ModuleType>SF OVHD Mainboard Mega</ModuleType>
+  <ModuleName>SF OVHD Mainboard</ModuleName>
+  <PowerSavingTime>600</PowerSavingTime>
+  <CustomDevice Name="SF OVHD Mainboard" CustomType="SF_OVHD_MAINBOARD" Pins="112" Config="">
+    <ConfiguredPins>
+      <string>112</string>
+    </ConfiguredPins>
+  </CustomDevice>
+</Config>
