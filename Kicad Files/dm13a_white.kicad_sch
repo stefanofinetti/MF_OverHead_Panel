@@ -805,6 +805,127 @@
 				)
 			)
 		)
+		(symbol "Device:R"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "PCM_SL_Devices:potentiometer_3362P"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1185,7 +1306,7 @@
 		(uuid "91a04386-91f1-45fc-9d7d-14d2478621a9")
 	)
 	(no_connect
-		(at 97.79 34.29)
+		(at 106.68 38.1)
 		(uuid "40df8359-a92c-4f28-991b-4c3a3852329e")
 	)
 	(wire
@@ -1197,16 +1318,6 @@
 			(type default)
 		)
 		(uuid "03806288-7717-47db-bae5-06ee00886749")
-	)
-	(wire
-		(pts
-			(xy 92.71 41.91) (xy 92.71 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "063a99c3-ddf7-4b09-8373-8ea673130ed9")
 	)
 	(wire
 		(pts
@@ -1280,7 +1391,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 41.91) (xy 97.79 41.91)
+			(xy 114.3 45.72) (xy 106.68 45.72)
 		)
 		(stroke
 			(width 0)
@@ -1297,16 +1408,6 @@
 			(type default)
 		)
 		(uuid "5e5d9d27-3c0e-4dcd-9464-5a165c1b0c8a")
-	)
-	(wire
-		(pts
-			(xy 92.71 38.1) (xy 93.98 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "61ac41ff-b214-4944-b213-53f096166f1a")
 	)
 	(wire
 		(pts
@@ -1397,6 +1498,16 @@
 			(type default)
 		)
 		(uuid "a8e3a654-d2c2-40c4-b1f5-56857ad468f8")
+	)
+	(wire
+		(pts
+			(xy 99.06 41.91) (xy 102.87 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a96628b9-902b-4804-8c90-53666cbd2374")
 	)
 	(wire
 		(pts
@@ -1500,7 +1611,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 41.91) (xy 86.36 41.91)
+			(xy 86.36 41.91) (xy 91.44 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2084,7 +2195,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SL_Devices:potentiometer_3362P")
-		(at 97.79 38.1 90)
+		(at 106.68 41.91 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2093,7 +2204,7 @@
 		(fields_autoplaced yes)
 		(uuid "0c2c1985-8757-4372-b901-6886343a11e0")
 		(property "Reference" "RV1"
-			(at 100.33 36.8299 90)
+			(at 109.22 40.6399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2102,7 +2213,7 @@
 			)
 		)
 		(property "Value" "POT_WHITE"
-			(at 100.33 39.3699 90)
+			(at 109.22 43.1799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2111,7 +2222,7 @@
 			)
 		)
 		(property "Footprint" "PCM_SL_Footprints:potentiometer_3362P"
-			(at 104.394 38.354 0)
+			(at 113.284 42.164 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2120,7 +2231,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.bourns.com/data/global/pdfs/3362.pdf"
-			(at 106.426 38.354 0)
+			(at 115.316 42.164 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2129,7 +2240,7 @@
 			)
 		)
 		(property "Description" "potentiometer_3362P"
-			(at 97.79 38.1 0)
+			(at 106.68 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3162,6 +3273,74 @@
 			(project "OverHead_v1"
 				(path "/b62c6a35-e532-4a7b-9786-2edcfc1d7d32/2f1b9fe8-b81e-49ed-9171-b387b6e501b8"
 					(reference "#PWR0208")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 95.25 41.91 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7ad7aa2b-7d5d-4118-bc33-314593b2e455")
+		(property "Reference" "R51"
+			(at 95.25 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "56"
+			(at 95.25 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 95.25 43.688 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 95.25 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b26709f9-aa1d-4cc5-9a97-7f187199c9a0")
+		)
+		(pin "2"
+			(uuid "49af8450-8be8-4df1-8e04-6fd97c85287c")
+		)
+		(instances
+			(project "OverHead_v1"
+				(path "/b62c6a35-e532-4a7b-9786-2edcfc1d7d32/2f1b9fe8-b81e-49ed-9171-b387b6e501b8"
+					(reference "R51")
 					(unit 1)
 				)
 			)
@@ -4267,7 +4446,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "DM13A-WHITE"
+		(property "Value" "DM13A-WHITE-0-100"
 			(at 68.2341 34.29 0)
 			(effects
 				(font
@@ -4585,7 +4764,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 105.41 41.91 90)
+		(at 114.3 45.72 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4594,7 +4773,7 @@
 		(fields_autoplaced yes)
 		(uuid "fb9477ec-50f3-4b37-92c0-7926e66a82b5")
 		(property "Reference" "#PWR0211"
-			(at 111.76 41.91 0)
+			(at 120.65 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4603,7 +4782,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 109.22 41.9099 90)
+			(at 118.11 45.7199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4612,7 +4791,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 105.41 41.91 0)
+			(at 114.3 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4621,7 +4800,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 105.41 41.91 0)
+			(at 114.3 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4630,7 +4809,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 105.41 41.91 0)
+			(at 114.3 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
