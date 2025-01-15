@@ -2,16 +2,14 @@
   
     "$schema": "./mfdevice.schema.json",
     "Info": {
-      "Label": "SF OVHD Mainboard",
+      "Label": "SF_OVHD_Mainboard",
       "Type": "SF_OVHD_MAINBOARD",
       "Author": "Stefano Finetti",
       "URL": "https://github.com",
       "Version" : "1.0.3"
     },
     "Config": {
-      "Pins": [
-        "OLED"
-      ],
+      "Pins": [],
       "I2C": {
         "Enabled": true,
         "Addresses": [
