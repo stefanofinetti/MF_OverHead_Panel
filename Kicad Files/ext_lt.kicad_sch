@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "c03ff46e-26c5-42bc-a749-acdc875425c0")
 	(paper "A4")
 	(lib_symbols
@@ -86,10 +86,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "dk_Toggle-Switches:100SP1T1B4M2QE"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -249,20 +252,8 @@
 						(type outline)
 					)
 				)
-				(polyline
-					(pts
-						(xy 2.667 2.286) (xy -1.778 0)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(circle
-					(center 2.159 -2.54)
+					(center 2.159 2.54)
 					(radius 0.381)
 					(stroke
 						(width 0)
@@ -273,7 +264,7 @@
 					)
 				)
 				(circle
-					(center 2.159 2.54)
+					(center 2.159 -2.54)
 					(radius 0.381)
 					(stroke
 						(width 0)
@@ -294,26 +285,20 @@
 						(type outline)
 					)
 				)
-			)
-			(symbol "100SP1T1B4M2QE_1_1"
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+				(polyline
+					(pts
+						(xy 2.667 2.286) (xy -1.778 0)
 					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
 					)
 				)
+			)
+			(symbol "100SP1T1B4M2QE_1_1"
 				(pin passive line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -325,6 +310,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -351,12 +354,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -447,6 +455,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(no_connect

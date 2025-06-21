@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "267a3f6c-1123-4dde-8178-c53d64203168")
 	(paper "A4")
 	(lib_symbols
@@ -86,6 +86,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "SFLibrary:SW_DPDT_XLX"
 			(pin_names
@@ -164,60 +165,6 @@
 			)
 			(symbol "SW_DPDT_XLX_1_1"
 				(pin input line
-					(at 6.35 -6.35 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 6.35 -3.81 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 6.35 -1.27 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
 					(at -6.35 -1.27 0)
 					(length 2.54)
 					(name "~"
@@ -271,11 +218,68 @@
 						)
 					)
 				)
+				(pin input line
+					(at 6.35 -1.27 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -3.81 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -6.35 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "dk_Toggle-Switches:100SP1T1B4M2QE"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -435,20 +439,8 @@
 						(type outline)
 					)
 				)
-				(polyline
-					(pts
-						(xy 2.667 2.286) (xy -1.778 0)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(circle
-					(center 2.159 -2.54)
+					(center 2.159 2.54)
 					(radius 0.381)
 					(stroke
 						(width 0)
@@ -459,7 +451,7 @@
 					)
 				)
 				(circle
-					(center 2.159 2.54)
+					(center 2.159 -2.54)
 					(radius 0.381)
 					(stroke
 						(width 0)
@@ -480,26 +472,20 @@
 						(type outline)
 					)
 				)
-			)
-			(symbol "100SP1T1B4M2QE_1_1"
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+				(polyline
+					(pts
+						(xy 2.667 2.286) (xy -1.778 0)
 					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
 					)
 				)
+			)
+			(symbol "100SP1T1B4M2QE_1_1"
 				(pin passive line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -511,6 +497,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -537,12 +541,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -633,6 +642,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(no_connect
@@ -652,6 +662,10 @@
 		(uuid "2c5fffbb-bbec-42ae-9fd2-858ddbb79a12")
 	)
 	(no_connect
+		(at 57.15 64.77)
+		(uuid "461504b3-6fb8-47d4-b177-05fb4daf92da")
+	)
+	(no_connect
 		(at 99.06 71.12)
 		(uuid "6f09ea2d-dca8-4e95-a807-85faa2b8f52d")
 	)
@@ -662,6 +676,10 @@
 	(no_connect
 		(at 99.06 73.66)
 		(uuid "a0dc03b9-dcff-465f-8cce-c2d2a66ba650")
+	)
+	(no_connect
+		(at 57.15 77.47)
+		(uuid "a9d9dced-576c-4c7b-8f4c-c2ea01693d81")
 	)
 	(no_connect
 		(at 99.06 53.34)
@@ -725,16 +743,6 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 77.47) (xy 57.15 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b08aaf4-4fc5-45ed-b853-47a4d33d641d")
-	)
-	(wire
-		(pts
 			(xy 113.03 91.44) (xy 111.76 91.44)
 		)
 		(stroke
@@ -782,16 +790,6 @@
 			(type default)
 		)
 		(uuid "837a70d8-d1c9-4e22-aa43-00ad957576be")
-	)
-	(wire
-		(pts
-			(xy 66.04 64.77) (xy 57.15 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "913b074d-ceb7-415c-9548-dcce414a8b33")
 	)
 	(wire
 		(pts
@@ -885,7 +883,7 @@
 			)
 		)
 	)
-	(global_label "NOSMOKING_ON"
+	(global_label "NOSMOKING_SIGN"
 		(shape input)
 		(at 66.04 72.39 0)
 		(fields_autoplaced yes)
@@ -897,7 +895,7 @@
 		)
 		(uuid "5a0c77dc-0f94-4531-a4ec-63b4ca475883")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 83.7815 72.39 0)
+			(at 85.5353 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -907,7 +905,7 @@
 			)
 		)
 	)
-	(global_label "SEATBELTS_ON"
+	(global_label "SEATBELTS_SIGN"
 		(shape input)
 		(at 66.04 59.69 0)
 		(fields_autoplaced yes)
@@ -919,7 +917,7 @@
 		)
 		(uuid "5f5caf1c-6ba5-47db-98a0-aafb7d434b03")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 82.6927 59.69 0)
+			(at 84.4465 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -942,28 +940,6 @@
 		(uuid "6609b19a-21d4-4aa2-bf31-07d4d270224b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 79.7899 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SEATBELTS_OFF"
-		(shape input)
-		(at 66.04 64.77 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "78d1c3b0-e1b0-451b-add3-30d73fc6be56")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 83.5394 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1008,28 +984,6 @@
 		(uuid "c555e054-feb2-4442-ba93-fdbdb8b9b553")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 78.9432 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "NOSMOKING_OFF"
-		(shape input)
-		(at 66.04 77.47 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "caa8b4ec-3798-4558-8850-7b3f024fe4d4")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 84.6282 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1938,7 +1892,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 106.68 77.47 0)
 			(effects
 				(font
@@ -2084,7 +2038,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 106.68 59.69 0)
 			(effects
 				(font
@@ -2391,7 +2345,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 106.68 95.25 0)
 			(effects
 				(font

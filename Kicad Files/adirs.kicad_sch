@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "16324b97-36f4-4205-80ff-e0b31fd56d69")
 	(paper "A4")
 	(lib_symbols
@@ -86,6 +86,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "SFLibrary:SW_DPDT_XLX"
 			(pin_names
@@ -164,60 +165,6 @@
 			)
 			(symbol "SW_DPDT_XLX_1_1"
 				(pin input line
-					(at 6.35 -6.35 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 6.35 -3.81 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 6.35 -1.27 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
 					(at -6.35 -1.27 0)
 					(length 2.54)
 					(name "~"
@@ -271,10 +218,67 @@
 						)
 					)
 				)
+				(pin input line
+					(at 6.35 -1.27 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -3.81 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -6.35 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Switch:SW_Rotary_1x8_MP"
-			(pin_names hide)
+			(pin_names
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -331,9 +335,33 @@
 				)
 			)
 			(symbol "SW_Rotary_1x8_MP_0_1"
+				(polyline
+					(pts
+						(xy -7.62 0) (xy -5.715 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(circle
 					(center -5.08 0)
 					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.9276 0.6604) (xy -3.9116 6.35)
+					)
 					(stroke
 						(width 0)
 						(type default)
@@ -354,31 +382,9 @@
 					)
 				)
 				(arc
-					(start -1.5876 -1.5875)
+					(start -2.2226 2.2225)
 					(mid -1.116 0.449)
-					(end -2.2226 2.2225)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.27 -6.35)
-					(radius 0.635)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.27 6.35)
-					(radius 0.635)
+					(end -1.5876 -1.5875)
 					(stroke
 						(width 0)
 						(type default)
@@ -389,19 +395,7 @@
 				)
 				(polyline
 					(pts
-						(xy -7.62 0) (xy -5.715 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -4.9276 0.6604) (xy -3.9116 6.35)
+						(xy -1.5876 -1.5875) (xy -1.5876 -0.6985)
 					)
 					(stroke
 						(width 0)
@@ -425,18 +419,6 @@
 				)
 				(polyline
 					(pts
-						(xy -1.5876 -1.5875) (xy -1.5876 -0.6985)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy -1.5876 -1.5875) (xy -0.8256 -1.0795)
 					)
 					(stroke
@@ -447,10 +429,75 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 5.08 -2.54) (xy 3.175 -2.54)
+				(circle
+					(center -1.27 6.35)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
 					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.27 -6.35)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0.635 4.445)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0.635 -4.445)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 2.54)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 3.175 0)
+					(radius 0.635)
 					(stroke
 						(width 0)
 						(type default)
@@ -461,43 +508,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 0) (xy 3.81 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 3.175 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -7.62) (xy 0.635 -7.62) (xy 0.635 -6.35) (xy -0.635 -6.35)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -5.08) (xy 2.54 -5.08) (xy 2.54 -4.445) (xy 1.27 -4.445)
+						(xy 5.08 7.62) (xy -1.27 7.62) (xy -1.27 7.62) (xy -1.27 6.985)
 					)
 					(stroke
 						(width 0)
@@ -521,7 +532,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 7.62) (xy -1.27 7.62) (xy -1.27 7.62) (xy -1.27 6.985)
+						(xy 5.08 2.54) (xy 3.175 2.54)
 					)
 					(stroke
 						(width 0)
@@ -531,9 +542,10 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 0.635 -4.445)
-					(radius 0.635)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 3.81 0)
+					)
 					(stroke
 						(width 0)
 						(type default)
@@ -542,9 +554,10 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 0.635 4.445)
-					(radius 0.635)
+				(polyline
+					(pts
+						(xy 5.08 -2.54) (xy 3.175 -2.54)
+					)
 					(stroke
 						(width 0)
 						(type default)
@@ -553,9 +566,10 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 2.54 -2.54)
-					(radius 0.635)
+				(polyline
+					(pts
+						(xy 5.08 -5.08) (xy 2.54 -5.08) (xy 2.54 -4.445) (xy 1.27 -4.445)
+					)
 					(stroke
 						(width 0)
 						(type default)
@@ -564,20 +578,10 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 2.54 2.54)
-					(radius 0.635)
-					(stroke
-						(width 0)
-						(type default)
+				(polyline
+					(pts
+						(xy 5.08 -7.62) (xy 0.635 -7.62) (xy 0.635 -6.35) (xy -0.635 -6.35)
 					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 3.175 0)
-					(radius 0.635)
 					(stroke
 						(width 0)
 						(type default)
@@ -590,6 +594,18 @@
 			(symbol "SW_Rotary_1x8_MP_1_1"
 				(polyline
 					(pts
+						(xy -7.62 11.43) (xy 5.08 11.43) (xy 5.08 -8.89) (xy -7.62 -8.89) (xy -7.62 11.43) (xy -7.62 11.43)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
 						(xy 5.08 10.16) (xy -3.81 10.16) (xy -3.81 7.62)
 					)
 					(stroke
@@ -600,16 +616,40 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -7.62 11.43) (xy 5.08 11.43) (xy 5.08 -8.89) (xy -7.62 -8.89) (xy -7.62 11.43) (xy -7.62 11.43)
+				(pin passive line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
-					(stroke
-						(width 0)
-						(type default)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
-					(fill
-						(type background)
+				)
+				(pin passive line
+					(at -10.16 -7.62 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 				(pin passive line
@@ -756,49 +796,18 @@
 						)
 					)
 				)
-				(pin passive line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -10.16 -7.62 0)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -889,6 +898,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(no_connect
@@ -1764,7 +1774,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 27.94 33.02 0)
 			(effects
 				(font

@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "609ab325-8748-465f-81d3-b790cfe7030a")
 	(paper "A4")
 	(lib_symbols
@@ -86,6 +86,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "SFLibrary:SW_DPDT_XLX"
 			(pin_names
@@ -164,60 +165,6 @@
 			)
 			(symbol "SW_DPDT_XLX_1_1"
 				(pin input line
-					(at 6.35 -6.35 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 6.35 -3.81 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 6.35 -1.27 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
 					(at -6.35 -1.27 0)
 					(length 2.54)
 					(name "~"
@@ -271,13 +218,72 @@
 						)
 					)
 				)
+				(pin input line
+					(at 6.35 -1.27 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -3.81 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 6.35 -6.35 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -368,6 +374,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(no_connect
@@ -714,7 +721,7 @@
 			)
 		)
 	)
-	(global_label "L_XFER_SW"
+	(global_label "CTR_TK_PUMP_1_SW"
 		(shape input)
 		(at 33.02 62.23 0)
 		(fields_autoplaced yes)
@@ -726,7 +733,7 @@
 		)
 		(uuid "4053a174-8d7d-4f4b-a388-a2b058b2b098")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.3465 62.23 0)
+			(at 54.8131 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -736,7 +743,7 @@
 			)
 		)
 	)
-	(global_label "R_XFER_SW"
+	(global_label "CTR_TK_PUMP_2_SW"
 		(shape input)
 		(at 33.02 97.79 0)
 		(fields_autoplaced yes)
@@ -748,7 +755,7 @@
 		)
 		(uuid "6a5e03e6-6294-4d71-b5ea-cb81b95137b4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.5884 97.79 0)
+			(at 54.8131 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1068,7 +1075,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 27.94 101.6 0)
 			(effects
 				(font
@@ -1148,7 +1155,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 27.94 83.82 0)
 			(effects
 				(font
@@ -1228,7 +1235,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 27.94 119.38 0)
 			(effects
 				(font
@@ -1308,7 +1315,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 27.94 48.26 0)
 			(effects
 				(font
@@ -1716,7 +1723,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 27.94 30.48 0)
 			(effects
 				(font
@@ -1860,7 +1867,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 27.94 66.04 0)
 			(effects
 				(font
@@ -2004,7 +2011,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SFLibrary:G-Switch PS-7054DVB-6PN"
+		(property "Footprint" "PCM_SFLibrary:G-Switch PS-7054DVB-6PN"
 			(at 27.94 137.16 0)
 			(effects
 				(font
