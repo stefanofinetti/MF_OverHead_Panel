@@ -1,16 +1,6 @@
 #include "SF_OVHD.h"
-#include <Fonts/FreeSans18pt7b.h>
-#include <Fonts/FreeSans9pt7b.h>
-#include "Fonts/FreeSans8pt7b.h"
-#include "Fonts/FreeSans7pt7b.h"
-#include "Fonts/FreeSans6pt7b.h"
-#include "Fonts/DSEG7Classic_Regular14pt7b.h"
-#include "Fonts/DSEG7Classic_Regular15pt7b.h"
-#include "Fonts/DSEG7Classic_Regular16pt7b.h"
-#include "Fonts/DSEG7Classic_Regular18pt7b.h"
-#include "Fonts/DSEG7Classic_Regular20pt7b.h" //https://github.com/keshikan/DSEG and https://rop.nl/truetype2gfx/
-#include "Fonts/DSEG7Classic_Regular22pt7b.h"
-#include "Fonts/DSEG14Modern_Regular20pt7b.h"
+#include <Fonts/FreeSans18pt7b.h>                // ADIRS, from Adafruit GFX
+#include "Fonts/DSEG14Modern_Regular20pt7b.h"  // BATT 1 and 2, https://github.com/keshikan/DSEG via https://rop.nl/truetype2gfx/
 
 // Values from the Connector, in fixed buffers so a redraw never touches the
 // heap. Each holds more than its display can show at the font it uses.
@@ -137,12 +127,10 @@ void SF_OVHD::set(int16_t messageID, char *message)
     }
 }
 
+// Only called with -DMF_CUSTOMDEVICE_HAS_UPDATE, which is off: the displays are
+// redrawn when a value arrives and at no other time.
 void SF_OVHD::update()
 {
-    // Do something which is required regulary
-        updateDisplayBatt1();
-        updateDisplayBatt2();
-        updateDisplayAdirs();
 }
 
 /* ************************************************************************************************
