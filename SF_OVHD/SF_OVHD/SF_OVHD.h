@@ -26,6 +26,7 @@ private:
     OLEDInterface *oled;
 
     void setTCAChannel(byte i);
+    void blankDisplays(void);
     void updateDisplayBatt1(void);
     void updateDisplayBatt2(void);
     void updateDisplayAdirs(void);

@@ -101,10 +101,13 @@ void SF_OVHD::set(int16_t messageID, char *message)
     // do something according your messageID
     // do something according your messageID
     switch (messageID) {
-    case -1:
-        // tbd., get's called when Mobiflight shuts down
-    case -2:
-        // tbd., get's called when PowerSavingMode is entered
+    case -1: // the Connector is closing
+    case -2: // the Connector enters power saving
+        // Blank all three rather than leave the last values standing: a static
+        // picture burns into an OLED. The next value that arrives redraws its
+        // display as usual.
+        blankDisplays();
+        break;
     case 0:
         /* code */
         ovhdBatt1Value = message;
@@ -142,6 +145,19 @@ void SF_OVHD::update()
 /* ************************************************************************************************
  ************************************************************************************************
  ************************************************************************************************ */
+
+/*
+  clear all three displays
+*/
+void SF_OVHD::blankDisplays(void)
+{
+    const uint8_t channels[] = {TCA9548A_CHANNEL_BATT1, TCA9548A_CHANNEL_BATT2, TCA9548A_CHANNEL_ADIRS};
+    for (uint8_t i = 0; i < sizeof(channels); i++) {
+        setTCAChannel(channels[i]);
+        oled->clearDisplay();
+        oled->display();
+    }
+}
 
 /*
   switch multiplexer channel
