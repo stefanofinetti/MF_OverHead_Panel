@@ -124,21 +124,7 @@ public:
         else
             oled_1106->println(t);
     }
-    void println(String t)
-    {
-        if (_type == SSD1306)
-            oled_1306->println(t);
-        else
-            oled_1106->println(t);
-    }
     void print(const char *t)
-    {
-        if (_type == SSD1306)
-            oled_1306->print(t);
-        else
-            oled_1106->print(t);
-    }
-    void print(String t)
     {
         if (_type == SSD1306)
             oled_1306->print(t);

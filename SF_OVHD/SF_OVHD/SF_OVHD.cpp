@@ -12,14 +12,18 @@
 #include "Fonts/DSEG7Classic_Regular22pt7b.h"
 #include "Fonts/DSEG14Modern_Regular20pt7b.h"
 
-// Battery 1
-String ovhdBatt1Value     = "00.00";
+// Values from the Connector, in fixed buffers so a redraw never touches the
+// heap. Each holds more than its display can show at the font it uses.
+char ovhdBatt1Value[8]  = "00.00";
+char ovhdBatt2Value[8]  = "00.00";
+char AdirsValue[16]     = "On batt";
 
-// Battery 2
-String ovhdBatt2Value     = "00.00";
-
-// ADIRS
-String  AdirsValue = "On batt";
+// copies a value from the Connector, cutting it to the buffer rather than overrunning it
+static void setValue(char *dest, size_t size, const char *src)
+{
+    strncpy(dest, src, size - 1);
+    dest[size - 1] = 0x00;
+}
 
 // light test switch
 uint8_t lightTestOn = 0x00;
@@ -115,17 +119,17 @@ void SF_OVHD::set(int16_t messageID, char *message)
         break;
     case 0:
         /* code */
-        ovhdBatt1Value = message;
+        setValue(ovhdBatt1Value, sizeof(ovhdBatt1Value), message);
         updateDisplayBatt1();
         break;
     case 1:
         /* code */
-        ovhdBatt2Value = message;
+        setValue(ovhdBatt2Value, sizeof(ovhdBatt2Value), message);
         updateDisplayBatt2();
         break;
     case 2:
         /* code */
-        AdirsValue = message;
+        setValue(AdirsValue, sizeof(AdirsValue), message);
         updateDisplayAdirs();
         break;
     case 3:
