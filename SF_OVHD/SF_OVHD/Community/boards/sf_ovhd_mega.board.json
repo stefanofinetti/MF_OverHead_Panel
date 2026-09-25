@@ -52,8 +52,8 @@
       },
       "DeviceConfigs": [
         {
-          "Name": "OverHead Displays",
-          "Description": "OverHead Panel OLED Displays",
+          "Name": "SF OVHD Mainboard",
+          "Description": "The whole overhead panel: 49 switches, two DM13A annunciator chains and the three OLEDs",
           "File": "SF OVHD Mainboard.mfmc"
         }
       ]

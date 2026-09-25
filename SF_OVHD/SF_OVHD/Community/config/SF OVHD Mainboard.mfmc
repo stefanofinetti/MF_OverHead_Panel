@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ModuleType>SF OVHD Mainboard Mega</ModuleType>
-  <ModuleName>SF_OVHD_Mainboard</ModuleName>
+  <ModuleType>SF OVHD Mega</ModuleType>
+  <ModuleName>SF OVHD Mainboard</ModuleName>
   <PowerSavingTime>600</PowerSavingTime>
-  <CustomDevice Name="SF_OVHD_Mainboard" CustomType="SF_OVHD" Pins="112" Config="">
+  <Button Name="APU_START_SW" Pin="29" />
+  <Button Name="APU_MASTER_SW" Pin="28" />
+  <Button Name="ANTI_ICE_WING_SW" Pin="54" />
+  <Button Name="ANTI_ICE_ENG1_SW" Pin="55" />
+  <Button Name="L_LDG_LIGHT_ON" Pin="10" />
+  <Button Name="L_LDG_LIGHT_RETR" Pin="11" />
+  <Button Name="R_LDG_LIGHT_ON" Pin="12" />
+  <Button Name="R_LDG_LIGHT_RETR" Pin="13" />
+  <ShiftRegister Name="ANN_UPPER" LatchPin="27" ClockPin="26" DataPin="25" NumModules="4" />
+  <ShiftRegister Name="ANN_LOWER" LatchPin="23" ClockPin="24" DataPin="22" NumModules="4" />
+  <Button Name="ANTI_ICE_ENG2_SW" Pin="56" />
+  <Button Name="APU_BLEED_SW" Pin="61" />
+  <Button Name="PACKS_1_SW" Pin="41" />
+  <Button Name="PACKS_2_SW" Pin="40" />
+  <CustomDevice Name="SF OVHD" CustomType="SF_OVHD" Pins="113" Config="">
     <ConfiguredPins>
-      <string>112</string>
+      <string>113</string>
     </ConfiguredPins>
   </CustomDevice>
+  <Button Name="GPWS_TERR_SW" Pin="57" />
+  <Button Name="GPWS_SYS_SW" Pin="58" />
+  <Button Name="GPWS_GS_SW" Pin="59" />
+  <Button Name="GPWS_FLAPS3_SW" Pin="60" />
+  <Button Name="EXT_PWR_SW" Pin="39" />
+  <Button Name="CREW_SUPPLY_SW" Pin="66" />
+  <Button Name="BATT_1_SW" Pin="67" />
+  <Button Name="BATT_2_SW" Pin="68" />
+  <Button Name="GND_CTL_SW" Pin="69" />
+  <Button Name="LT_TK_PUMP_1_SW" Pin="17" />
+  <Button Name="LT_TK_PUMP_2_SW" Pin="16" />
+  <Button Name="CTR_TK_PUMP_1_SW" Pin="8" />
+  <Button Name="X_FEED_SW" Pin="4" />
+  <Button Name="RT_TK_PUMP_1_SW" Pin="6" />
+  <Button Name="RT_TK_PUMP_2_SW" Pin="7" />
+  <Button Name="CTR_TK_PUMP_2_SW" Pin="9" />
+  <Button Name="EMER_EXIT_ON" Pin="2" />
+  <Button Name="EMER_EXIT_OFF" Pin="3" />
+  <Button Name="NONSMOKING_SIGN" Pin="5" />
+  <Button Name="SEATBELTS_SIGN" Pin="19" />
+  <Button Name="NOSELIGHT_TO" Pin="37" />
+  <Button Name="NOSELIGHT_OFF" Pin="36" />
+  <Button Name="RWY_TURN" Pin="30" />
+  <Button Name="STROBE" Pin="31" />
+  <Button Name="BEACON" Pin="32" />
+  <Button Name="WING_LIGHTS" Pin="33" />
+  <Button Name="NAV_LOGO_OFF" Pin="35" />
+  <Button Name="NAV_LOGO_1" Pin="34" />
+  <Button Name="ADIR_1_OFF" Pin="49" />
+  <Button Name="ADIR_1_NAV" Pin="14" />
+  <Button Name="ADIR_1_ATT" Pin="15" />
+  <Button Name="ADIR_3_OFF" Pin="48" />
+  <Button Name="ADIR_3_NAV" Pin="63" />
+  <Button Name="ADIR_3_ATT" Pin="62" />
+  <Button Name="ADIR_2_OFF" Pin="47" />
+  <Button Name="ADIR_2_NAV" Pin="65" />
+  <Button Name="ADIR_2_ATT" Pin="64" />
 </Config>
