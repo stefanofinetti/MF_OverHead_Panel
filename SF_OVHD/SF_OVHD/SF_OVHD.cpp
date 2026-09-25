@@ -45,6 +45,9 @@ void SF_OVHD::attach(uint8_t addrI2C)
     } else {
         oled = new (mem) OLEDInterface(SH1106);
     }
+    // the driver itself may not have fitted; OLEDInterface has reported it
+    if (!oled->ready())
+        return;
     _initialised = true;
 }
 
@@ -98,8 +101,10 @@ void SF_OVHD::set(int16_t messageID, char *message)
         Put in your code to enter this mode (e.g. clear a display)
 
     ********************************************************************************** */
-    // do something according your messageID
-    // do something according your messageID
+    // attach() gives up without a display driver, and then there is nothing to draw on
+    if (!_initialised)
+        return;
+
     switch (messageID) {
     case -1: // the Connector is closing
     case -2: // the Connector enters power saving

@@ -42,6 +42,11 @@ public:
             oled_1106 = new (mem) Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
         }
     }
+    // false when the driver did not fit in memory; nothing else may be called then
+    bool ready()
+    {
+        return oled_1306 != NULL || oled_1106 != NULL;
+    }
     void begin(uint8_t I2Caddress, bool status)
     {
         if (_type == SSD1306)
