@@ -201,7 +201,7 @@ void SF_OVHD::updateDisplayBatt2(void)
     oled->setTextColor(SSD1306_WHITE);
     if (lightTestOn == 1) {
         oled->setFont(&DSEG14Modern_Regular20pt7b);
-        oled->setCursor(0, 40);
+        oled->setCursor(0, 60);
         oled->println("28.80");
         oled->fillCircle(64, 60, 2, SSD1306_WHITE);
     } else {
@@ -221,7 +221,7 @@ void SF_OVHD::updateDisplayAdirs(void)
     oled->setTextColor(SSD1306_WHITE);
     if (lightTestOn == 1) {
         oled->setFont(&FreeSans18pt7b);
-        oled->setCursor(0, 60);
+        oled->setCursor(0, 40);
         oled->println("On Batt");
         oled->fillCircle(64, 60, 2, SSD1306_WHITE);
     } else {

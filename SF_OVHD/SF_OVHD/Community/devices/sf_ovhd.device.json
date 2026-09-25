@@ -33,6 +33,11 @@
         "id": 2,
         "label": "Adirs message",
         "description": "$ will be displayed as text"
+      },
+      {
+        "id": 3,
+        "label": "Light test",
+        "description": "1 = all three displays show their test picture, 0 = back to the values"
       }
 
     ]
