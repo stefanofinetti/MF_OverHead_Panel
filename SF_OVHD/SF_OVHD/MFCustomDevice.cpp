@@ -2,36 +2,45 @@
 #include "commandmessenger.h"
 #include "allocateMem.h"
 #include "MFEEPROM.h"
+#if defined(HAS_CONFIG_IN_FLASH)
+#include "MFCustomDevicesConfig.h"
+#else
+const char CustomDeviceConfig[] PROGMEM = {};
+#endif
+
 extern MFEEPROM MFeeprom;
 
 /* **********************************************************************************
-    The custom device pins, type and configuration is stored in the EEPROM
-    While loading the config the adresses in the EEPROM are transferred to the constructor
-    Within the constructor you have to copy the EEPROM content to a buffer
-    and evaluate him. The buffer is used for all 3 types (pins, type configuration),
-    so do it step by step.
-    The max size of the buffer is defined here. It must be the size of the
-    expected max length of these strings.
+    The custom device pins, type and configuration is stored in the EEPROM.
+    While loading the config the adresses in the EEPROM are transferred to the
+    constructor. Within the constructor you have to copy the EEPROM content to a
+    buffer and evaluate it. The buffer is used for all 3 types (pins, type,
+    configuration), so do it step by step.
 
-    E.g. 6 pins are required, each pin could have two characters (two digits),
-    each pins are delimited by "|" and the string is NULL terminated.
-    -> (6 * 2) + 5 + 1 = 18 bytes is the maximum.
-    The custom type is "MyCustomClass", which means 14 characters plus NULL = 15
-    The configuration is "myConfig", which means 8 characters plus NULL = 9
-    The maximum characters to be expected is 18, so MEMLEN_STRING_BUFFER has to be at least 18
+    This device takes one value only, the I2C address of the multiplexer, but the
+    type string "SF_OVHD" passes through the same buffer.
 ********************************************************************************** */
 #define MEMLEN_STRING_BUFFER 40
 
-// reads a string from EEPROM at given address which is '.' terminated and saves it to the buffer
-bool MFCustomDevice::getStringFromEEPROM(uint16_t addreeprom, char *buffer)
+// reads a string from EEPROM or Flash at given address which is '.' terminated and saves it to the buffer
+bool MFCustomDevice::getStringFromMem(uint16_t addrMem, char *buffer, bool configFromFlash)
 {
-    char    temp    = 0;
-    uint8_t counter = 0;
+    char     temp    = 0;
+    uint8_t  counter = 0;
+    uint16_t length  = MFeeprom.get_length();
     do {
-        temp              = MFeeprom.read_byte((addreeprom)++); // read the first character
-        buffer[counter++] = temp;                               // save character and locate next buffer position
-        if (counter >= MEMLEN_STRING_BUFFER) {                  // nameBuffer will be exceeded
-            return false;                                       // abort copying to buffer
+        if (configFromFlash) {
+            temp = pgm_read_byte_near(CustomDeviceConfig + addrMem++);
+            if (addrMem > sizeof(CustomDeviceConfig))
+                return false;
+        } else {
+            temp = MFeeprom.read_byte(addrMem++);
+            if (addrMem > length)
+                return false;
+        }
+        buffer[counter++] = temp;              // save character and locate next buffer position
+        if (counter >= MEMLEN_STRING_BUFFER) { // nameBuffer will be exceeded
+            return false;                      // abort copying to buffer
         }
     } while (temp != '.');      // reads until limiter '.' and locates the next free buffer position
     buffer[counter - 1] = 0x00; // replace '.' by NULL, terminates the string
@@ -44,30 +53,28 @@ MFCustomDevice::MFCustomDevice()
 }
 
 /* **********************************************************************************
-    Within the connector pins, a device name and a config string can be defined
-    These informations are stored in the EEPROM like for the other devices.
-    While reading the config from the EEPROM this function is called.
+    Within the connector pins, a device name and a config string can be defined.
+    These informations are stored in the EEPROM or Flash like for the other devices.
+    While reading the config from the EEPROM or Flash this function is called.
     It is the first function which will be called for the custom device.
     If it fits into the memory buffer, the constructor for the customer device
-    will be called
+    will be called.
 ********************************************************************************** */
 
-void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfig)
+void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfig, bool configFromFlash)
 {
-    /* **********************************************************************************
-        Do something which is required to setup your custom device
-    ********************************************************************************** */
+    if (adrPin == 0) return;
 
     char   *params, *p = NULL;
     char    parameter[MEMLEN_STRING_BUFFER];
-    uint8_t _addrI2C;
+    uint8_t addrI2C;
 
     /* **********************************************************************************
-        Read the Type from the EEPROM, copy it into a buffer and evaluate it
-        The string get's NOT stored as this would need a lot of RAM, instead a variable
-        is used to store the type
+        Read the Type from the EEPROM or Flash, copy it into a buffer and evaluate it.
+        The string does NOT get stored as this would need a lot of RAM, instead a
+        variable is used to store the type.
     ********************************************************************************** */
-    getStringFromEEPROM(adrType, parameter);
+    getStringFromMem(adrType, parameter, configFromFlash);
     if (strcmp(parameter, "SF_OVHD") == 0)
         _customType = SF_OVHD_DEVICE;
 
@@ -75,52 +82,29 @@ void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfi
         /* **********************************************************************************
             Check if the device fits into the device buffer
         ********************************************************************************** */
-        if (!FitInMemory(sizeof(SF_OVHD))) {
+        void *mem = MF_ALLOC_TYPE(SF_OVHD, 1);
+        if (!mem) {
             // Error Message to Connector
             cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
+            // nothing was constructed, so do not let detach() dereference the pointer
+            _customType = 0;
             return;
         }
         /* **********************************************************************************************
-            Read the pins from the EEPROM, copy them into a buffer
-            If you have set '"isI2C": true' in the device.json file, the first value is the I2C address
+            Read the pins from the EEPROM or Flash, copy them into a buffer.
+            '"isI2C": true' is set in the device.json file, so the first value is the I2C
+            address of the PCA9548A the three displays hang off.
         ********************************************************************************************** */
-        getStringFromEEPROM(adrPin, parameter);
-        /* **********************************************************************************************
-            Split the pins up into single pins. As the number of pins could be different between
-            multiple devices, it is done here.
-        ********************************************************************************************** */
-        params = strtok_r(parameter, "|", &p);
-        _addrI2C  = atoi(params);
+        getStringFromMem(adrPin, parameter, configFromFlash);
+        params  = strtok_r(parameter, "|", &p);
+        addrI2C = atoi(params);
 
         /* **********************************************************************************
-            Read the configuration from the EEPROM, copy it into a buffer.
+            The config string is not used by this device, so it is not read here.
         ********************************************************************************** */
-        // getStringFromEEPROM(adrConfig, parameter);
-        /* **********************************************************************************
-            Split the config up into single parameter. As the number of parameters could be
-            different between multiple devices, it is done here.
-            This is just an example how to process the init string. Do NOT use
-            "," or ";" as delimiter for multiple parameters but e.g. "|"
-            For most customer devices it is not required.
-            In this case just delete the following
-        ********************************************************************************** */
-        // uint16_t Parameter1;
-        // char    *Parameter2;
-        // params     = strtok_r(parameter, "|", &p);
-        // Parameter1 = atoi(params);
-        // params     = strtok_r(NULL, "|", &p);
-        // Parameter2 = params;
 
-        /* **********************************************************************************
-            Next call the constructor of your custom device
-            adapt it to the needs of your constructor
-        ********************************************************************************** */
-        // In most cases you need only one of the following functions
-        // depending on if the constuctor takes the variables or a separate function is required
-        _my_SF_OVHD = new (allocateMemory(sizeof(SF_OVHD))) SF_OVHD();
-        _my_SF_OVHD->attach(_addrI2C);
-        // if your custom device does not need a separate begin() function, delete the following
-        // or this function could be called from the custom constructor or attach() function
+        _my_SF_OVHD = new (mem) SF_OVHD();
+        _my_SF_OVHD->attach(addrI2C);
         _my_SF_OVHD->begin();
         _initialized = true;
     } else {
@@ -142,20 +126,17 @@ void MFCustomDevice::detach()
 }
 
 /* **********************************************************************************
-    Within in loop() the update() function is called regularly
+    Within in loop() the update() function is called regularly.
     Within the loop() you can define a time delay where this function gets called
     or as fast as possible. See comments in loop().
     It is only needed if you have to update your custom device without getting
     new values from the connector.
-    Otherwise just make a return; in the calling function.
     It gets called from CustomerDevice::update()
 ********************************************************************************** */
 void MFCustomDevice::update()
 {
     if (!_initialized) return;
-    /* **********************************************************************************
-        Do something if required
-    ********************************************************************************** */
+
     if (_customType == SF_OVHD_DEVICE) {
         _my_SF_OVHD->update();
     }

@@ -11,14 +11,14 @@ class MFCustomDevice
 {
 public:
     MFCustomDevice();
-    void attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfig);
+    void attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfig, bool configFromFlash = false);
     void detach();
     void update();
     void set(int16_t messageID, char *setPoint);
 
 private:
-    bool           getStringFromEEPROM(uint16_t addreeprom, char *buffer);
-    bool           _initialized = false;
-    SF_OVHD       *_my_SF_OVHD;
-    uint8_t        _customType = 0;
+    bool     getStringFromMem(uint16_t addrMem, char *buffer, bool configFromFlash);
+    bool     _initialized = false;
+    SF_OVHD *_my_SF_OVHD;
+    uint8_t  _customType = 0;
 };

@@ -21,21 +21,25 @@ class OLEDInterface
 public:
     OLEDInterface(OLEDType type)
     {
-        _type = type;
+        _type     = type;
+        oled_1306 = NULL;
+        oled_1106 = NULL;
         if (_type == SSD1306) {
-            if (!FitInMemory(sizeof(Adafruit_SSD1306))) {
+            void *mem = MF_ALLOC_TYPE(Adafruit_SSD1306, 1);
+            if (!mem) {
                 // Error Message to Connector
                 cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
                 return;
             }
-            oled_1306 = new (allocateMemory(sizeof(Adafruit_SSD1306))) Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+            oled_1306 = new (mem) Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
         } else {
-            if (!FitInMemory(sizeof(Adafruit_SH1106G))) {
+            void *mem = MF_ALLOC_TYPE(Adafruit_SH1106G, 1);
+            if (!mem) {
                 // Error Message to Connector
                 cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
                 return;
             }
-            oled_1106 = new (allocateMemory(sizeof(Adafruit_SH1106G))) Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+            oled_1106 = new (mem) Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
         }
     }
     void begin(uint8_t I2Caddress, bool status)
