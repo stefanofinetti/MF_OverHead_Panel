@@ -60,30 +60,24 @@ void SF_OVHD::begin()
     if (!_initialised)
         return;
 
-    //**************************
-    // // Battery 1
-    // //**************************
+    // The same three steps for each display: select its channel, initialise the
+    // controller behind it, draw. The draw clears the buffer and pushes a
+    // frame by itself, so nothing is pushed before it.
+
+    // Battery 1
     setTCAChannel(TCA9548A_CHANNEL_BATT1);
-    oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
-    oled->display();
+    oled->begin(SCREEN_ADDRESS, true);
     updateDisplayBatt1();
 
-    //**************************
-    // // Battery 2
-    // //**************************
+    // Battery 2
     setTCAChannel(TCA9548A_CHANNEL_BATT2);
-    oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
-    oled->display();
+    oled->begin(SCREEN_ADDRESS, true);
     updateDisplayBatt2();
 
-
-    //**********************************************
-    // ADIRS.
-    //**********************************************
+    // ADIRS
     setTCAChannel(TCA9548A_CHANNEL_ADIRS);
-    oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
+    oled->begin(SCREEN_ADDRESS, true);
     updateDisplayAdirs();
-
 }
 
 void SF_OVHD::detach()
@@ -175,8 +169,9 @@ void SF_OVHD::setTCAChannel(byte i)
 {
     Wire.beginTransmission(_addrI2C);
     Wire.write(1 << i);
+    // The PCA9548A switches on the STOP that endTransmission() waits for, so the
+    // channel is live by the time this returns and needs no pause.
     Wire.endTransmission();
-    delay(5); // Pause
 }
 
 /*******************************************
