@@ -54,6 +54,15 @@ public:
         else
             oled_1106->begin(I2Caddress, status);
     }
+    // contrast register, 0-255; begin() puts back the driver's own default
+    void setContrast(uint8_t contrast)
+    {
+        if (_type == SSD1306) {
+            oled_1306->ssd1306_command(SSD1306_SETCONTRAST);
+            oled_1306->ssd1306_command(contrast);
+        } else
+            oled_1106->setContrast(contrast);
+    }
     void display()
     {
         if (_type == SSD1306)

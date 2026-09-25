@@ -122,6 +122,16 @@ void SF_OVHD::set(int16_t messageID, char *message)
         updateDisplayBatt(TCA9548A_CHANNEL_BATT2, ovhdBatt2Value);
         updateDisplayAdirs();
         break;
+    case 4: {
+        // 0-100 from the Connector. Until the first one arrives the displays
+        // keep their driver's default: 0xCF on SSD1306, 0xFF on SH1106.
+        // An empty value is ignored rather than read as 0, which would be darkest.
+        if (message[0] == 0x00)
+            break;
+        int16_t percent = atoi(message);
+        setBrightness(percent < 0 ? 0 : (percent > 100 ? 100 : percent));
+        break;
+    }
     default:
         break;
     }
@@ -147,6 +157,19 @@ void SF_OVHD::blankDisplays(void)
         setTCAChannel(channels[i]);
         oled->clearDisplay();
         oled->display();
+    }
+}
+
+/*
+  set the contrast of all three displays; nothing is redrawn, the picture stays
+*/
+void SF_OVHD::setBrightness(uint8_t percent)
+{
+    uint8_t       contrast   = (uint16_t)percent * 255 / 100;
+    const uint8_t channels[] = {TCA9548A_CHANNEL_BATT1, TCA9548A_CHANNEL_BATT2, TCA9548A_CHANNEL_ADIRS};
+    for (uint8_t i = 0; i < sizeof(channels); i++) {
+        setTCAChannel(channels[i]);
+        oled->setContrast(contrast);
     }
 }
 

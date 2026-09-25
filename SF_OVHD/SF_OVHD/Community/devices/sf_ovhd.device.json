@@ -38,6 +38,11 @@
         "id": 3,
         "label": "Light test",
         "description": "1 = all three displays show their test picture, 0 = back to the values"
+      },
+      {
+        "id": 4,
+        "label": "Brightness",
+        "description": "0-100, the contrast of all three displays. Until it is first sent they keep their default"
       }
 
     ]

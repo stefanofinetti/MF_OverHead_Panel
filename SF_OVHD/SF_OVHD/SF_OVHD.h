@@ -27,6 +27,7 @@ private:
 
     void setTCAChannel(byte i);
     void blankDisplays(void);
+    void setBrightness(uint8_t percent);
     void updateDisplayBatt(uint8_t channel, const char *value);
     void updateDisplayAdirs(void);
 
