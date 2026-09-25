@@ -27,8 +27,7 @@ private:
 
     void setTCAChannel(byte i);
     void blankDisplays(void);
-    void updateDisplayBatt1(void);
-    void updateDisplayBatt2(void);
+    void updateDisplayBatt(uint8_t channel, const char *value);
     void updateDisplayAdirs(void);
 
 };

@@ -57,12 +57,12 @@ void SF_OVHD::begin()
     // Battery 1
     setTCAChannel(TCA9548A_CHANNEL_BATT1);
     oled->begin(SCREEN_ADDRESS, true);
-    updateDisplayBatt1();
+    updateDisplayBatt(TCA9548A_CHANNEL_BATT1, ovhdBatt1Value);
 
     // Battery 2
     setTCAChannel(TCA9548A_CHANNEL_BATT2);
     oled->begin(SCREEN_ADDRESS, true);
-    updateDisplayBatt2();
+    updateDisplayBatt(TCA9548A_CHANNEL_BATT2, ovhdBatt2Value);
 
     // ADIRS
     setTCAChannel(TCA9548A_CHANNEL_ADIRS);
@@ -104,12 +104,12 @@ void SF_OVHD::set(int16_t messageID, char *message)
     case 0:
         /* code */
         setValue(ovhdBatt1Value, sizeof(ovhdBatt1Value), message);
-        updateDisplayBatt1();
+        updateDisplayBatt(TCA9548A_CHANNEL_BATT1, ovhdBatt1Value);
         break;
     case 1:
         /* code */
         setValue(ovhdBatt2Value, sizeof(ovhdBatt2Value), message);
-        updateDisplayBatt2();
+        updateDisplayBatt(TCA9548A_CHANNEL_BATT2, ovhdBatt2Value);
         break;
     case 2:
         /* code */
@@ -118,8 +118,8 @@ void SF_OVHD::set(int16_t messageID, char *message)
         break;
     case 3:
         lightTestOn = atoi(message);
-        updateDisplayBatt1();
-        updateDisplayBatt2();
+        updateDisplayBatt(TCA9548A_CHANNEL_BATT1, ovhdBatt1Value);
+        updateDisplayBatt(TCA9548A_CHANNEL_BATT2, ovhdBatt2Value);
         updateDisplayAdirs();
         break;
     default:
@@ -162,48 +162,47 @@ void SF_OVHD::setTCAChannel(byte i)
     Wire.endTransmission();
 }
 
+/*
+  width the cursor advances over a text, summed from the font's own glyph table
+*/
+static int16_t textAdvance(const GFXfont *font, const char *text)
+{
+    uint8_t   first  = pgm_read_byte(&font->first);
+    uint8_t   last   = pgm_read_byte(&font->last);
+    GFXglyph *glyphs = (GFXglyph *)pgm_read_ptr(&font->glyph);
+    int16_t   width  = 0;
+    for (; *text; text++) {
+        uint8_t c = *text;
+        if (c < first || c > last)
+            continue;
+        width += pgm_read_byte(&glyphs[c - first].xAdvance);
+    }
+    return width;
+}
+
 /*******************************************
 Has to be redone, only tests
 ******************************************/
-void SF_OVHD::updateDisplayBatt1(void)
+void SF_OVHD::updateDisplayBatt(uint8_t channel, const char *value)
 {
-    setTCAChannel(TCA9548A_CHANNEL_BATT1);
+    const char *text = (lightTestOn == 1) ? "28.80" : value;
+
+    setTCAChannel(channel);
     // Clear the buffer
     oled->clearDisplay();
     oled->setTextColor(SSD1306_WHITE);
-    if (lightTestOn == 1) {
-        oled->setFont(&DSEG14Modern_Regular20pt7b);
-        oled->setCursor(0, 60);
-        oled->println("28.80");
+    oled->setFont(&DSEG14Modern_Regular20pt7b);
+    // Right-aligned on the digit cells, as on a segment display: DSEG14 gives
+    // every digit the same advance and the point none, so "28.80" fills the
+    // 128 pixels from x=0 and "9.80" starts one cell in, at x=32.
+    int16_t x = SCREEN_WIDTH - textAdvance(&DSEG14Modern_Regular20pt7b, text);
+    oled->setCursor(x < 0 ? 0 : x, 60);
+    oled->println(text);
+    if (lightTestOn == 1)
         oled->fillCircle(64, 60, 2, SSD1306_WHITE);
-    } else {
-        oled->setFont(&DSEG14Modern_Regular20pt7b);
-        oled->setCursor(0, 60);
-        oled->println(ovhdBatt1Value);        
-    }
     oled->display();
 
-} // updateDisplayBatt1
-
-void SF_OVHD::updateDisplayBatt2(void)
-{
-    setTCAChannel(TCA9548A_CHANNEL_BATT2);
-    // Clear the buffer
-    oled->clearDisplay();
-    oled->setTextColor(SSD1306_WHITE);
-    if (lightTestOn == 1) {
-        oled->setFont(&DSEG14Modern_Regular20pt7b);
-        oled->setCursor(0, 60);
-        oled->println("28.80");
-        oled->fillCircle(64, 60, 2, SSD1306_WHITE);
-    } else {
-        oled->setFont(&DSEG14Modern_Regular20pt7b);
-        oled->setCursor(0, 60);
-        oled->println(ovhdBatt2Value);        
-    }
-    oled->display();
-
-} // updateDisplayBatt2
+} // updateDisplayBatt
 
 void SF_OVHD::updateDisplayAdirs(void)
 {
