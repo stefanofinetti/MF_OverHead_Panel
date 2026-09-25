@@ -35,17 +35,17 @@
       "CanInstallFirmware": true,
       "CanResetBoard": true,
       "DelayAfterFirmwareUpdate": 0,
-      "FirmwareBaseName": "SF_OVHD_MAINBOARD_mega",
+      "FirmwareBaseName": "SF_OVHD_mega",
       "FirmwareExtension": "hex",
-      "LatestFirmwareVersion": "1.0.3",
-      "FriendlyName": "SF OVHD Mainboard Mega",
-      "MobiFlightType": "SF OVHD Mainboard Mega",
+      "LatestFirmwareVersion": "1.0.5",
+      "FriendlyName": "SF OVHD Mega",
+      "MobiFlightType": "SF OVHD Mega",
       "ResetFirmwareFile": "reset.arduino_mega_1_0_2.hex",
       "CustomDeviceTypes": [
-        "SF_OVHD_MAINBOARD"
+        "SF_OVHD"
       ],
       "Community": {
-        "Project": "SF_OVHD_MAINBOARD",
+        "Project": "SF_OVHD",
         "Website": "https://github.com/stefanofinetti/MobiFlight-SF_OVHD_OLEDs",
         "Docs": "https://github.com/stefanofinetti/MobiFlight-SF_OVHD_OLEDs",
         "Support": "https://github.com/stefanofinetti/MobiFlight-SF_OVHD_OLEDs"

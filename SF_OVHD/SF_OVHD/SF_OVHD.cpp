@@ -10,15 +10,16 @@
 #include "Fonts/DSEG7Classic_Regular18pt7b.h"
 #include "Fonts/DSEG7Classic_Regular20pt7b.h" //https://github.com/keshikan/DSEG and https://rop.nl/truetype2gfx/
 #include "Fonts/DSEG7Classic_Regular22pt7b.h"
+#include "Fonts/DSEG14Modern_Regular20pt7b.h"
 
 // Battery 1
-String ovhdBatt1Value     = "0.0V";
+String ovhdBatt1Value     = "00.00";
 
 // Battery 2
-String ovhdBatt2Value     = "0.0V";
+String ovhdBatt2Value     = "00.00";
 
 // ADIRS
-String  AdirsValue = "ON BATT";
+String  AdirsValue = "On batt";
 
 // light test switch
 uint8_t lightTestOn = 0x00;
@@ -162,12 +163,12 @@ void SF_OVHD::updateDisplayBatt1(void)
     oled->clearDisplay();
     oled->setTextColor(SSD1306_WHITE);
     if (lightTestOn == 1) {
-        oled->setFont(&DSEG7Classic_Regular20pt7b);
+        oled->setFont(&DSEG14Modern_Regular20pt7b);
         oled->setCursor(0, 60);
-        oled->println("28,8V");
+        oled->println("28.80");
         oled->fillCircle(64, 60, 2, SSD1306_WHITE);
     } else {
-        oled->setFont(&DSEG7Classic_Regular20pt7b);
+        oled->setFont(&DSEG14Modern_Regular20pt7b);
         oled->setCursor(0, 60);
         oled->println(ovhdBatt1Value);        
     }
@@ -182,12 +183,12 @@ void SF_OVHD::updateDisplayBatt2(void)
     oled->clearDisplay();
     oled->setTextColor(SSD1306_WHITE);
     if (lightTestOn == 1) {
-        oled->setFont(&DSEG7Classic_Regular20pt7b);
-        oled->setCursor(0, 60);
-        oled->println("28,8V");
+        oled->setFont(&DSEG14Modern_Regular20pt7b);
+        oled->setCursor(0, 40);
+        oled->println("28.80");
         oled->fillCircle(64, 60, 2, SSD1306_WHITE);
     } else {
-        oled->setFont(&DSEG7Classic_Regular20pt7b);
+        oled->setFont(&DSEG14Modern_Regular20pt7b);
         oled->setCursor(0, 60);
         oled->println(ovhdBatt2Value);        
     }
@@ -202,13 +203,13 @@ void SF_OVHD::updateDisplayAdirs(void)
     oled->clearDisplay();
     oled->setTextColor(SSD1306_WHITE);
     if (lightTestOn == 1) {
-        oled->setFont(&DSEG7Classic_Regular20pt7b);
+        oled->setFont(&FreeSans18pt7b);
         oled->setCursor(0, 60);
-        oled->println("ON BATT");
+        oled->println("On Batt");
         oled->fillCircle(64, 60, 2, SSD1306_WHITE);
     } else {
-        oled->setFont(&DSEG7Classic_Regular20pt7b);
-        oled->setCursor(0, 60);
+        oled->setFont(&FreeSans18pt7b);
+        oled->setCursor(0, 40);
         oled->println(AdirsValue);        
     }
     oled->display();

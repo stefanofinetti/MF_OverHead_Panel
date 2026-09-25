@@ -3,7 +3,7 @@
   <ModuleType>SF OVHD Mainboard Mega</ModuleType>
   <ModuleName>SF_OVHD_Mainboard</ModuleName>
   <PowerSavingTime>600</PowerSavingTime>
-  <CustomDevice Name="SF_OVHD_Mainboard" CustomType="SF_OVHD_MAINBOARD" Pins="112" Config="">
+  <CustomDevice Name="SF_OVHD_Mainboard" CustomType="SF_OVHD" Pins="112" Config="">
     <ConfiguredPins>
       <string>112</string>
     </ConfiguredPins>

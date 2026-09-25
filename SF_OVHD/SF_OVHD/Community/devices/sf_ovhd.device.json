@@ -2,11 +2,11 @@
   
     "$schema": "./mfdevice.schema.json",
     "Info": {
-      "Label": "SF_OVHD_Mainboard",
-      "Type": "SF_OVHD_MAINBOARD",
+      "Label": "SF OVHD",
+      "Type": "SF_OVHD",
       "Author": "Stefano Finetti",
       "URL": "https://github.com",
-      "Version" : "1.0.3"
+      "Version" : "1.0.5"
     },
     "Config": {
       "Pins": [],
@@ -22,12 +22,12 @@
       {
         "id": 0,
         "label": "Battery 1 Voltage",
-        "description": "$ will be displayed as voltage X.YYV"
+        "description": "$ will be displayed as voltage X.YY"
       },
       {
         "id": 1,
         "label": "Battery 2 Voltage",
-        "description": "$ will be displayed as voltage X.YYV"
+        "description": "$ will be displayed as voltage X.YY"
       },
       {
         "id": 2,

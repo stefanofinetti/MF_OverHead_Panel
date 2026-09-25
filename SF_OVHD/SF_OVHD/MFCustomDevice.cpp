@@ -68,7 +68,7 @@ void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfi
         is used to store the type
     ********************************************************************************** */
     getStringFromEEPROM(adrType, parameter);
-    if (strcmp(parameter, "SF_OVHD_MAINBOARD") == 0)
+    if (strcmp(parameter, "SF_OVHD") == 0)
         _customType = SF_OVHD_DEVICE;
 
     if (_customType == SF_OVHD_DEVICE) {

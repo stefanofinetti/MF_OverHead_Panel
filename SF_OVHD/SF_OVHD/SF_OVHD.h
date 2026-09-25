@@ -4,10 +4,10 @@
 #include "OLEDInterface.h"
 
 // address of the multiplexer to change the channels
-#define TCA9548A_I2C_ADDRESS  0x70
+#define TCA9548A_I2C_ADDRESS  0x71
 #define TCA9548A_CHANNEL_BATT1 0
 #define TCA9548A_CHANNEL_BATT2 1
-#define TCA9548A_CHANNEL_ADIRS    3
+#define TCA9548A_CHANNEL_ADIRS 2
 
 
 class SF_OVHD
