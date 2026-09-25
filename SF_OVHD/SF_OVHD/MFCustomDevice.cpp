@@ -75,7 +75,10 @@ void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfi
         variable is used to store the type.
     ********************************************************************************** */
     getStringFromMem(adrType, parameter, configFromFlash);
-    if (strcmp(parameter, "SF_OVHD") == 0)
+    // "SF_OVHD_MAINBOARD" is what the January 2025 firmware and its config wrote
+    // into the EEPROM. Accepting it too means this firmware drops straight onto
+    // such a board without rebuilding its configuration first.
+    if (strcmp(parameter, "SF_OVHD") == 0 || strcmp(parameter, "SF_OVHD_MAINBOARD") == 0)
         _customType = SF_OVHD_DEVICE;
 
     if (_customType == SF_OVHD_DEVICE) {
