@@ -7,7 +7,7 @@ This repositories contains the complete  Airbus A319/320/321/330 Overhead compac
 ## Features
 - If you decide to not modify anything, you can just print the various 3D components and order the PCB from JLCPCB.
 - You will need a lot of materials, if you open the Kicad Project you can obtain the BOM directly from it.
-- You will need to build your own custom firmware (source provided) or you can use the one in the ZIP file inside the \_dist directory in VsCode Files
+- The firmware for the three OLED displays is in `SF_OVHD`; its README says how to build the installable MobiFlight package, which also carries the complete module config for the panel
 
 ## License
 
