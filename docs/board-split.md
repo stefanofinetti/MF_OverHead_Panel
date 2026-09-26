@@ -123,17 +123,17 @@ Everything on today's board that belongs to no panel:
   100k/100k divider on the external rail, `ILIM` set to about 0.8 A). It
   replaces D162, today's series diode on VBUS.
 * **The annunciator anodes do not go through the TPS2115A.** In a light
-  test all 44 LEDs are lit, about 660 mA at 15 mA each. Added to the logic,
-  that sits right on the 0.8 A limit and is beyond a USB port's 500 mA. The
+  test all 44 LEDs are lit, about 0.8 A at the measured 18 mA each. Added to
+  the logic, that is past the 0.8 A limit and a USB port's 500 mA. The
   anodes therefore take their own rail, `+5V_LED`, straight from the
   MIC29302. On USB alone the annunciators stay dark, like the backlight,
   and the logic keeps working.
 * **Two fuses, one per branch**, as on the FCU PSU: the backlight branch
-  (~1.3 A) and the regulator branch (~0.8 A in a light test). A fault on
-  one does not take down the other.
-* The MIC29302 dissipates about 1.2 W in normal use and up to ~3 W in a light
-  test (4 V across it at ~0.8 A). It keeps a copper area under its tab as
-  today.
+  (~0.7 A, measured) and the regulator branch (~0.9 A in a light test). A
+  fault on one does not take down the other.
+* The MIC29302 dissipates under 1 W in normal use, with a handful of
+  annunciators lit, and around 3 W in a light test (about 3.5 V across it at
+  ~0.9 A). It keeps a copper area under its tab as today.
 
 ### I2C
 
@@ -148,19 +148,39 @@ Everything on today's board that belongs to no panel:
 
 ### Annunciators: fixed current, dimmable
 
-* **The trimmers go.** Each DM13A gets one fixed 1206 resistor on `REXT`.
-  Today `REXT` sees 56 Ω plus a 0–100 Ω trimmer, i.e. 56–156 Ω. The DM13A
-  datasheet sets 3–60 mA with `REXT` between about 22 kΩ and 0.5 kΩ, so the
-  whole trimmer range asks for several times the chip's maximum. The chip
-  sits at its limit and the trimmer changes nothing. That is why it never
-  worked. The LEDs have probably been driven above their rating since.
-* **Values: two for white and blue, one shared by the two green/amber
-  chips**, since green and amber look alike at the same current. To be
-  chosen by trying them on the current board: replace one 56 Ω (R49–R52)
-  with a 2.2 kΩ, trimmer at zero, and look. Expect 2–4 kΩ for 10–15 mA.
-  The curve is not a simple 1/R, so the eye decides.
-* **The 100 nF on `REXT`:** footprint kept, not fitted, until the full
-  datasheet confirms whether it belongs there.
+* **The trimmers go. Each DM13A gets a fixed 680 Ω 1206 on `REXT`**, all
+  four the same. This was measured on the current board, not taken from the
+  datasheet, because these chips do not follow it.
+* **What was measured** (September 2026, U6 first, then all four). The LED
+  current is read as the step in the 9 V supply current when one LED is
+  switched on. The 5 V side is linear, so the step is the LED current:
+
+  | `REXT` at pin 23 | LED current | Light |
+  |---|---|---|
+  | 56 Ω (today's resistor, trimmer at zero) | ~70–85 mA | far too bright |
+  | 300 Ω | 39 mA | too bright |
+  | 680 Ω | 17–18 mA, all four chips | right, on every colour |
+  | 780 Ω | ~18 mA | right |
+  | 2.1 kΩ | ~7 mA | dim |
+  | 3.6 kΩ | a few mA | very dim |
+  | 4.7 kΩ | ~4 mA | dim |
+
+  The points follow roughly I (mA) ≈ 12 / R (kΩ).
+* **The datasheet does not describe these parts.** It gives
+  I = 1.2 V / R × M with M from 55 at 3 mA down to 41.6 at 50 mA, which
+  would put 4.7 kΩ at ~14 mA and 680 Ω far past the 60 mA maximum. These
+  chips give about a fifth of that. If the DM13A ever comes from another
+  source, measure again before trusting either table.
+* **Why the trimmer never worked:** 56–156 Ω asks for far more than the
+  chip can give, so its output sits at its own limit and the trimmer barely
+  moves it. At 56 Ω one LED was drawing ~80 mA, about four times the ~20 mA LEDs
+  like these are typically rated for.
+* **With a low `REXT` the chip can stop driving its outputs** while still
+  passing data down the chain, and it only recovers after a power cycle.
+  This was seen at 56 Ω and at 300 Ω. At 680 Ω it did not happen.
+* **The 100 nF on `REXT`:** the datasheet text does not mention one. The
+  typical application on page 14 still has to be checked. Footprint kept,
+  not fitted, until then.
 * **Dimming through `~EN`.** Today the four `~EN` pins are tied to ground.
   They are joined and driven from **D45**, a PWM pin free today, through an
   inverter: an N-MOSFET (BS170, through-hole) with a 10k pull-up on `~EN`
@@ -203,9 +223,11 @@ the ribbon, cathodes back down the ribbon to their DM13A output.
 
 ### Backlight strings
 
-Today there are 61 strings, each of 2 LEDs and one 150 Ω resistor on 9 V. A
-string of two white LEDs (V_F ≈ 3 V) draws about 20 mA, so the total is about
-1.2 A.
+Today there are 61 strings, each of 2 LEDs and one 150 Ω resistor on 9 V.
+Measured on the current board, everything but the annunciators draws
+0.76–0.81 A from the 9 V supply. The logic accounts for roughly 0.1 A of
+that (estimated, not measured), so the backlight takes about **0.7 A, or
+~11 mA per string**. It will vary with the supply and the temperature.
 
 The split changes three things:
 
@@ -213,23 +235,23 @@ The split changes three things:
   D139 (GPWS) + D140 (EXT LT), D141 (SIGNS) + D142 (AIR COND),
   D148 (APU) + D149 (SIGNS). D141 and D149 then pair up on SIGNS.
 * That leaves **GPWS, AIR COND, EXT LT and APU with an odd LED count**. Each
-  gets one single-LED string on 9 V, at about 300 Ω for the same ~20 mA
-  (R = (9 − V_F) / I). Confirm against the LEDs' actual V_F. It dissipates
-  about 0.12 W, fine for a 1206.
+  gets one single-LED string on 9 V, with R = (V_BL − V_F) / 11 mA, where V_BL
+  is the backlight rail at the string. The value waits on a measured V_F of
+  one backlight LED.
 * **Four strings have both LEDs on one panel but their resistor across the
   seam**: R57, R61, R64 and R66. The resistor moves next to its LEDs.
 
 | Board | Strings | Backlight current ≈ |
 |---|---|---|
-| ADIRS | 9 | 180 mA |
-| FUEL | 7 | 140 mA |
-| ELEC | 5 | 100 mA |
-| GPWS | 4 + 1 single | 100 mA |
-| AIR COND | 6 + 1 single | 140 mA |
-| EXT LT | 15 + 1 single | 320 mA |
-| APU | 2 + 1 single | 60 mA |
-| SIGNS | 11 | 220 mA |
-| **Total** | **63** | **~1.26 A** |
+| ADIRS | 9 | 100 mA |
+| FUEL | 7 | 80 mA |
+| ELEC | 5 | 55 mA |
+| GPWS | 4 + 1 single | 55 mA |
+| AIR COND | 6 + 1 single | 80 mA |
+| EXT LT | 15 + 1 single | 180 mA |
+| APU | 2 + 1 single | 35 mA |
+| SIGNS | 11 | 120 mA |
+| **Total** | **63** | **~0.7 A** |
 
 22–24 AWG is ample for the largest.
 
@@ -391,10 +413,10 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 
 ## Before drawing
 
-1. **REXT values.** Try 2.2 kΩ, then 3.3 kΩ, on the current board and pick
-   one per colour.
+1. ~~REXT values~~ — done: 680 Ω on all four chips, measured.
 2. **Backlight LED V_F.** Measure one, to set the single-string resistor.
-3. **The `REXT` capacitor.** Read it in the full DM13A datasheet.
+3. **The `REXT` capacitor.** Check the typical application on page 14 of the
+   DM13A datasheet.
 4. **Inner panel outlines.** Take them from SketchUp, with the same
    clearance as today's outer edge.
 5. **Mainboard outline.** Measure the free floor of the lower-left case part.
