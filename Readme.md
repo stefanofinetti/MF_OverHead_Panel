@@ -41,7 +41,7 @@ hand-soldering kind.
   colour (white, green, blue and orange, i.e. amber), in two shift register chains. Each
   colour has its own trimmer, so the four can be balanced against each
   other.
-* **Backlighting:** 123 LEDs on the 9 V rail through fixed 150 Ω resistors.
+* **Backlighting:** 122 LEDs on the 9 V rail, in strings of two with a fixed 150 Ω resistor each.
 * **Displays:** three 128 × 64 I2C OLEDs (BATT 1, BATT 2 and ADIRS) on 4-pin
   sockets, behind a PCA9548A multiplexer. A three-way DIP switch sets the
   multiplexer's address.
