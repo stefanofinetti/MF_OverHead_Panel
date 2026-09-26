@@ -135,6 +135,41 @@ Everything on today's board that belongs to no panel:
   annunciators lit, and around 3 W in a light test (about 3.5 V across it at
   ~0.9 A). It keeps a copper area under its tab as today.
 
+### Hot-plug lock-up
+
+Found on the current board, September 2026, with 680 Ω on every `REXT`:
+
+| How the 9 V arrives | Annunciators |
+|---|---|
+| Barrel already in the board, adapter then plugged into the mains | work, every time |
+| Barrel pushed into an adapter that is already live | dead, about 19 times in 20 |
+| Bench supply | work |
+
+Two different 9 V / 3 A adapters behave the same way. The OLEDs, the
+switches and the backlight work in every case. Only the DM13A outputs stay
+off, while data still passes through the chips.
+
+Pushing the barrel into a live supply brings the 9 V in all at once, with
+the jack's contacts bouncing and the input capacitors being charged in one
+step. The ATmega has a reset and the firmware re-initialises the OLEDs.
+The DM13A has neither a reset pin nor a reset command, so a bad start is
+kept until its supply goes away. Why it did not show with the old 56 Ω
+`REXT` is not known. No oscilloscope capture has been taken.
+
+**On the current board:** leave the barrel plugged in and switch the
+adapter at the mains.
+
+**On the new mainboard:**
+
+* **A robust 9 V input:** a bulk electrolytic across the input to damp
+  the hot-plug ringing, and a TVS for the spikes. The panel jack, the wires
+  and the screw terminal make the input path longer than today's, so the
+  problem would get worse, not go away.
+* **A firmware-controlled reset for the DM13A (to evaluate):** switch their
+  VDD with a small P-MOSFET from a spare pin, D46 for instance. `SF_OVHD`
+  would cut it for a few tens of milliseconds at start-up, so the chips
+  always start clean whatever the supply did.
+
 ### I2C
 
 * **Upstream pull-ups on +5V.** Today R7 and R8 pull SDA and SCL to 3.3 V,
@@ -175,9 +210,10 @@ Everything on today's board that belongs to no panel:
   chip can give, so its output sits at its own limit and the trimmer barely
   moves it. At 56 Ω one LED was drawing ~80 mA, about four times the ~20 mA LEDs
   like these are typically rated for.
-* **With a low `REXT` the chip can stop driving its outputs** while still
-  passing data down the chain, and it only recovers after a power cycle.
-  This was seen at 56 Ω and at 300 Ω. At 680 Ω it did not happen.
+* **The DM13A can start up stuck.** It keeps passing data down the chain
+  but never turns its outputs on, and only recovers after a full power
+  cycle. See *Hot-plug lock-up* below. It was first taken for an effect of a
+  low `REXT`, but it also happens at 680 Ω.
 * **The 100 nF on `REXT`:** the datasheet text does not mention one. The
   typical application on page 14 still has to be checked. Footprint kept,
   not fitted, until then.
@@ -199,7 +235,7 @@ Everything on today's board that belongs to no panel:
   section returns join at its drain.
 * D44 low or not driven → backlight off. PWM from a MobiFlight output on
   D44, 0–255, meant to follow the INTEG LT knob.
-* D46 stays free.
+* D46 stays free, unless it becomes the DM13A reset (see *Hot-plug lock-up*).
 
 ### Connectors on the mainboard
 
@@ -420,3 +456,6 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 4. **Inner panel outlines.** Take them from SketchUp, with the same
    clearance as today's outer edge.
 5. **Mainboard outline.** Measure the free floor of the lower-left case part.
+6. **DM13A reset.** Decide whether the firmware-controlled VDD switch goes
+   in. If an oscilloscope is at hand, capture +5V while the barrel is pushed
+   into a live adapter, to confirm the cause.
