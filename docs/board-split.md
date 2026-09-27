@@ -101,7 +101,7 @@ Everything on today's board that belongs to no panel:
   ISP programmer powers the MCU alone while the bootloader is burned.
 * MIC29302, AMS1117
 * PCA9548A with the three-way address DIP switch (today under ADIRS)
-* The four DM13A (today spread over several panels)
+* The four TLC5927 (today spread over several panels; the schematic calls them DM13A)
 
 ### Power
 
@@ -123,21 +123,23 @@ Everything on today's board that belongs to no panel:
   100k/100k divider on the external rail, `ILIM` set to about 0.8 A). It
   replaces D162, today's series diode on VBUS.
 * **The annunciator anodes do not go through the TPS2115A.** In a light
-  test all 44 LEDs are lit, about 0.8 A at the measured 18 mA each. Added to
-  the logic, that is past the 0.8 A limit and a USB port's 500 mA. The
+  test all 44 LEDs are lit, about 1.2 A at 28 mA each. Added to the logic,
+  that is well past the 0.8 A limit and a USB port's 500 mA. The
   anodes therefore take their own rail, `+5V_LED`, straight from the
   MIC29302. On USB alone the annunciators stay dark, like the backlight,
   and the logic keeps working.
 * **Two fuses, one per branch**, as on the FCU PSU: the backlight branch
-  (~0.7 A, measured) and the regulator branch (~0.9 A in a light test). A
+  (~0.7 A, measured) and the regulator branch (~1.3 A in a light test). A
   fault on one does not take down the other.
-* The MIC29302 dissipates under 1 W in normal use, with a handful of
-  annunciators lit, and around 3 W in a light test (about 3.5 V across it at
-  ~0.9 A). It keeps a copper area under its tab as today.
+* The MIC29302 dissipates about 1 W in normal use, with a handful of
+  annunciators lit. In a light test it is ~4 W, about 3.2 V across it at
+  ~1.3 A, which is too much to hold for long on a TO-263. The light test
+  is seconds long, but the copper under the tab must be sized for it, or
+  the anode rail given its own regulator.
 
 ### Hot-plug lock-up
 
-Found on the current board, September 2026, with 680 Ω on every `REXT`:
+Found on the current board, September 2026, with 680 Ω on every `R-EXT`:
 
 | How the 9 V arrives | Annunciators |
 |---|---|
@@ -146,15 +148,16 @@ Found on the current board, September 2026, with 680 Ω on every `REXT`:
 | Bench supply | work |
 
 Two different 9 V / 3 A adapters behave the same way. The OLEDs, the
-switches and the backlight work in every case. Only the DM13A outputs stay
+switches and the backlight work in every case. Only the TLC5927 outputs stay
 off, while data still passes through the chips.
 
 Pushing the barrel into a live supply brings the 9 V in all at once, with
 the jack's contacts bouncing and the input capacitors being charged in one
 step. The ATmega has a reset and the firmware re-initialises the OLEDs.
-The DM13A has neither a reset pin nor a reset command, so a bad start is
-kept until its supply goes away. Why it did not show with the old 56 Ω
-`REXT` is not known. No oscilloscope capture has been taken.
+The TLC5927 has no reset pin, so a bad start is kept until its supply goes
+away. Why it did not show with the old 56 Ω `R-EXT` is not known. See
+*Output voltage and short detection* below for the one difference found so
+far. No oscilloscope capture has been taken.
 
 **On the current board:** leave the barrel plugged in and switch the
 adapter at the mains.
@@ -165,7 +168,7 @@ adapter at the mains.
   the hot-plug ringing, and a TVS for the spikes. The panel jack, the wires
   and the screw terminal make the input path longer than today's, so the
   problem would get worse, not go away.
-* **A firmware-controlled reset for the DM13A (to evaluate):** switch their
+* **A firmware-controlled reset for the TLC5927 (to evaluate):** switch their
   VDD with a small P-MOSFET from a spare pin, D46 for instance. `SF_OVHD`
   would cut it for a few tens of milliseconds at start-up, so the chips
   always start clean whatever the supply did.
@@ -183,50 +186,68 @@ adapter at the mains.
 
 ### Annunciators: fixed current, dimmable
 
-* **The trimmers go. Each DM13A gets a fixed 680 Ω 1206 on `REXT`**, all
-  four the same. This was measured on the current board, not taken from the
-  datasheet, because these chips do not follow it.
-* **What was measured** (September 2026, U6 first, then all four). The LED
-  current is read as the step in the 9 V supply current when one LED is
-  switched on. The 5 V side is linear, so the step is the LED current:
+**The four drivers are TI TLC5927, not DM13A.** They were bought from
+Digi-Key, and the TLC5927 has the DM13A's pinout, so the KiCad symbol and
+the schematic say DM13A. Everything below comes from the TLC5927 datasheet
+(SLVS677C) and from measurements on the board.
 
-  | `REXT` at pin 23 | LED current | Light |
-  |---|---|---|
-  | 56 Ω (today's resistor, trimmer at zero) | ~70–85 mA | far too bright |
-  | 300 Ω | 39 mA | too bright |
-  | 680 Ω | 17–18 mA, all four chips | right, on every colour |
-  | 780 Ω | ~18 mA | right |
-  | 2.1 kΩ | ~7 mA | dim |
-  | 3.6 kΩ | a few mA | very dim |
-  | 4.7 kΩ | ~4 mA | dim |
+* **Output current**, with the configuration the chip powers up in:
+  I_OUT = 1.25 V / R_ext × 15. That is about 26 mA at 720 Ω and 52 mA at
+  360 Ω. The output range is 10–120 mA, and 120 mA is the absolute maximum.
+* **The trimmers go. Each TLC5927 gets a fixed 680 Ω 1206 on `R-EXT`**, all
+  four the same, for ~28 mA per LED. The light was judged right on every
+  colour. Still open: whether the Korry LEDs are rated for 28 mA. If they are
+  not, 820 Ω (~23 mA) or 1 kΩ (~19 mA).
+* **Measured against the formula.** The LED current was read as the step in
+  the 9 V supply current when one LED is switched on:
 
-  The points follow roughly I (mA) ≈ 12 / R (kΩ).
-* **The datasheet does not describe these parts.** It gives
-  I = 1.2 V / R × M with M from 55 at 3 mA down to 41.6 at 50 mA, which
-  would put 4.7 kΩ at ~14 mA and 680 Ω far past the 60 mA maximum. These
-  chips give about a fifth of that. If the DM13A ever comes from another
-  source, measure again before trusting either table.
-* **Why the trimmer never worked:** 56–156 Ω asks for far more than the
-  chip can give, so its output sits at its own limit and the trimmer barely
-  moves it. At 56 Ω one LED was drawing ~80 mA, about four times the ~20 mA LEDs
-  like these are typically rated for.
-* **The DM13A can start up stuck.** It keeps passing data down the chain
-  but never turns its outputs on, and only recovers after a full power
-  cycle. See *Hot-plug lock-up* below. It was first taken for an effect of a
-  low `REXT`, but it also happens at 680 Ω.
-* **The 100 nF on `REXT`:** the datasheet text does not mention one. The
-  typical application on page 14 still has to be checked. Footprint kept,
-  not fitted, until then.
-* **Dimming through `~EN`.** Today the four `~EN` pins are tied to ground.
-  They are joined and driven from **D45**, a PWM pin free today, through an
-  inverter: an N-MOSFET (BS170, through-hole) with a 10k pull-up on `~EN`
-  to +5V and a pull-down on its gate.
-  * D45 high → MOSFET on → `~EN` low → annunciators lit
-  * D45 low or not driven → pull-up → `~EN` high → annunciators dark
-  * So 255 means bright in the Connector, and at power-up, reset or with the
-    Connector closed the annunciators stay dark.
-  * Brightness = the fixed `REXT` current × the PWM duty. Colour balance
-    stays where the resistors put it.
+  | `R-EXT` at pin 23 | TLC5927 formula | Measured | Light |
+  |---|---|---|---|
+  | 56–156 Ω (the original resistor and trimmer) | 120–335 mA asked, **held at 120 mA** | ~70–85 mA | far too bright |
+  | 300 Ω | 63 mA | 39 mA | too bright |
+  | 680 Ω | 28 mA | 17–18 mA | right, on every colour |
+  | 2.1 kΩ | 9 mA | ~7 mA | dim |
+  | 3.6 kΩ | 5 mA | a few mA | very dim |
+  | 4.7 kΩ | 4.0 mA | ~4 mA | dim |
+
+  Where the currents are low, measurement and formula agree. Where they are
+  higher, the measurement reads low. The likely reason is that USB feeds
+  part of the +5V through D162, so the bench supply does not see all of
+  it. That has not been checked at these currents.
+* **Why the trimmer never worked:** over its whole travel, 56–156 Ω asks
+  for more than 120 mA. The chip sits at its own limit, so turning the
+  trimmer changes nothing, and the LEDs ran far above their rating.
+* **The 100 nF on `R-EXT`:** the TLC5927 datasheet does not call for one.
+  Footprint kept, not fitted.
+* **`OE` stays tied to GND, hard.** On the TLC5927, `OE` is also the mode
+  pin. A one-clock-wide pulse on it, sampled by `CLK`, switches the chip
+  into Special mode. There `LE` writes the configuration latch instead of
+  the outputs. So **no PWM on `OE`**: MobiFlight's PWM is not synchronised
+  with the shift-register clock, and could produce exactly that pulse. The
+  dimming inverter on `~EN` that this plan used to have is dropped.
+* **Dimming on the anode rail instead.** A P-MOSFET high-side switch on
+  `+5V_LED`, its gate pulled up to `+5V_LED` (off by default) and pulled
+  down by an N-MOSFET (BS170) from **D45**, a PWM pin free today.
+  * D45 high → both MOSFETs on → anodes powered → annunciators lit.
+  * D45 low or not driven → anodes off → annunciators dark. So 255 means
+    bright in the Connector, and at power-up, reset or with the Connector
+    closed they stay dark.
+  * Brightness = the `R-EXT` current × the PWM duty. The chips never see
+    their `OE` move.
+  * The P-MOSFET must carry the light test: 44 × 28 mA ≈ 1.2 A.
+* **Output voltage and short detection.** The TLC5927 flags an LED as
+  shorted when the voltage on its output, with the channel on, is above
+  2.4–3.1 V (2.6 V typical). It clears below 2.2 V. The datasheet only says
+  this is reported in Special mode, not that anything is switched off.
+  But with anodes at 5 V and the chip regulating at 28 mA, an amber or
+  green LED (V_F ≈ 2.0–2.2 V) leaves ~2.8–3.0 V on the output, inside that
+  window. A white one (V_F ≈ 3 V) leaves ~2 V. At 56 Ω the output is
+  saturated and sits much lower. This matches the lock-up hitting the amber
+  chip first. It is a **correlation, not an explanation**: measure the
+  output voltage of a lit amber LED at 680 Ω before drawing anything. If it
+  is in the window, keep the outputs below 2.2 V on the new board, either
+  with the anode rail lower than 5 V, a small series resistor per LED, or
+  the TLC5926, which is the same chip without short detection.
 
 ### Backlight dimming
 
@@ -235,7 +256,7 @@ adapter at the mains.
   section returns join at its drain.
 * D44 low or not driven → backlight off. PWM from a MobiFlight output on
   D44, 0–255, meant to follow the INTEG LT knob.
-* D46 stays free, unless it becomes the DM13A reset (see *Hot-plug lock-up*).
+* D46 stays free, unless it becomes the TLC5927 reset (see *Hot-plug lock-up*).
 
 ### Connectors on the mainboard
 
@@ -254,8 +275,8 @@ spacing, group the backlight terminals in fours, or make the board bigger.
 
 Each one carries its switches, its annunciator LEDs and its backlight LEDs
 with their resistors. It has no ICs, and the annunciator LEDs have no
-resistors, because the DM13A is a current sink. Anodes go to `+5V_LED` from
-the ribbon, cathodes back down the ribbon to their DM13A output.
+resistors, because the TLC5927 is a current sink. Anodes go to `+5V_LED` from
+the ribbon, cathodes back down the ribbon to their TLC5927 output.
 
 ### Backlight strings
 
@@ -309,7 +330,7 @@ Conventions:
 
 All 49 inputs were checked against the current board, from the switch pad to
 the ATmega pin, and agree with the `.mfmc`. The 44 annunciator bits were
-checked against the DM13A outputs and agree with the MobiFlight project.
+checked against the driver outputs and agree with the MobiFlight project.
 
 #### ADIRS — 20 pins
 
@@ -449,13 +470,14 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 
 ## Before drawing
 
-1. ~~REXT values~~ — done: 680 Ω on all four chips, measured.
-2. **Backlight LED V_F.** Measure one, to set the single-string resistor.
-3. **The `REXT` capacitor.** Check the typical application on page 14 of the
-   DM13A datasheet.
-4. **Inner panel outlines.** Take them from SketchUp, with the same
+1. ~~R-EXT value~~ — 680 Ω on all four TLC5927.
+2. **Korry LED rating.** Confirm they take 28 mA, or pick 820 Ω / 1 kΩ.
+3. **Output voltage of a lit amber LED at 680 Ω**, against the 2.4–3.1 V
+   short-detect window (see *Output voltage and short detection*).
+4. **Backlight LED V_F.** Measure one, to set the single-string resistor.
+5. **Inner panel outlines.** Take them from SketchUp, with the same
    clearance as today's outer edge.
-5. **Mainboard outline.** Measure the free floor of the lower-left case part.
-6. **DM13A reset.** Decide whether the firmware-controlled VDD switch goes
+6. **Mainboard outline.** Measure the free floor of the lower-left case part.
+7. **TLC5927 reset.** Decide whether the firmware-controlled VDD switch goes
    in. If an oscilloscope is at hand, capture +5V while the barrel is pushed
-   into a live adapter, to confirm the cause.
+   into a live adapter.
