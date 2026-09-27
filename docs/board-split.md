@@ -501,6 +501,24 @@ v1 schematic calls those nets `…_OFF`, but they are not buttons, and nothing
 uses them. They are not carried over. EMER EXIT LT, NAV & LOGO, NOSE and
 both LDG lights really have three positions, and keep both contacts.
 
+**Contacts are given by pad number, not by lever direction.** The toggles
+are generic AliExpress parts, so which contact the lever closes when it is
+up cannot be read from the footprint. NO SMOKING, for instance, is ON with
+the lever up and is read on contact 3. What keeps the panel working is that
+every ATmega pin stays on the same pad number of the same switch as on v1.
+The MobiFlight configuration, which is right as it stands, then behaves
+exactly as today.
+
+**Toggle parts in the BOM.** The v1 schematic gives all eleven toggles the
+E-Switch MPN 100SP1T1B4M2QE, which is not what is fitted. The v2 BOM lists
+them as generic three-terminal PCB-pin lever toggles, from AliExpress and
+fitted by hand, not orderable from JLCPCB:
+
+* ON-OFF-ON (5): LDG L, LDG R, NOSE, NAV & LOGO, EMER EXIT LT
+* ON-OFF (6): WING, BEACON, STROBE, RWY TURN, SEAT BELTS, NO SMOKING
+
+The v1 footprint stays, since they fit it.
+
 ### Free resources
 
 * Shift register bits: `ANN_LOWER` 22, 23, 26–31; `ANN_UPPER` 0–3, 6, 7, 15,
