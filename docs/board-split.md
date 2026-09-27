@@ -309,6 +309,29 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
 about 340 mm of it. That fits, but tightly. If it does not fit with generous
 spacing, group the backlight terminals in fours, or make the board bigger.
 
+### Schematic status
+
+The mainboard schematic is drawn: `Mainboard/OVHD_Mainboard`, seven sheets
+(Power, USB and supply, MCU, I2C, Annunciators, Connectors), 126 parts,
+labels on pins rather than wires. ERC: no errors, no warnings. The exported
+netlist was checked against this document: every `.mfmc` button runs from
+its v1 ATmega pin to exactly one ribbon pin, every annunciator from its
+TLC5927 output to exactly one ribbon pin, and all 136 IDC pins match the
+pinout tables below.
+
+Parts chosen while drawing, open to review:
+
+| Where | Part |
+|---|---|
+| 9 V input | 1N5822 reverse diode (as the FCU PSU), SMBJ12CA TVS, 470 µF 25 V electrolytic |
+| Fuses | MF-RHT200 on both branches (backlight, regulator) |
+| 5 V | MIC29302WU, 3.6k / 1.2k as v1 |
+| Supply selector, USB, ISP, JP1, 3.3 V | the FCU mainboard's circuit, pin for pin |
+| Anode and TLC5927 supply switches | AO3401A (SOT-23) driven by BS170 (TO-92), 10k / 100R / 100k |
+| Backlight dimmer | IRLIZ44N, 100R gate, 10k pull-down |
+| Annunciator drivers | TLC5927IDWR, DW24-M footprint, R-EXT 1k, 1k series on CLK/LE/SDI |
+| Ribbons | shrouded IDC headers 2x5 to 2x13; backlight on 5.08 mm 2-pole terminals |
+
 ## Section boards
 
 Each one carries its switches, its annunciator LEDs and its backlight LEDs
