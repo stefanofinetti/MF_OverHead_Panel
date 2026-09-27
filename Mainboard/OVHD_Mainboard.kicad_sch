@@ -49,7 +49,7 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/b1fa8af7-a458-4307-9f26-c3f25469de48"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
 					(page "5")
 				)
 			)
@@ -95,7 +95,7 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/b1fa8af7-a458-4307-9f26-c3f25469de48"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
 					(page "2")
 				)
 			)
@@ -141,7 +141,7 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/b1fa8af7-a458-4307-9f26-c3f25469de48"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
 					(page "6")
 				)
 			)
@@ -187,7 +187,7 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/b1fa8af7-a458-4307-9f26-c3f25469de48"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
 					(page "7")
 				)
 			)
@@ -233,7 +233,7 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/b1fa8af7-a458-4307-9f26-c3f25469de48"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
 					(page "3")
 				)
 			)
@@ -279,7 +279,7 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/b1fa8af7-a458-4307-9f26-c3f25469de48"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
 					(page "4")
 				)
 			)
@@ -290,4 +290,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )

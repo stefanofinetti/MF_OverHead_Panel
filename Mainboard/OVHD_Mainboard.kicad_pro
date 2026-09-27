@@ -256,12 +256,13 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "1.0"
+      "sch_revision": ""
     },
     "layer_pairs": [],
     "layer_presets": [],
     "viewports": []
   },
+  "boards": [],
   "component_class_settings": {
     "assignments": [],
     "meta": {
@@ -829,8 +830,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "FCU_Mainboard_v3.kicad_sch",
-        "name": "FCU_Mainboard_v3",
+        "filename": "OVHD_Mainboard.kicad_sch",
+        "name": "OVHD_Mainboard",
         "uuid": "3267b3f3-6c63-480a-8354-1757ed0a4fd3"
       }
     ],
@@ -839,8 +840,8 @@
   },
   "sheets": [
     [
-      "b1fa8af7-a458-4307-9f26-c3f25469de48",
-      "Root"
+      "3267b3f3-6c63-480a-8354-1757ed0a4fd3",
+      "OVHD_Mainboard"
     ],
     [
       "14a8d658-e392-4b30-b20e-dffa9a1a6ecc",
