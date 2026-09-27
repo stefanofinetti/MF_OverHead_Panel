@@ -329,9 +329,13 @@ The split changes three things:
   D139 (GPWS) + D140 (EXT LT), D141 (SIGNS) + D142 (AIR COND),
   D148 (APU) + D149 (SIGNS). D141 and D149 then pair up on SIGNS.
 * That leaves **GPWS, AIR COND, EXT LT and APU with an odd LED count**. Each
-  gets one single-LED string on 9 V, with R = (V_BL − V_F) / 11 mA, where V_BL
-  is the backlight rail at the string. The value waits on a measured V_F of
-  one backlight LED.
+  gets one single-LED string on 9 V. For the same current as a pair, and so
+  the same brightness, R = V / (2·I) + 75 Ω, which follows from
+  V = 2·V_F + 150 Ω·I for the pair. With the rail at ~8.6 V after the reverse
+  diode and ~11 mA per string, that is ~466 Ω: **470 Ω**. At 10 mA or 13 mA
+  it would be 505 or 406 Ω, so the brightness stays within about 15%. To
+  confirm it, measure the voltage across one 150 Ω with the backlight on:
+  divided by 150, it gives the exact string current.
 * **Four strings have both LEDs on one panel but their resistor across the
   seam**: R57, R61, R64 and R66. The resistor moves next to its LEDs.
 
@@ -516,7 +520,8 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
    limit set for the Korry LEDs.
 2. ~~Hot-plug re-check with the new U8~~ — still dead on a hot plug, so
    the TLC5927 power-up switch is in the design.
-3. **Backlight LED V_F.** Measure one, to set the single-string resistor.
+3. ~~Backlight LED V_F~~ — not needed: the single-LED strings get 470 Ω,
+   worked out from the pair. Optional check: the voltage across one 150 Ω.
 4. **Inner panel outlines.** Take them from SketchUp, with the same
    clearance as today's outer edge.
 5. **Mainboard outline.** Measure the free floor of the lower-left case part.
