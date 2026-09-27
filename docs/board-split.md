@@ -133,7 +133,7 @@ Everything on today's board that belongs to no panel:
   MIC29302. On USB alone the annunciators stay dark, like the backlight,
   and the logic keeps working.
 * **Two fuses, one per branch**, as on the FCU PSU: the backlight branch
-  (~0.7 A, measured) and the regulator branch (~1 A in a light test). A
+  (~1.1 A at 17 mA per string) and the regulator branch (~1 A in a light test). A
   fault on one does not take down the other.
 * The MIC29302 dissipates well under 1 W in normal use, with a handful of
   annunciators lit. In a light test it is ~3 W, about 3.2 V across it at
@@ -377,10 +377,10 @@ the ribbon, cathodes back down the ribbon to their TLC5927 output.
 
 | Board | Status |
 |---|---|
-| APU | `Section_APU/`, the trial board. Schematic 24 parts, ERC 0. PCB 39 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. J1 (2x5) and J2 on the left edge, towards the mainboard. D148 is a single-LED string with R3 470 Ω on the back |
-| GPWS | `Section_GPWS/`. Schematic 38 parts, ERC 0. PCB 159.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 6 annunciators, 4 strings of two and D139 on its own with R5 470 Ω (its v1 partner D140 and resistor R75 go to EXT LT). J1 (2x7) and J2 along the top edge on the right: the bottom band, nearer the mainboard, is taken by the Korry pins, the annunciator LEDs and the frame holes, and a 2x7 shroud does not fit there |
-| AIR COND | `Section_AIRCOND/`. Schematic 46 parts, ERC 0. PCB 150.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 8 annunciators, 6 strings of two and D142 on its own: its v1 resistor R76 is on this board, so it stays where it is and becomes 470 Ω (its v1 partner D141 goes to SIGNS). R57 belongs to D73's string and moves to ELEC. J1 (2x8) and J2 along the top edge on the left, the side nearest the mainboard |
-| EXT LT | `Section_EXTLT/`. Schematic 61 parts, ERC 0. PCB 159.5 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 8 toggles (LDG LIGHT L/R, NOSE LIGHT and NAV & LOGO on both contacts 1 and 3), 15 strings of two and D140 on its own with R16 470 Ω on the back (its v1 partners D139 and R75 were on GPWS). No annunciators, so no `+5V_LED` on this ribbon. J1 (2x7) and J2 at the right, over the mainboard |
+| APU | `Section_APU/`, the trial board. Schematic 24 parts, ERC 0. PCB 39 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. J1 (2x5) and J2 on the left edge, towards the mainboard. D148 is a single-LED string with R3 330 Ω on the back |
+| GPWS | `Section_GPWS/`. Schematic 38 parts, ERC 0. PCB 159.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 6 annunciators, 4 strings of two and D139 on its own with R5 330 Ω (its v1 partner D140 and resistor R75 go to EXT LT). J1 (2x7) and J2 along the top edge on the right: the bottom band, nearer the mainboard, is taken by the Korry pins, the annunciator LEDs and the frame holes, and a 2x7 shroud does not fit there |
+| AIR COND | `Section_AIRCOND/`. Schematic 46 parts, ERC 0. PCB 150.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 8 annunciators, 6 strings of two and D142 on its own: its v1 resistor R76 is on this board, so it stays where it is and becomes 330 Ω (its v1 partner D141 goes to SIGNS). R57 belongs to D73's string and moves to ELEC. J1 (2x8) and J2 along the top edge on the left, the side nearest the mainboard |
+| EXT LT | `Section_EXTLT/`. Schematic 61 parts, ERC 0. PCB 159.5 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 8 toggles (LDG LIGHT L/R, NOSE LIGHT and NAV & LOGO on both contacts 1 and 3), 15 strings of two and D140 on its own with R16 330 Ω on the back (its v1 partners D139 and R75 were on GPWS). No annunciators, so no `+5V_LED` on this ribbon. J1 (2x7) and J2 at the right, over the mainboard |
 | ADIRS | `Section_ADIRS/`. Schematic 41 parts, ERC 0. PCB 132.5 × 81.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 3 ADR rotaries (positions 1 OFF, 2 NAV, 3 ATT, common on pin 9), GND CTL Korry and its annunciator, 9 strings of two, and J3, the ADIRS OLED socket, where it was. **The middle rotary is IR 3 and the right one IR 2**, as on the A320 and in the `.mfmc`: the copper says so, although the v1 footprints were labelled the other way round. J1 (2x10) and J2 on the back between ADR 1 and ADR 3 |
 | FUEL | `Section_FUEL/`. Schematic 55 parts, ERC 0. PCB 177.5 × 40 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 7 Korry, 14 annunciators, 7 strings of two. Three of them had their resistor across the seam, on the ELEC side (R66, R64, R61): each gets a new 150 Ω on the back beside its LEDs (R2, R4, R7). The seam with ELEC is inset 1 mm instead of 1.5, because D102 and D104 sit 2 mm from it. J1 (2x13) and J2 on the back along the top edge, left of the middle M3 hole |
 | ELEC | `Section_ELEC/`. Schematic 35 parts, ERC 0. PCB 177.5 × 39.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 3 Korry, 5 annunciators, 5 strings of two; D72/D73 had R57 across the seam on AIR COND and gets a new 150 Ω (R5) on the back. The BATT 1 and BATT 2 OLED sockets stay where they were (J3 on PCA9548A channel 0, J4 on channel 1, checked on the copper). J1 (2x10) and J2 on the back, top edge, left end |
@@ -389,10 +389,12 @@ the ribbon, cathodes back down the ribbon to their TLC5927 output.
 ### Backlight strings
 
 Today there are 61 strings, each of 2 LEDs and one 150 Ω resistor on 9 V.
-Measured on the current board, everything but the annunciators draws
-0.76–0.81 A from the 9 V supply. The logic accounts for roughly 0.1 A of
-that (estimated, not measured), so the backlight takes about **0.7 A, or
-~11 mA per string**. It will vary with the supply and the temperature.
+A pair on 150 Ω runs at **17 mA** (Stefano's figure for the current
+board). 63 strings on v2 make **~1.1 A** of backlight. That is more than
+the 0.76–0.81 A measured earlier for the whole board without the
+annunciators, so the two figures do not agree. Check the total once with the
+new boards: it sizes the 9 V adapter. The MF-RHT200 on the backlight branch
+holds 2 A, so it is fine either way.
 
 The split changes three things:
 
@@ -403,24 +405,22 @@ The split changes three things:
   gets one single-LED string on 9 V. For the same current as a pair, and so
   the same brightness, R = V / (2·I) + 75 Ω, which follows from
   V = 2·V_F + 150 Ω·I for the pair. With the rail at ~8.6 V after the reverse
-  diode and ~11 mA per string, that is ~466 Ω: **470 Ω**. At 10 mA or 13 mA
-  it would be 505 or 406 Ω, so the brightness stays within about 15%. To
-  confirm it, measure the voltage across one 150 Ω with the backlight on:
-  divided by 150, it gives the exact string current.
+  diode and 17 mA per string, that is ~328 Ω: **330 Ω**. (An earlier draft
+  used 470 Ω, from an estimated 11 mA per string, which was wrong.)
 * **Four strings have both LEDs on one panel but their resistor across the
   seam**: R57, R61, R64 and R66. The resistor moves next to its LEDs.
 
 | Board | Strings | Backlight current ≈ |
 |---|---|---|
-| ADIRS | 9 | 100 mA |
-| FUEL | 7 | 80 mA |
-| ELEC | 5 | 55 mA |
-| GPWS | 4 + 1 single | 55 mA |
-| AIR COND | 6 + 1 single | 80 mA |
-| EXT LT | 15 + 1 single | 180 mA |
-| APU | 2 + 1 single | 35 mA |
-| SIGNS | 11 | 120 mA |
-| **Total** | **63** | **~0.7 A** |
+| ADIRS | 9 | 155 mA |
+| FUEL | 7 | 120 mA |
+| ELEC | 5 | 85 mA |
+| GPWS | 4 + 1 single | 85 mA |
+| AIR COND | 6 + 1 single | 120 mA |
+| EXT LT | 15 + 1 single | 270 mA |
+| APU | 2 + 1 single | 50 mA |
+| SIGNS | 11 | 185 mA |
+| **Total** | **63** | **~1.1 A** |
 
 22–24 AWG is ample for the largest.
 
@@ -617,8 +617,8 @@ The v1 footprint stays, since they fit it.
    limit set for the Korry LEDs.
 2. ~~Hot-plug re-check with the new U8~~ — still dead on a hot plug, so
    the TLC5927 power-up switch is in the design.
-3. ~~Backlight LED V_F~~ — not needed: the single-LED strings get 470 Ω,
-   worked out from the pair. Optional check: the voltage across one 150 Ω.
+3. ~~Backlight LED V_F~~ — not needed: the single-LED strings get 330 Ω,
+   worked out from the pair at 17 mA.
 4. ~~Inner panel outlines~~ — not needed. The outer edges are today's PCB
    outline, which already fits the case. The inner cuts follow the panel
    seams on the current layout, where nothing crosses the PCB plane, and

@@ -351,13 +351,13 @@
       {
         "filename": "Section_APU.kicad_sch",
         "name": "Section_APU",
-        "uuid": "b1967c20-9096-4b5c-afc3-623751985e91"
+        "uuid": "77c61efd-1f00-4a0d-9301-f489bd8758ac"
       }
     ]
   },
   "sheets": [
     [
-      "b1967c20-9096-4b5c-afc3-623751985e91",
+      "77c61efd-1f00-4a0d-9301-f489bd8758ac",
       "Section_APU"
     ]
   ],
