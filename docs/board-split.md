@@ -370,9 +370,11 @@ Conventions:
   *n* of `ANN_UPPER` (latch D27, clock D26, data D25): U8 carries bits 0–15
   (amber) and U5 bits 16–31 (green and amber).
 
-All 49 inputs were checked against the current board, from the switch pad to
-the ATmega pin, and agree with the `.mfmc`. The 44 annunciator bits were
-checked against the driver outputs and agree with the MobiFlight project.
+All 49 inputs and all 44 annunciators were checked by **following the copper**
+of the as-built board: the project as sent to JLCPCB on 3 March 2025,
+restored in `Kicad Files/`. Net names were not trusted, because schematic and
+copper disagree in places. Every button in the `.mfmc` reaches exactly one
+switch contact, and every annunciator bit reaches exactly one LED.
 
 #### ADIRS — 20 pins
 
@@ -485,12 +487,19 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 |---|---|---|---|---|
 | 1 | GND | | 2 | ANTI ICE WING — D54 |
 | 3 | ANTI ICE ENG 1 — D55 | | 4 | ANTI ICE ENG 2 — D56 |
-| 5 | SEAT BELTS — D19 | | 6 | NO SMOKING — D5 |
+| 5 | SEAT BELTS — D19 (contact 1) | | 6 | NO SMOKING — D5 (contact 3) |
 | 7 | EMER EXIT LT ON — D2 | | 8 | EMER EXIT LT OFF — D3 |
 | 9 | GND | | 10 | WING ON — L18 |
 | 11 | WING FAULT — U21 | | 12 | ENG 1 ON — L19 |
 | 13 | ENG 1 FAULT — U20 | | 14 | ENG 2 ON — L20 |
 | 15 | ENG 2 FAULT — U22 | | 16 | +5V_LED |
+
+SEAT BELTS and NO SMOKING are on-off toggles, so one contact each is enough,
+and it is the one the `.mfmc` reads. The v1 copper also takes their other
+contacts to D18 (SEAT BELTS, contact 3) and D38 (NO SMOKING, contact 1). The
+v1 schematic calls those nets `…_OFF`, but they are not buttons, and nothing
+uses them. They are not carried over. EMER EXIT LT, NAV & LOGO, NOSE and
+both LDG lights really have three positions, and keep both contacts.
 
 ### Free resources
 
