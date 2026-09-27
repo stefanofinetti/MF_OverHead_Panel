@@ -264,7 +264,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Section_APU.kicad_pro",
+    "filename": "Section_GPWS.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -349,16 +349,16 @@
     "legacy_lib_list": [],
     "top_level_sheets": [
       {
-        "filename": "Section_APU.kicad_sch",
-        "name": "Section_APU",
-        "uuid": "b1967c20-9096-4b5c-afc3-623751985e91"
+        "filename": "Section_GPWS.kicad_sch",
+        "name": "Section_GPWS",
+        "uuid": "a880fa45-b67d-4d9a-92ee-0bee984c51fc"
       }
     ]
   },
   "sheets": [
     [
-      "b1967c20-9096-4b5c-afc3-623751985e91",
-      "Section_APU"
+      "a880fa45-b67d-4d9a-92ee-0bee984c51fc",
+      "Section_GPWS"
     ]
   ],
   "text_variables": {},

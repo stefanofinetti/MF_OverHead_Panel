@@ -38,6 +38,9 @@ the same screws in the same inserts.
 
 * **Holes:** every hole of today's board is kept on the section board it
   falls in, at the same position, whether or not its purpose is known.
+* **Seams:** the v1 board has them drawn on `User.Drawings`: x = 154 and
+  x = 181 / 223 mm, y = 60, 102 and 144 mm. Each section board's inner
+  edges are those lines moved 1.5 mm inwards.
 * **Outline:** each section board keeps today's outer edge where it has
   one, since the current board already fits the case there. The new inner
   edges are cut along the seams between panels, on the current layout.
@@ -375,7 +378,8 @@ the ribbon, cathodes back down the ribbon to their TLC5927 output.
 | Board | Status |
 |---|---|
 | APU | `Section_APU/`, the trial board. Schematic 24 parts, ERC 0. PCB 39 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. J1 (2x5) and J2 on the left edge, towards the mainboard. D148 is a single-LED string with R3 470 Ω on the back |
-| ADIRS, FUEL, ELEC, GPWS, AIR COND, EXT LT, SIGNS | after the APU board is reviewed |
+| GPWS | `Section_GPWS/`. Schematic 38 parts, ERC 0. PCB 159.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 6 annunciators, 4 strings of two and D139 on its own with R5 470 Ω (its v1 partner D140 and resistor R75 go to EXT LT). J1 (2x7) and J2 along the top edge on the right: the bottom band, nearer the mainboard, is taken by the Korry pins, the annunciator LEDs and the frame holes, and a 2x7 shroud does not fit there |
+| ADIRS, FUEL, ELEC, AIR COND, EXT LT, SIGNS | next |
 
 ### Backlight strings
 
