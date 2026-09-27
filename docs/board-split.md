@@ -379,7 +379,8 @@ the ribbon, cathodes back down the ribbon to their TLC5927 output.
 |---|---|
 | APU | `Section_APU/`, the trial board. Schematic 24 parts, ERC 0. PCB 39 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. J1 (2x5) and J2 on the left edge, towards the mainboard. D148 is a single-LED string with R3 470 Ω on the back |
 | GPWS | `Section_GPWS/`. Schematic 38 parts, ERC 0. PCB 159.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 6 annunciators, 4 strings of two and D139 on its own with R5 470 Ω (its v1 partner D140 and resistor R75 go to EXT LT). J1 (2x7) and J2 along the top edge on the right: the bottom band, nearer the mainboard, is taken by the Korry pins, the annunciator LEDs and the frame holes, and a 2x7 shroud does not fit there |
-| ADIRS, FUEL, ELEC, AIR COND, EXT LT, SIGNS | next |
+| AIR COND | `Section_AIRCOND/`. Schematic 46 parts, ERC 0. PCB 150.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 8 annunciators, 6 strings of two and D142 on its own: its v1 resistor R76 is on this board, so it stays where it is and becomes 470 Ω (its v1 partner D141 goes to SIGNS). R57 belongs to D73's string and moves to ELEC. J1 (2x8) and J2 along the top edge on the left, the side nearest the mainboard |
+| ADIRS, FUEL, ELEC, EXT LT, SIGNS | next |
 
 ### Backlight strings
 
