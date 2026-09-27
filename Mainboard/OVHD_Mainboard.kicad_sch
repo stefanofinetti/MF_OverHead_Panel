@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "73e7d2ef-26c8-45b7-a17d-3b799e8cb4ab")
+	(uuid "6b8dd6e4-c4ee-46cc-97f6-84bfaa34cfbf")
 	(paper "A4")
 	(title_block
 		(title "SF OVHD mainboard v2")
@@ -10,7 +10,7 @@
 	)
 	(lib_symbols)
 	(sheet
-		(at 30.48 76.2)
+		(at 111.76 40.64)
 		(size 60.96 20.32)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -24,9 +24,9 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "09d97777-45af-447b-b162-5af12350f4ec")
-		(property "Sheetname" "USB and supply"
-			(at 30.48 75.5 0)
+		(uuid "4d7689db-d9d1-45bc-bd4c-81b178fc981c")
+		(property "Sheetname" "MCU"
+			(at 111.76 39.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -36,8 +36,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "usb_supply.kicad_sch"
-			(at 30.48 97.1 0)
+		(property "Sheetfile" "mcu.kicad_sch"
+			(at 111.76 61.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -49,8 +49,8 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/73e7d2ef-26c8-45b7-a17d-3b799e8cb4ab"
-					(page "3")
+				(path "/6b8dd6e4-c4ee-46cc-97f6-84bfaa34cfbf"
+					(page "4")
 				)
 			)
 		)
@@ -70,7 +70,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "0f376c39-399b-42e1-8204-d559b882cf90")
+		(uuid "4e3b70ec-74d4-4596-b2a6-46bf1d027070")
 		(property "Sheetname" "Power"
 			(at 30.48 39.94 0)
 			(show_name no)
@@ -95,8 +95,54 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/73e7d2ef-26c8-45b7-a17d-3b799e8cb4ab"
+				(path "/6b8dd6e4-c4ee-46cc-97f6-84bfaa34cfbf"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 30.48 76.2)
+		(size 60.96 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a11682bc-4790-4ce6-9a2e-4565d3507400")
+		(property "Sheetname" "USB and supply"
+			(at 30.48 75.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb_supply.kicad_sch"
+			(at 30.48 97.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/6b8dd6e4-c4ee-46cc-97f6-84bfaa34cfbf"
+					(page "3")
 				)
 			)
 		)

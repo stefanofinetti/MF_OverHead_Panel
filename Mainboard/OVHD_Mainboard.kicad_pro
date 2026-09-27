@@ -839,16 +839,20 @@
   },
   "sheets": [
     [
-      "73e7d2ef-26c8-45b7-a17d-3b799e8cb4ab",
+      "6b8dd6e4-c4ee-46cc-97f6-84bfaa34cfbf",
       "Root"
     ],
     [
-      "0f376c39-399b-42e1-8204-d559b882cf90",
+      "4e3b70ec-74d4-4596-b2a6-46bf1d027070",
       "Power"
     ],
     [
-      "09d97777-45af-447b-b162-5af12350f4ec",
+      "a11682bc-4790-4ce6-9a2e-4565d3507400",
       "USB and supply"
+    ],
+    [
+      "4d7689db-d9d1-45bc-bd4c-81b178fc981c",
+      "MCU"
     ]
   ],
   "text_variables": {},
