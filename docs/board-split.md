@@ -22,8 +22,8 @@ panels.
 | Section boards | Cut out of the current layout: outline, **every hole**, every switch and LED at the same coordinates |
 | Thickness | 1.6 mm, JLCPCB's standard, as today. The board is the spacer between panel and case |
 | Layers | 2 on every board |
-| Data | One shrouded, keyed IDC header per section board, ribbon straight through, pin 1 to pin 1 |
-| Backlight | A 2-pole screw terminal per section board, AWG wire, dimmed on the mainboard |
+| Data | One shrouded, keyed IDC header per section board, ribbon straight through, pin 1 to pin 1. SMD header on the section boards |
+| Backlight | A 2-pin JST PH (SMD) per section board, AWG wire to a 2-pole screw terminal on the mainboard, dimmed there |
 | Connectors | On the **back** of the section boards only. Nothing new may stand proud of the front |
 | Mainboard | On the floor of the lower-left case part, towards the centre of the case |
 | USB | A ready-made panel-mount USB-B extension at the case wall; USB-B stays on the mainboard |
@@ -338,6 +338,40 @@ Each one carries its switches, its annunciator LEDs and its backlight LEDs
 with their resistors. It has no ICs, and the annunciator LEDs have no
 resistors, because the TLC5927 is a current sink. Anodes go to `+5V_LED` from
 the ribbon, cathodes back down the ribbon to their TLC5927 output.
+
+### Layout rules and status
+
+* **Parts:** everything from v1 stays at its v1 coordinates, and the build
+  script checks every pad against the v1 board. New parts (the IDC header,
+  the JST PH and any new resistor) go on the back.
+* **Connectors:** SMD, on the back, on the edge nearest the mainboard:
+  `IDC-Header_2xNN_P2.54mm_Vertical_SMD` and
+  `JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical` (pin 1 `+9V_BL`, pin 2
+  `BL_RET`). Keep them at least ~4 mm from a mounting hole, where the case
+  insert bears on the back.
+* **Silkscreen:** everything needed to solder the board without the
+  schematic goes on the silkscreen of the side the part is on:
+  * `K` at every backlight LED cathode, and the annunciator colour and
+    function (`FAULT amber`, `ON blue`, `AVAIL green`);
+  * resistor values;
+  * pin 1 of the Korry and the IDC;
+  * `+` and `-` at the JST;
+  * the mainboard connector each cable goes to.
+* **Libraries:** `Libraries/OVHD.pretty` and `Libraries/OVHD.kicad_sym`
+  hold the custom parts every board shares. The footprints are extracted
+  from the v1 board, because three of their four source libraries are no
+  longer installed: Korry G-Switch PS-7054DVB-6PN, the rectangular
+  annunciator LED, the ADR rotary and the toggle. The symbols (Korry,
+  toggle) come from the v1 schematic, with every pin made passive.
+* **Rules:** 2 layers, 1.6 mm. Tracks are 0.3 mm, or 0.6 mm for `GND`,
+  `+5V_LED`, `+9V_BL` and `BL_RET`. Clearance is 0.25 mm and vias
+  0.8/0.4 mm. Routed with Freerouting 2.4.1 (Java 25 or later), then
+  checked with KiCad DRC.
+
+| Board | Status |
+|---|---|
+| APU | `Section_APU/`, the trial board. Schematic 24 parts, ERC 0. PCB 39 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. J1 (2x5) and J2 on the left edge, towards the mainboard. D148 is a single-LED string with R3 470 Ω on the back |
+| ADIRS, FUEL, ELEC, GPWS, AIR COND, EXT LT, SIGNS | after the APU board is reviewed |
 
 ### Backlight strings
 
