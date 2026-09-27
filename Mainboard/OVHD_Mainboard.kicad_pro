@@ -839,24 +839,28 @@
   },
   "sheets": [
     [
-      "41250dd4-2159-4b7d-88fc-4463c1b04a92",
+      "52924ed9-850d-44ae-9796-844fad281947",
       "Root"
     ],
     [
-      "7e394348-b55c-4ded-b775-1c4c7ccd76a8",
+      "cb07fcbc-9c6f-4bc1-ab0a-ba57962c2c9d",
       "Power"
     ],
     [
-      "37371886-722b-4dfc-806a-5680abf774ca",
+      "7fba2274-fb66-4038-ba87-eb61eb33c34c",
       "USB and supply"
     ],
     [
-      "79a1d630-f2e6-46ab-bfc7-7a8cde7f6092",
+      "9f665aaf-709e-4b24-b346-0b09291dd94f",
       "MCU"
     ],
     [
-      "313e1f4c-b67d-4d89-b7e2-d3ff60c169e1",
+      "dd87693e-6fff-4cc9-8fe4-4c8612646bd2",
       "I2C"
+    ],
+    [
+      "3eb0f0ae-d347-42a2-86d5-4ddc268edcc1",
+      "Annunciators"
     ]
   ],
   "text_variables": {},

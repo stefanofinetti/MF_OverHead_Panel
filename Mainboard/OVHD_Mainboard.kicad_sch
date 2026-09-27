@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "41250dd4-2159-4b7d-88fc-4463c1b04a92")
+	(uuid "52924ed9-850d-44ae-9796-844fad281947")
 	(paper "A4")
 	(title_block
 		(title "SF OVHD mainboard v2")
@@ -10,7 +10,7 @@
 	)
 	(lib_symbols)
 	(sheet
-		(at 111.76 76.2)
+		(at 193.04 40.64)
 		(size 60.96 20.32)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -24,9 +24,9 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "313e1f4c-b67d-4d89-b7e2-d3ff60c169e1")
-		(property "Sheetname" "I2C"
-			(at 111.76 75.5 0)
+		(uuid "3eb0f0ae-d347-42a2-86d5-4ddc268edcc1")
+		(property "Sheetname" "Annunciators"
+			(at 193.04 39.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -36,8 +36,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "i2c.kicad_sch"
-			(at 111.76 97.1 0)
+		(property "Sheetfile" "annunciators.kicad_sch"
+			(at 193.04 61.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -49,8 +49,8 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/41250dd4-2159-4b7d-88fc-4463c1b04a92"
-					(page "5")
+				(path "/52924ed9-850d-44ae-9796-844fad281947"
+					(page "6")
 				)
 			)
 		)
@@ -70,7 +70,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "37371886-722b-4dfc-806a-5680abf774ca")
+		(uuid "7fba2274-fb66-4038-ba87-eb61eb33c34c")
 		(property "Sheetname" "USB and supply"
 			(at 30.48 75.5 0)
 			(show_name no)
@@ -95,7 +95,7 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/41250dd4-2159-4b7d-88fc-4463c1b04a92"
+				(path "/52924ed9-850d-44ae-9796-844fad281947"
 					(page "3")
 				)
 			)
@@ -116,7 +116,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "79a1d630-f2e6-46ab-bfc7-7a8cde7f6092")
+		(uuid "9f665aaf-709e-4b24-b346-0b09291dd94f")
 		(property "Sheetname" "MCU"
 			(at 111.76 39.94 0)
 			(show_name no)
@@ -141,7 +141,7 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/41250dd4-2159-4b7d-88fc-4463c1b04a92"
+				(path "/52924ed9-850d-44ae-9796-844fad281947"
 					(page "4")
 				)
 			)
@@ -162,7 +162,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "7e394348-b55c-4ded-b775-1c4c7ccd76a8")
+		(uuid "cb07fcbc-9c6f-4bc1-ab0a-ba57962c2c9d")
 		(property "Sheetname" "Power"
 			(at 30.48 39.94 0)
 			(show_name no)
@@ -187,8 +187,54 @@
 		)
 		(instances
 			(project "OVHD_Mainboard"
-				(path "/41250dd4-2159-4b7d-88fc-4463c1b04a92"
+				(path "/52924ed9-850d-44ae-9796-844fad281947"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 111.76 76.2)
+		(size 60.96 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "dd87693e-6fff-4cc9-8fe4-4c8612646bd2")
+		(property "Sheetname" "I2C"
+			(at 111.76 75.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "i2c.kicad_sch"
+			(at 111.76 97.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/52924ed9-850d-44ae-9796-844fad281947"
+					(page "5")
 				)
 			)
 		)
