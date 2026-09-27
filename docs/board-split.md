@@ -390,11 +390,11 @@ the ribbon, cathodes back down the ribbon to their TLC5927 output.
 
 Today there are 61 strings, each of 2 LEDs and one 150 Ω resistor on 9 V.
 A pair on 150 Ω runs at **17 mA** (Stefano's figure for the current
-board). 63 strings on v2 make **~1.1 A** of backlight. That is more than
-the 0.76–0.81 A measured earlier for the whole board without the
-annunciators, so the two figures do not agree. Check the total once with the
-new boards: it sizes the 9 V adapter. The MF-RHT200 on the backlight branch
-holds 2 A, so it is fine either way.
+board). 63 strings on v2 make **~1.1 A** of backlight. (The 0.76–0.81 A
+measured on the bench for the whole board is not reliable enough to size
+anything on.) With ~1 A on the regulator branch in a light test, the worst
+case is ~2.1 A, within the 3 A of the 9 V adapter. The MF-RHT200 on the
+backlight branch holds 2 A.
 
 The split changes three things:
 
