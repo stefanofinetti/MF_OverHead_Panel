@@ -138,10 +138,13 @@ Everything on today's board that belongs to no panel:
 
 ### Hot-plug lock-up
 
-Found on the current board, September 2026, with 680 Ω on every `R-EXT`
-and **with the original U8 still fitted**. That U8 later turned out to be
-faulty (see *A failed driver* below). This section has to be re-checked with
-the new U8 before it drives any design decision.
+Found on the current board, September 2026, first with 680 Ω on every
+`R-EXT` and the original, faulty U8 fitted. **Re-checked with 1 kΩ and a new
+U8: the result is the same.** Pushing the barrel into a live adapter still
+leaves the annunciators dead. With the barrel already in and the adapter
+plugged into the mains, everything works, including after the case was
+closed and the panel fully reassembled. It is a power-up problem, not a
+faulty chip.
 
 | How the 9 V arrives | Annunciators |
 |---|---|
@@ -157,8 +160,8 @@ Pushing the barrel into a live supply brings the 9 V in all at once, with
 the jack's contacts bouncing and the input capacitors being charged in one
 step. The ATmega has a reset and the firmware re-initialises the OLEDs.
 The TLC5927 has no reset pin, so a bad start is kept until its supply goes
-away. Why it did not show with the old 56 Ω `R-EXT` is not known, and the
-faulty U8 may have been part of it. No oscilloscope capture has been taken.
+away. Why it did not show with the old 56 Ω `R-EXT` is not known. No
+oscilloscope capture has been taken.
 
 **On the current board:** leave the barrel plugged in and switch the
 adapter at the mains.
@@ -169,11 +172,27 @@ adapter at the mains.
   the hot-plug ringing, and a TVS for the spikes. The panel jack, the wires
   and the screw terminal make the input path longer than today's, so the
   problem would get worse, not go away.
-* **A firmware-controlled reset for the TLC5927 (to evaluate, and only if
-  the lock-up survives the re-check with the new U8):** switch their
-  VDD with a small P-MOSFET from a spare pin, D46 for instance. `SF_OVHD`
-  would cut it for a few tens of milliseconds at start-up, so the chips
-  always start clean whatever the supply did.
+* **A firmware-controlled power-up of the TLC5927 — required.** The four
+  chips' VDD goes through a P-MOSFET high-side switch, the same topology as
+  the anode switch: gate pulled up to +5V (off by default) and pulled down
+  by an N-MOSFET (BS170) from **D46**.
+  * The chips stay unpowered until the firmware turns them on. The ATmega
+    starts, the supply has settled, and only then do the TLC5927s get
+    power. They start clean whatever the 9 V did on the way in.
+  * `SF_OVHD` does it in `attach()`: drive D46 low, wait a few tens of
+    milliseconds, drive it high. The same sequence can be exposed as a
+    message, so the Connector can reset the chain without a power cycle.
+  * **Watch for back-powering.** While the chips are unpowered, CLK, LE
+    and SDI must not sit high. A CMOS input driven high with VDD at 0 V
+    feeds the chip through its protection diodes, half-powers it and
+    defeats the reset. MobiFlight's output shifter leaves LE high after
+    every update, so the firmware pulls CLK, LE and SDI low before it cuts
+    VDD. A 1 kΩ series resistor on each of the three lines, at the chips'
+    end, limits the injected current if that ever fails. It also damps the
+    long clock and latch traces.
+  * This firmware is the only one that can bring the annunciators up. A
+    board flashed with stock MobiFlight firmware would leave them dark,
+    which is acceptable for this panel.
 
 ### I2C
 
@@ -274,7 +293,7 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
   section returns join at its drain.
 * D44 low or not driven → backlight off. PWM from a MobiFlight output on
   D44, 0–255, meant to follow the INTEG LT knob.
-* D46 stays free, unless it becomes the TLC5927 reset (see *Hot-plug lock-up*).
+* D46 switches the TLC5927 supply (see *Hot-plug lock-up*).
 
 ### Connectors on the mainboard
 
@@ -473,13 +492,18 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 * Shift register bits: `ANN_LOWER` 22, 23, 26–31; `ANN_UPPER` 0–3, 6, 7, 15,
   17, 25–28. 20 outputs in all.
 * PCA9548A channels 3–7.
-* ATmega pins: D46, plus whatever the `.mfmc` does not use. D44 and D45 are
-  taken by the two dimmers.
+* ATmega pins: whatever the `.mfmc` does not use. D44, D45 and D46 are
+  taken by the two dimmers and the TLC5927 supply switch.
 
 ## Firmware and MobiFlight
 
-* **The firmware does not change.** The pin map is the same, and the two
-  dimmers are plain MobiFlight outputs, which are core.
+* **The pin map does not change,** and the two dimmers are plain
+  MobiFlight outputs, which are core.
+* **`SF_OVHD` gains one job: powering the TLC5927 up.** In `attach()` it pulls
+  the two chains' CLK, LE and SDI (D22–D27) low, drives D46 low, waits a
+  few tens of milliseconds, then drives D46 high. D46 must not appear in
+  the `.mfmc`: the custom device owns it. A message that repeats the
+  sequence on demand is optional.
 * **The `.mfmc` gains two outputs**, D44 (backlight) and D45 (annunciators),
   both PWM.
 * **The MobiFlight project gains two output rows** for them, typically
@@ -490,16 +514,15 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 
 1. ~~R-EXT value~~ — 1 kΩ on all four TLC5927, ~19 mA, within the 25 mA
    limit set for the Korry LEDs.
-2. **Hot-plug re-check with the new U8.** Push the barrel into a live
-   adapter a few times. If the annunciators always come up, the lock-up was
-   the faulty U8, and the TLC5927 reset (item 6) can go. If not, it is a
-   power-up problem and stays in the design.
+2. ~~Hot-plug re-check with the new U8~~ — still dead on a hot plug, so
+   the TLC5927 power-up switch is in the design.
 3. **Backlight LED V_F.** Measure one, to set the single-string resistor.
 4. **Inner panel outlines.** Take them from SketchUp, with the same
    clearance as today's outer edge.
 5. **Mainboard outline.** Measure the free floor of the lower-left case part.
-6. **TLC5927 reset.** Decide after item 2. If an oscilloscope is at hand,
-   capture +5V while the barrel is pushed into a live adapter.
+6. ~~TLC5927 reset~~ — decided: VDD switch from D46, driven by `SF_OVHD`.
+   If an oscilloscope is at hand, a capture of +5V during a hot plug would
+   still be worth having.
 
 ## Lessons carried into the next version
 
@@ -512,4 +535,7 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
   limit over its whole travel.
 * **`OE` stays hard-wired to GND.** It is the mode pin, so it gets no PWM,
   no pull-up and no test point that could be touched by accident.
+* **The annunciator drivers need a clean power-up.** On a hot-plugged
+  supply they can come up with frozen outputs. The new board powers them
+  from the firmware, after the rest of the board is up.
 * **Spares are at hand:** about twenty TLC5927 from the same Digi-Key order.
