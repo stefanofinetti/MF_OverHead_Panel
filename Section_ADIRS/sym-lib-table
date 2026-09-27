@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "OVHD")(type "KiCad")(uri "${KIPRJMOD}/../Libraries/OVHD.kicad_sym")(options "")(descr "OVHD custom symbols, shared by all boards"))
+)

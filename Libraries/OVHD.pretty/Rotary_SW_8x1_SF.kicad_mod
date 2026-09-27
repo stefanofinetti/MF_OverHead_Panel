@@ -56,7 +56,7 @@
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_circle
 		(center 0 0)
-		(end 8 0)
+		(end 9.3 0)
 		(stroke
 			(width 0.12)
 			(type solid)

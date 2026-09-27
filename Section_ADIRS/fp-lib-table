@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "OVHD")(type "KiCad")(uri "${KIPRJMOD}/../Libraries/OVHD.pretty")(options "")(descr "OVHD custom footprints, from the v1 board"))
+)
