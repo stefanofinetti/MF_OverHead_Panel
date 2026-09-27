@@ -487,27 +487,26 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 |---|---|---|---|---|
 | 1 | GND | | 2 | ANTI ICE WING — D54 |
 | 3 | ANTI ICE ENG 1 — D55 | | 4 | ANTI ICE ENG 2 — D56 |
-| 5 | SEAT BELTS — D19 (contact 1) | | 6 | NO SMOKING — D5 (contact 3) |
+| 5 | SEAT BELTS — D19 (contact 1) | | 6 | NO SMOKING — D5 (contact 1) |
 | 7 | EMER EXIT LT ON — D2 | | 8 | EMER EXIT LT OFF — D3 |
 | 9 | GND | | 10 | WING ON — L18 |
 | 11 | WING FAULT — U21 | | 12 | ENG 1 ON — L19 |
 | 13 | ENG 1 FAULT — U20 | | 14 | ENG 2 ON — L20 |
 | 15 | ENG 2 FAULT — U22 | | 16 | +5V_LED |
 
-SEAT BELTS and NO SMOKING are on-off toggles, so one contact each is enough,
-and it is the one the `.mfmc` reads. The v1 copper also takes their other
-contacts to D18 (SEAT BELTS, contact 3) and D38 (NO SMOKING, contact 1). The
-v1 schematic calls those nets `…_OFF`, but they are not buttons, and nothing
-uses them. They are not carried over. EMER EXIT LT, NAV & LOGO, NOSE and
+SEAT BELTS and NO SMOKING are on-off toggles, so they need one contact
+each. The v1 copper wires both contacts of each: SEAT BELTS contact 1 to D19
+and contact 3 to D18, NO SMOKING contact 1 to D38 and contact 3 to D5. The
+v1 schematic calls the unused ones `…_OFF`, but they are not buttons. v2
+keeps only contact 1 of each. EMER EXIT LT, NAV & LOGO, NOSE and
 both LDG lights really have three positions, and keep both contacts.
 
-**Contacts are given by pad number, not by lever direction.** The toggles
-are generic AliExpress parts, so which contact the lever closes when it is
-up cannot be read from the footprint. NO SMOKING, for instance, is ON with
-the lever up and is read on contact 3. What keeps the panel working is that
-every ATmega pin stays on the same pad number of the same switch as on v1.
-The MobiFlight configuration, which is right as it stands, then behaves
-exactly as today.
+**Lever up closes contact 1, the lower pin, on every toggle.** Every
+single-contact toggle is read on contact 1. On v1 NO SMOKING alone was read
+on contact 3 (D5), and the MobiFlight row was inverted to make up for it.
+On v2 D5 moves to contact 1. **When moving to v2, remove the inversion on
+the NO SMOKING row.** The three-position toggles keep both contacts on the
+same pins as v1, contact 1 up and contact 3 down.
 
 **Toggle parts in the BOM.** The v1 schematic gives all eleven toggles the
 E-Switch MPN 100SP1T1B4M2QE, which is not what is fitted. The v2 BOM lists
