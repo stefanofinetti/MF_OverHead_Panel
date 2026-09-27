@@ -38,11 +38,12 @@ the same screws in the same inserts.
 
 * **Holes:** every hole of today's board is kept on the section board it
   falls in, at the same position, whether or not its purpose is known.
-* **Outline:** each section board must sit inside its panel's recess with
-  the same clearance the current board has at its outer edge, or the panel
-  will not close. The outer edges exist today. The inner edges, where two
-  panels meet, are new and have to be taken from the panel recesses in
-  SketchUp.
+* **Outline:** each section board keeps today's outer edge where it has
+  one, since the current board already fits the case there. The new inner
+  edges are cut along the seams between panels, on the current layout.
+  Today's board is continuous there, so nothing passes through the PCB
+  plane at a seam. The cut only has to stay clear of parts, tracks and
+  holes.
 * **Case:** it is open inside, built for one board, and its parts are joined
   at floor level, so ribbons and wires pass under the section boards with
   nothing in the way. The only change is brass inserts on the floor of the
@@ -522,9 +523,12 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
    the TLC5927 power-up switch is in the design.
 3. ~~Backlight LED V_F~~ — not needed: the single-LED strings get 470 Ω,
    worked out from the pair. Optional check: the voltage across one 150 Ω.
-4. **Inner panel outlines.** Take them from SketchUp, with the same
-   clearance as today's outer edge.
-5. **Mainboard outline.** Measure the free floor of the lower-left case part.
+4. ~~Inner panel outlines~~ — not needed. The outer edges are today's PCB
+   outline, which already fits the case. The inner cuts follow the panel
+   seams on the current layout, where nothing crosses the PCB plane, and
+   stay clear of parts, tracks and holes.
+5. ~~Mainboard outline~~ — proposed in KiCad. The case is then adapted to it
+   in the 3D model.
 6. ~~TLC5927 reset~~ — decided: VDD switch from D46, driven by `SF_OVHD`.
    If an oscilloscope is at hand, a capture of +5V during a hot plug would
    still be worth having.
