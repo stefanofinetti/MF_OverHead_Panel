@@ -1611,76 +1611,7 @@
 			)
 			(justify left)
 		)
-		(uuid "4ac1e480-1d98-4a97-89d7-83d87eb03562")
-	)
-	(global_label "5V_EXT"
-		(shape passive)
-		(at 172.72 168.91 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "04b71ba1-5027-495b-b600-91edc64be98a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 172.72 168.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V"
-		(shape passive)
-		(at 111.76 113.03 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "05d54915-318c-4c9e-89b9-933fad00b193")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 111.76 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "VIN_RAW"
-		(shape passive)
-		(at 115.57 60.96 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "05eb6499-7580-4e93-b38c-ab8b7c9cdc60")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 115.57 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
+		(uuid "4bd0d8a1-e0d3-4339-acea-12f7c63ded29")
 	)
 	(global_label "+9V"
 		(shape passive)
@@ -1692,7 +1623,7 @@
 			)
 			(justify left)
 		)
-		(uuid "2296c716-bbe9-4f11-9c78-2ffc79c1785d")
+		(uuid "3c67ba54-0a69-4e05-9bee-7c5ea2c77449")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 233.68 57.15 0)
 			(hide yes)
@@ -1705,9 +1636,9 @@
 			)
 		)
 	)
-	(global_label "+9V_REG"
+	(global_label "5V_EXT"
 		(shape passive)
-		(at 50.8 168.91 90)
+		(at 172.72 168.91 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1715,101 +1646,9 @@
 			)
 			(justify left)
 		)
-		(uuid "46cb0169-c5f8-4640-ab2b-759bf5e91501")
+		(uuid "3edac113-b5b1-478d-94be-ad6d9a72cd04")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 168.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_BL"
-		(shape passive)
-		(at 50.8 120.65 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "47653d11-5237-4e1e-a14b-8196a1c76e85")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "MIC_ADJ"
-		(shape passive)
-		(at 233.68 120.65 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4855f8c8-ece6-41d1-b1a3-f655d8ff707b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 233.68 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_REG"
-		(shape passive)
-		(at 162.56 114.3 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "563e65fc-9d79-4219-b3da-ec59e7489116")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 162.56 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V"
-		(shape passive)
-		(at 168.91 60.96 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6b31eb63-0145-44ff-88e7-84324bfadb98")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 168.91 60.96 0)
+			(at 172.72 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1830,239 +1669,9 @@
 			)
 			(justify left)
 		)
-		(uuid "6b35da60-f79d-4a7b-a02e-b6ec85377671")
+		(uuid "41ef1917-6434-4aaf-8fb0-3f7822e1305f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 50.8 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "5V_EXT"
-		(shape passive)
-		(at 233.68 113.03 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7ba0c164-cd11-4d7b-8b7d-200f6912bbe0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 233.68 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "MIC_ADJ"
-		(shape passive)
-		(at 182.88 119.38 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "82510860-bfdd-49c1-949a-371b82b57de3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 182.88 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_REG"
-		(shape passive)
-		(at 111.76 168.91 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "928d9c91-1a99-45dd-bf9e-9f3328043f80")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 111.76 168.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_REG"
-		(shape passive)
-		(at 330.2 251.46 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "97b34e5a-128b-4445-af09-642f2f454ac7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 330.2 251.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V"
-		(shape passive)
-		(at 107.95 60.96 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9e9f35e4-aaab-4966-a297-26111b943244")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 107.95 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_REG"
-		(shape passive)
-		(at 111.76 120.65 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a0b659ea-b555-479f-a522-cf13f4c2a9c5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 111.76 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "MIC_ADJ"
-		(shape passive)
-		(at 294.64 113.03 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a0c8324d-d9ae-4d78-9357-e6b0524779a3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 294.64 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_REG"
-		(shape passive)
-		(at 162.56 119.38 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "bb591a59-c976-485a-b29d-008e34692261")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 162.56 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V"
-		(shape passive)
-		(at 294.64 57.15 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e288046f-6117-44a7-b5ba-e72ed8605f9c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 294.64 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "5V_EXT"
-		(shape passive)
-		(at 233.68 168.91 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e2d5a845-1aa1-40c8-bd6a-cc2234e451fd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 233.68 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2083,9 +1692,354 @@
 			)
 			(justify right)
 		)
-		(uuid "e7386126-3423-4fd1-a859-7c4fefac52f7")
+		(uuid "469a7799-5fbf-45f8-8e4f-e0b996d66917")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 45.72 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V"
+		(shape passive)
+		(at 107.95 60.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4ca59e91-9b21-4c02-8c91-0d6ffedf50cd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 107.95 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_REG"
+		(shape passive)
+		(at 50.8 168.91 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4d619443-7fcb-4283-a690-e1ebdc1d439e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "VIN_RAW"
+		(shape passive)
+		(at 115.57 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5f5e86f2-33f0-406b-b43f-f1c5ec3ab432")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 115.57 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V"
+		(shape passive)
+		(at 168.91 60.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7accde0f-14c7-4f78-b8e1-ef0ee078996d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 168.91 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_REG"
+		(shape passive)
+		(at 50.8 228.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7fb9a145-2130-44f1-9c41-c3685ea1abb7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_REG"
+		(shape passive)
+		(at 111.76 168.91 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "82d454a4-48d2-4cef-bcaf-184b17c9dd17")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "5V_EXT"
+		(shape passive)
+		(at 233.68 168.91 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8a5173ec-8718-4514-bdb1-a392e3b3e892")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 233.68 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_REG"
+		(shape passive)
+		(at 162.56 114.3 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8d729aa3-27a8-462a-88e1-2bf5c5f9a451")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.56 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 45.72 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8edbcb09-97b5-4daa-88bc-3ec055dcd755")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.72 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V"
+		(shape passive)
+		(at 111.76 113.03 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c3f3c11c-d946-4239-8fca-4176e8eff0b8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_REG"
+		(shape passive)
+		(at 111.76 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ca3eae61-9e1f-48dd-ae50-413278ebea51")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.76 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "MIC_ADJ"
+		(shape passive)
+		(at 233.68 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cca81e94-df92-465e-acc0-f40bd56a118c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 233.68 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_REG"
+		(shape passive)
+		(at 162.56 119.38 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d7cc6979-179e-47cd-b482-7507d483277b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.56 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "MIC_ADJ"
+		(shape passive)
+		(at 294.64 113.03 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dc49b8b3-5460-42f1-9d68-22336103f827")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 294.64 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_BL"
+		(shape passive)
+		(at 50.8 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dc746955-5a0c-44b4-ad7b-5e7b1c28b5cc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2106,7 +2060,7 @@
 			)
 			(justify left)
 		)
-		(uuid "eb577540-84c6-4d54-ad7d-07f97b0aeac2")
+		(uuid "dde43cc6-db4f-4e36-890d-c78f4e0a503e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 182.88 114.3 0)
 			(hide yes)
@@ -2119,325 +2073,94 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:C")
-		(at 233.68 172.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "022908b0-86a0-4fc9-93b0-66231aad9a21")
-		(property "Reference" "C106"
-			(at 233.68 167.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "+9V"
+		(shape passive)
+		(at 294.64 57.15 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "10uF"
-			(at 233.68 177.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-			(at 233.68 172.72 0)
+		(uuid "ddea128c-bdc1-44b2-9eef-82f6fedab066")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 294.64 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 233.68 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 233.68 172.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "17e0a7d6-dd73-4236-89b0-f56e4ea79954")
-		)
-		(pin "2"
-			(uuid "8198a40b-7545-437e-b8ff-e4b42906ba2d")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "C106")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Regulator_Linear:MIC29302WU")
-		(at 172.72 116.84 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "08e27a19-060c-450b-858d-d74692b1d808")
-		(property "Reference" "U101"
-			(at 172.72 111.76 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "5V_EXT"
+		(shape passive)
+		(at 233.68 113.03 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "MIC29302WU"
-			(at 172.72 121.92 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
-			(at 172.72 116.84 0)
+		(uuid "e53d5090-1e03-408f-92af-be4fe3791309")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 233.68 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "5 V for logic (through the TPS2115A) and for the annunciator anodes. Values from v1."
-			(at 172.72 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6a6a8e5b-e1d2-4096-b661-05e1f3ae9a77")
-		)
-		(pin "2"
-			(uuid "73253d13-00dc-4c7e-ad36-5888c9efff75")
-		)
-		(pin "3"
-			(uuid "d7ea24fd-1a22-42ed-8abd-954a6e790d8b")
-		)
-		(pin "4"
-			(uuid "8f89505e-fc18-44bf-bec7-f6beaa990f97")
-		)
-		(pin "5"
-			(uuid "a6ff127b-554b-4775-a061-f6514f10c236")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "U101")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 50.8 60.96 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0a07f58f-9e06-414e-b6e0-979641e50078")
-		(property "Reference" "J101"
-			(at 50.8 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "GND"
+		(shape passive)
+		(at 176.53 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "9V IN"
-			(at 50.8 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
-			(at 50.8 60.96 0)
+		(uuid "ed86926a-8cd5-4805-a214-003f9697f656")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.53 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "From the panel-mount 5.5x2.1 jack. Pin 1 is +."
-			(at 50.8 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6464364c-46ff-4194-98d0-bc977b733e6a")
-		)
-		(pin "2"
-			(uuid "40b19024-05b6-4e56-aec0-a39b37b68ccb")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "J101")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:C")
-		(at 111.76 172.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "10ccb2e5-1966-4527-872e-7e7a1b95b401")
-		(property "Reference" "C104"
-			(at 111.76 167.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "MIC_ADJ"
+		(shape passive)
+		(at 182.88 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "100nF"
-			(at 111.76 177.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-			(at 111.76 172.72 0)
+		(uuid "efc44f1b-33cf-47d3-be44-4c8d2cec4c4c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.88 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 111.76 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 111.76 172.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4c851b3b-edee-42d0-92e1-d9b4ab85c5ef")
-		)
-		(pin "2"
-			(uuid "a5598d0a-b246-471f-8af2-1cfd3174bca4")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "C104")
-					(unit 1)
 				)
 			)
 		)
@@ -2452,25 +2175,27 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "267444de-3255-4799-a985-5401ada47a16")
+		(uuid "1defd7ea-f870-46ec-94da-b8a12fa7a357")
 		(property "Reference" "C101"
-			(at 233.68 55.88 0)
+			(at 237.236 58.801 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "470uF 25V"
-			(at 233.68 66.04 0)
+			(at 237.236 61.341 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
@@ -2507,15 +2232,95 @@
 			)
 		)
 		(pin "1"
-			(uuid "7cbb71d8-519a-4b85-bbb7-0ecbf0ab4eed")
+			(uuid "0085b8e0-b0a6-4d51-a657-35073c7d00b0")
 		)
 		(pin "2"
-			(uuid "6e2788d3-037d-46b5-bdbc-e7b6c117661a")
+			(uuid "9fbc4d79-2711-4a0e-9708-dd346acf4090")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
 					(reference "C101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 233.68 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "21afd945-a8fd-464c-aaf1-587ea0ebc034")
+		(property "Reference" "C106"
+			(at 236.982 171.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 236.982 173.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 233.68 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cf02b777-9ffc-4d01-a3a5-8fd423e3979e")
+		)
+		(pin "2"
+			(uuid "05b6c03d-5ae5-4e97-a7ff-4e558c6bede1")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "C106")
 					(unit 1)
 				)
 			)
@@ -2531,9 +2336,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "290acafc-8aab-4f72-887f-38801b6a0cf7")
-		(property "Reference" "#PWR6ecc006"
-			(at 294.64 127 0)
+		(uuid "25203947-5e43-4523-8b59-584e3ddc2ce2")
+		(property "Reference" "#PWR6ecc004"
+			(at 294.64 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2586,20 +2391,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "bf0aa838-14b0-40f7-bc0e-e2c05e88c549")
+			(uuid "ca13a24b-00e2-4f55-83cb-e06fafa3d6a3")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#PWR6ecc006")
+					(reference "#PWR6ecc004")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:Polyfuse")
-		(at 111.76 116.84 0)
+		(lib_id "Device:C_Polarized")
+		(at 172.72 172.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2607,29 +2412,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "2c26fb66-eda5-4487-ac59-877e831cce26")
-		(property "Reference" "F102"
-			(at 111.76 111.76 0)
+		(uuid "26589bb1-0cf5-4ddc-9e72-d281b6eb66b6")
+		(property "Reference" "C105"
+			(at 176.276 170.561 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "MF-RHT200"
-			(at 111.76 121.92 0)
+		(property "Value" "100uF 10V"
+			(at 176.276 173.101 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Fuse:Fuse_Bourns_MF-RHT200"
-			(at 111.76 116.84 0)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
+			(at 172.72 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2640,7 +2447,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 116.84 0)
+			(at 172.72 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2650,8 +2457,8 @@
 				)
 			)
 		)
-		(property "Description" "Regulator branch, ~0.3 A normal, ~1 A in a light test."
-			(at 111.76 116.84 0)
+		(property "Description" "MIC29302 output capacitor, at least 10 uF."
+			(at 172.72 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2662,23 +2469,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "4825af69-f256-42fd-bfeb-d9d3c043aea0")
+			(uuid "dce9afdb-b885-401c-9ecc-8d5ad00c5662")
 		)
 		(pin "2"
-			(uuid "31e0713a-0e70-45a6-aa7b-bf02a38082fc")
+			(uuid "b8d30575-cffc-4eb3-b443-1e3ee2f2b1df")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "F102")
+					(reference "C105")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 176.53 60.96 0)
+		(lib_id "Device:R")
+		(at 294.64 116.84 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2686,30 +2493,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "41337aed-f1a8-4a17-9c3d-a7e722ba6526")
-		(property "Reference" "#PWR6ecc002"
-			(at 176.53 67.31 0)
-			(hide yes)
+		(uuid "309f6d70-54d4-47ca-9521-77cd01fee6db")
+		(property "Reference" "R102"
+			(at 296.926 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 176.53 64.77 0)
+		(property "Value" "1.2K"
+			(at 296.926 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 176.53 60.96 0)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 294.64 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2720,7 +2528,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 176.53 60.96 0)
+			(at 294.64 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2731,7 +2539,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 176.53 60.96 0)
+			(at 294.64 116.84 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2741,88 +2549,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "3aa4e065-1137-41b6-b889-dde321006302")
+			(uuid "c3057766-b17f-40dc-b741-412369d6c7ae")
+		)
+		(pin "2"
+			(uuid "e6460bff-ecc0-442d-afc0-06606bb38684")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#PWR6ecc002")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 330.2 251.46 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "45a44c64-dc50-4c8c-b09c-e23265a237d4")
-		(property "Reference" "#FLG6ecc011"
-			(at 330.2 249.555 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 330.2 247.65 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 251.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 251.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 330.2 251.46 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e6acfcc4-9f98-42ce-87fe-83a1c110ae6a")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#FLG6ecc011")
+					(reference "R102")
 					(unit 1)
 				)
 			)
@@ -2838,9 +2573,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "4ef7047f-6757-4600-91c0-6609cde2a42c")
-		(property "Reference" "#PWR6ecc003"
-			(at 233.68 71.12 0)
+		(uuid "4773d193-4bca-4823-8da4-311a1664a72e")
+		(property "Reference" "#PWR6ecc001"
+			(at 233.68 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2893,554 +2628,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "c3031c68-d979-4d16-b6e7-0f6d6ccd5683")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#PWR6ecc003")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 294.64 60.96 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "564d0269-28f0-4d54-af29-2a8bd5ff5c48")
-		(property "Reference" "C102"
-			(at 294.64 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100nF"
-			(at 294.64 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-			(at 294.64 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 294.64 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 294.64 60.96 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b6bf86ce-2ad7-47ce-bbce-cb497807bb6a")
-		)
-		(pin "2"
-			(uuid "28e68ff7-e690-4b82-be29-5328b5bfc1f0")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "C102")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 50.8 172.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5cc03a29-7ecf-4c26-b9c9-687f1de3f750")
-		(property "Reference" "C103"
-			(at 50.8 167.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF 25V"
-			(at 50.8 177.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-			(at 50.8 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 172.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9c756720-86f9-4411-b148-9223c159df8f")
-		)
-		(pin "2"
-			(uuid "aedc8ee0-3ae9-4a6d-b5aa-7c5ab634293e")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "C103")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 111.76 60.96 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5d60cd17-748f-4929-8ad1-f44d1ae3159f")
-		(property "Reference" "D101"
-			(at 111.76 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N5822"
-			(at 111.76 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_THT:D_DO-201AD_P15.24mm_Horizontal"
-			(at 111.76 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 111.76 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Reverse-polarity protection, 40 V 3 A. Same part as the FCU PSU."
-			(at 111.76 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b8e8c744-54b0-498a-9849-4c43460c22bb")
-		)
-		(pin "2"
-			(uuid "655762a9-df29-4b7d-b9c2-d79fca5c8982")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "D101")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 233.68 176.53 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "61e1e29a-b870-4ef4-9e02-806614b024bb")
-		(property "Reference" "#PWR6ecc010"
-			(at 233.68 182.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 233.68 180.34 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 233.68 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 233.68 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 233.68 176.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "459f1133-55c3-4a7c-b22c-130406ce7ccb")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#PWR6ecc010")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 45.72 63.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7a612f50-af72-4739-adaf-f84768643f4b")
-		(property "Reference" "#PWR6ecc001"
-			(at 45.72 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 45.72 67.31 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 45.72 63.5 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "280a05ed-6d16-42fc-900e-8e27038f7126")
+			(uuid "e5e15fff-ac3e-4bc5-939f-7eebbe46b4d9")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
 					(reference "#PWR6ecc001")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 172.72 176.53 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "82598191-d4eb-4faf-8ead-206ac548e53c")
-		(property "Reference" "#PWR6ecc009"
-			(at 172.72 182.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 172.72 180.34 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 172.72 176.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "66d03866-4340-4cb2-b39a-9b93296e7a5d")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#PWR6ecc009")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 172.72 172.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8a3c2b93-b00c-4d78-8351-cef25d3da4a8")
-		(property "Reference" "C105"
-			(at 172.72 167.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100uF 10V"
-			(at 172.72 177.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
-			(at 172.72 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "MIC29302 output capacitor, at least 10 uF."
-			(at 172.72 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ba9aaf82-4c47-4999-a12d-58544cce2425")
-		)
-		(pin "2"
-			(uuid "532bc095-256b-49fb-a516-8b0839e96f47")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "C105")
 					(unit 1)
 				)
 			)
@@ -3456,9 +2649,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "94a2a953-8503-45dd-b9ca-ef3ed26708de")
+		(uuid "4da04549-ee3c-40c0-9ef8-c52fc09c006a")
 		(property "Reference" "D102"
-			(at 172.72 55.88 0)
+			(at 172.72 57.785 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3468,7 +2661,7 @@
 			)
 		)
 		(property "Value" "SMBJ12CA"
-			(at 172.72 66.04 0)
+			(at 172.72 64.135 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3511,10 +2704,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "0f8fd7f0-0464-49f7-905f-07d89e3e471c")
+			(uuid "c948f306-b2c4-4864-871d-f724b08fdc48")
 		)
 		(pin "2"
-			(uuid "8de3c0bd-ccf7-4c84-b42f-4f29d55bad0e")
+			(uuid "5b7d2639-8011-457a-a097-16b2ec5083e2")
 		)
 		(instances
 			(project "OVHD_Mainboard"
@@ -3535,9 +2728,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "ad0c219d-9819-4be6-a375-88f8d88debe0")
-		(property "Reference" "#PWR6ecc005"
-			(at 172.72 130.81 0)
+		(uuid "63d24a73-0f45-473b-803a-ebab1797ec66")
+		(property "Reference" "#PWR6ecc003"
+			(at 172.72 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3590,12 +2783,332 @@
 			)
 		)
 		(pin "1"
-			(uuid "4307208d-4696-4a01-ab76-2cd872d2abc0")
+			(uuid "b2a6b032-0ae4-4a76-83b3-40f66734e397")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#PWR6ecc005")
+					(reference "#PWR6ecc003")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 233.68 176.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "71e27605-a150-4a9d-8885-651788d67778")
+		(property "Reference" "#PWR6ecc008"
+			(at 233.68 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 233.68 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 233.68 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 176.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0eab9865-23f5-4cc2-8683-b3f5a990a9e6")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "#PWR6ecc008")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 50.8 228.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7abbf71b-9b5a-42ae-988b-0badfa8ca345")
+		(property "Reference" "#FLG6ecc009"
+			(at 50.8 226.695 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 50.8 224.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9f83b971-900e-4d62-ba2e-66135b46299b")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "#FLG6ecc009")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Regulator_Linear:MIC29302WU")
+		(at 172.72 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "81a7aff7-18fb-46bd-82e8-de008708c829")
+		(property "Reference" "U101"
+			(at 172.72 107.315 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MIC29302WU"
+			(at 172.72 109.855 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
+			(at 172.72 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "5 V for logic (through the TPS2115A) and for the annunciator anodes. Values from v1."
+			(at 172.72 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "17be3e49-b23a-4fa2-9419-bbc970368f68")
+		)
+		(pin "2"
+			(uuid "64e68103-487a-4b7c-b8ed-671fc1a37d20")
+		)
+		(pin "3"
+			(uuid "b428b40e-15e8-4a2f-a471-4b109e85a296")
+		)
+		(pin "4"
+			(uuid "9f4f9eb6-0f0d-4c6e-a369-06b027aafeda")
+		)
+		(pin "5"
+			(uuid "aa2df73e-09a3-4b17-bdc1-f8823bbc59d0")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "U101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 111.76 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "81ecf875-40f4-46b9-86e5-dac2cf0b3759")
+		(property "Reference" "C104"
+			(at 115.062 171.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 115.062 173.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 111.76 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 111.76 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9d9cf944-fea0-4527-baed-8c4a309f30be")
+		)
+		(pin "2"
+			(uuid "b40f0020-7c5a-4330-8196-67c94ac136af")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "C104")
 					(unit 1)
 				)
 			)
@@ -3611,9 +3124,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b12bb0ce-9cec-4a60-acf4-3e33f9c4dffe")
-		(property "Reference" "#PWR6ecc008"
-			(at 111.76 182.88 0)
+		(uuid "8db00c48-42f0-4e87-8978-1428874d957e")
+		(property "Reference" "#PWR6ecc006"
+			(at 111.76 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3666,20 +3179,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "528eb8c2-96e4-40fe-8f02-673b1f17f799")
+			(uuid "169bdb55-fa22-46a0-8568-060193441f57")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#PWR6ecc008")
+					(reference "#PWR6ecc006")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 50.8 176.53 0)
+		(lib_id "Device:D_Schottky")
+		(at 111.76 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3687,10 +3200,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b1a836ee-e437-485a-be95-d1c4dd97fb6a")
-		(property "Reference" "#PWR6ecc007"
-			(at 50.8 182.88 0)
-			(hide yes)
+		(uuid "9128480f-c154-4d1d-bd6e-c89fd52f6aed")
+		(property "Reference" "D101"
+			(at 111.442 57.785 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3699,8 +3211,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 50.8 180.34 0)
+		(property "Value" "1N5822"
+			(at 111.442 64.135 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3709,8 +3221,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 50.8 176.53 0)
+		(property "Footprint" "Diode_THT:D_DO-201AD_P15.24mm_Horizontal"
+			(at 111.76 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3721,7 +3233,248 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 176.53 0)
+			(at 111.76 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Reverse-polarity protection, 40 V 3 A. Same part as the FCU PSU."
+			(at 111.76 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d23314b0-04bd-49cf-878d-0f1c4d4757cf")
+		)
+		(pin "2"
+			(uuid "551657aa-05c5-422e-ac21-9c1accc665db")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "D101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Polyfuse")
+		(at 111.76 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a1703e56-083f-42d0-ac88-493b19ecb25a")
+		(property "Reference" "F102"
+			(at 114.554 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MF-RHT200"
+			(at 114.554 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_Bourns_MF-RHT200"
+			(at 111.76 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Regulator branch, ~0.3 A normal, ~1 A in a light test."
+			(at 111.76 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8c2861b3-06f2-4533-90ce-033e822146c1")
+		)
+		(pin "2"
+			(uuid "1087b1b6-2df1-4f41-80d9-ef89746c3d79")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "F102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 50.8 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ae98dec2-eac0-44bc-b3df-33abe9f35f9e")
+		(property "Reference" "J101"
+			(at 50.8 57.785 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "9V IN"
+			(at 50.8 66.675 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
+			(at 50.8 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "From the panel-mount 5.5x2.1 jack. Pin 1 is +."
+			(at 50.8 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c906857e-fe43-43d3-a158-e4c6b3492321")
+		)
+		(pin "2"
+			(uuid "57c237b5-e380-4023-bee4-b23c7eb2764d")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "J101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 50.8 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ba18d47f-c8c3-4bec-b0ce-070843279cdc")
+		(property "Reference" "C103"
+			(at 54.102 171.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF 25V"
+			(at 54.102 173.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 50.8 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3732,7 +3485,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 50.8 176.53 0)
+			(at 50.8 172.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3742,12 +3495,333 @@
 			)
 		)
 		(pin "1"
-			(uuid "bd85b8cf-2b37-4292-be96-dc9ac124aa73")
+			(uuid "0dd68637-9f88-4bfb-a4a3-53dd7f1fb7a5")
+		)
+		(pin "2"
+			(uuid "a4957839-c105-4a99-83f4-29d3d5b10977")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "C103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 172.72 176.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d779c414-2b17-4608-8098-3bd3cb71e4fa")
+		(property "Reference" "#PWR6ecc007"
+			(at 172.72 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 172.72 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 172.72 176.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8f5ff93-b1ec-4ac8-9bff-8585fd94d3f3")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
 					(reference "#PWR6ecc007")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 233.68 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dd21dc43-23c0-4a10-b1d9-a9830747dfe1")
+		(property "Reference" "R101"
+			(at 235.966 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3.6K"
+			(at 235.966 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 233.68 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Vout = 1.24 V x (1 + 3.6k/1.2k) = 4.96 V"
+			(at 233.68 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4a6ea4c6-f918-4e43-ada4-1dd1686bae56")
+		)
+		(pin "2"
+			(uuid "1948279b-9cf2-4d05-bd81-a32e481e1926")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "R101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Polyfuse")
+		(at 50.8 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dfc0cec5-5f9b-441a-ba4c-2769b8fd300b")
+		(property "Reference" "F101"
+			(at 53.594 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MF-RHT200"
+			(at 53.594 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_Bourns_MF-RHT200"
+			(at 50.8 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight branch, ~0.7 A measured. 2 A hold, as the FCU learned."
+			(at 50.8 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc5ef715-3b68-40a2-aced-bdaa277855a2")
+		)
+		(pin "2"
+			(uuid "b405c5a7-7810-48e2-bc39-a50a06c536ab")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "F101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 294.64 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ebb1ecf8-871f-44aa-96bd-99b4295bc181")
+		(property "Reference" "C102"
+			(at 297.942 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 297.942 62.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 294.64 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 294.64 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 294.64 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8cae7b8d-b5c2-4110-bdf3-1df7d84fa56c")
+		)
+		(pin "2"
+			(uuid "6931a095-26b6-4fd9-b83f-74a742ab1c26")
+		)
+		(instances
+			(project "OVHD_Mainboard"
+				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
+					(reference "C102")
 					(unit 1)
 				)
 			)
@@ -3763,9 +3837,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "c28e3cff-7b75-431b-8ceb-b6bb301df8b8")
-		(property "Reference" "#PWR6ecc004"
-			(at 294.64 71.12 0)
+		(uuid "efec8e79-5836-4c19-84db-4bf856501e9e")
+		(property "Reference" "#PWR6ecc002"
+			(at 294.64 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3818,20 +3892,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "cffa07a1-d9b2-48f6-a47e-aea46faa9922")
+			(uuid "6ee0e1df-33ae-4222-8fa2-a2e260eb884c")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "#PWR6ecc004")
+					(reference "#PWR6ecc002")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:Polyfuse")
-		(at 50.8 116.84 0)
+		(lib_id "power:GND")
+		(at 50.8 176.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3839,9 +3913,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "ce9e30f2-c3fa-47fe-b986-a94e31aeca96")
-		(property "Reference" "F101"
-			(at 50.8 111.76 0)
+		(uuid "f8733d7f-d9d9-4eac-bda8-916355888ff1")
+		(property "Reference" "#PWR6ecc005"
+			(at 50.8 176.53 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3850,8 +3925,8 @@
 				)
 			)
 		)
-		(property "Value" "MF-RHT200"
-			(at 50.8 121.92 0)
+		(property "Value" "GND"
+			(at 50.8 180.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3860,8 +3935,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Fuse:Fuse_Bourns_MF-RHT200"
-			(at 50.8 116.84 0)
+		(property "Footprint" ""
+			(at 50.8 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3872,86 +3947,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight branch, ~0.7 A measured. 2 A hold, as the FCU learned."
-			(at 50.8 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "dc7d27d9-ea69-40d5-bea7-651035e5d840")
-		)
-		(pin "2"
-			(uuid "f329a126-df81-44c5-b9b5-5e422c32d664")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "F101")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 294.64 116.84 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e2307e32-bd51-46cc-b23b-e6791060f3dc")
-		(property "Reference" "R102"
-			(at 294.64 111.76 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1.2K"
-			(at 294.64 121.92 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 294.64 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 294.64 116.84 0)
+			(at 50.8 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3962,7 +3958,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 294.64 116.84 0)
+			(at 50.8 176.53 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3972,94 +3968,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "0a533713-523f-4e65-88bb-eced971e4560")
-		)
-		(pin "2"
-			(uuid "e10716fc-06fc-4aaa-8cd3-eeca54a69d02")
+			(uuid "e6272d68-a69c-4957-9763-604c1dd38a34")
 		)
 		(instances
 			(project "OVHD_Mainboard"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "R102")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 233.68 116.84 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e88616e0-623f-403e-b001-6d4b6cc7a537")
-		(property "Reference" "R101"
-			(at 233.68 111.76 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3.6K"
-			(at 233.68 121.92 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 233.68 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 233.68 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Vout = 1.24 V x (1 + 3.6k/1.2k) = 4.96 V"
-			(at 233.68 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b561eeca-47ea-4778-907f-5603ac672eec")
-		)
-		(pin "2"
-			(uuid "4d185cb9-62dd-4093-9a73-d1d2ac24a147")
-		)
-		(instances
-			(project "OVHD_Mainboard"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/14a8d658-e392-4b30-b20e-dffa9a1a6ecc"
-					(reference "R101")
+					(reference "#PWR6ecc005")
 					(unit 1)
 				)
 			)
