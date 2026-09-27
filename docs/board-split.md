@@ -123,23 +123,25 @@ Everything on today's board that belongs to no panel:
   100k/100k divider on the external rail, `ILIM` set to about 0.8 A). It
   replaces D162, today's series diode on VBUS.
 * **The annunciator anodes do not go through the TPS2115A.** In a light
-  test all 44 LEDs are lit, about 1.2 A at 28 mA each. Added to the logic,
-  that is well past the 0.8 A limit and a USB port's 500 mA. The
+  test all 44 LEDs are lit, about 0.85 A at 19 mA each. Added to the logic,
+  that is past the 0.8 A limit and a USB port's 500 mA. The
   anodes therefore take their own rail, `+5V_LED`, straight from the
   MIC29302. On USB alone the annunciators stay dark, like the backlight,
   and the logic keeps working.
 * **Two fuses, one per branch**, as on the FCU PSU: the backlight branch
-  (~0.7 A, measured) and the regulator branch (~1.3 A in a light test). A
+  (~0.7 A, measured) and the regulator branch (~1 A in a light test). A
   fault on one does not take down the other.
-* The MIC29302 dissipates about 1 W in normal use, with a handful of
-  annunciators lit. In a light test it is ~4 W, about 3.2 V across it at
-  ~1.3 A, which is too much to hold for long on a TO-263. The light test
-  is seconds long, but the copper under the tab must be sized for it, or
-  the anode rail given its own regulator.
+* The MIC29302 dissipates well under 1 W in normal use, with a handful of
+  annunciators lit. In a light test it is ~3 W, about 3.2 V across it at
+  ~1 A. The light test lasts seconds, but the copper under the tab must be
+  sized for it, or the anode rail given its own regulator.
 
 ### Hot-plug lock-up
 
-Found on the current board, September 2026, with 680 Ω on every `R-EXT`:
+Found on the current board, September 2026, with 680 Ω on every `R-EXT`
+and **with the original U8 still fitted**. That U8 later turned out to be
+faulty (see *A failed driver* below). This section has to be re-checked with
+the new U8 before it drives any design decision.
 
 | How the 9 V arrives | Annunciators |
 |---|---|
@@ -155,9 +157,8 @@ Pushing the barrel into a live supply brings the 9 V in all at once, with
 the jack's contacts bouncing and the input capacitors being charged in one
 step. The ATmega has a reset and the firmware re-initialises the OLEDs.
 The TLC5927 has no reset pin, so a bad start is kept until its supply goes
-away. Why it did not show with the old 56 Ω `R-EXT` is not known. See
-*Output voltage and short detection* below for the one difference found so
-far. No oscilloscope capture has been taken.
+away. Why it did not show with the old 56 Ω `R-EXT` is not known, and the
+faulty U8 may have been part of it. No oscilloscope capture has been taken.
 
 **On the current board:** leave the barrel plugged in and switch the
 adapter at the mains.
@@ -168,7 +169,8 @@ adapter at the mains.
   the hot-plug ringing, and a TVS for the spikes. The panel jack, the wires
   and the screw terminal make the input path longer than today's, so the
   problem would get worse, not go away.
-* **A firmware-controlled reset for the TLC5927 (to evaluate):** switch their
+* **A firmware-controlled reset for the TLC5927 (to evaluate, and only if
+  the lock-up survives the re-check with the new U8):** switch their
   VDD with a small P-MOSFET from a spare pin, D46 for instance. `SF_OVHD`
   would cut it for a few tens of milliseconds at start-up, so the chips
   always start clean whatever the supply did.
@@ -194,10 +196,17 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
 * **Output current**, with the configuration the chip powers up in:
   I_OUT = 1.25 V / R_ext × 15. That is about 26 mA at 720 Ω and 52 mA at
   360 Ω. The output range is 10–120 mA, and 120 mA is the absolute maximum.
-* **The trimmers go. Each TLC5927 gets a fixed 680 Ω 1206 on `R-EXT`**, all
-  four the same, for ~28 mA per LED. The light was judged right on every
-  colour. Still open: whether the Korry LEDs are rated for 28 mA. If they are
-  not, 820 Ω (~23 mA) or 1 kΩ (~19 mA).
+* **The trimmers go. Each TLC5927 gets a fixed 1 kΩ 1206 on `R-EXT`**, all
+  four the same, for ~19 mA per LED (1.25 V / 1 kΩ × 15). The Korry LEDs
+  are plain rectangular LEDs, and the rule is to keep them at or below
+  25 mA. 1 kΩ is the value fitted on the current board, and all four chips
+  pass repeated full MobiFlight test cycles with it. 680 Ω (~28 mA) looked
+  as good but sits above that limit.
+* **Never below ~160 Ω, never above ~1.9 kΩ.** At power-up the chip runs
+  with CM = 1, which is specified for 10–120 mA. That puts `R-EXT` between
+  ~160 Ω (120 mA, the absolute maximum) and ~1.9 kΩ (10 mA). The 2–4.7 kΩ
+  values tried along the way were below the chip's range, and that is why
+  they were dim.
 * **Measured against the formula.** The LED current was read as the step in
   the 9 V supply current when one LED is switched on:
 
@@ -206,6 +215,7 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
   | 56–156 Ω (the original resistor and trimmer) | 120–335 mA asked, **held at 120 mA** | ~70–85 mA | far too bright |
   | 300 Ω | 63 mA | 39 mA | too bright |
   | 680 Ω | 28 mA | 17–18 mA | right, on every colour |
+  | **1 kΩ** | **19 mA** | — | **fitted, all four chips** |
   | 2.1 kΩ | 9 mA | ~7 mA | dim |
   | 3.6 kΩ | 5 mA | a few mA | very dim |
   | 4.7 kΩ | 4.0 mA | ~4 mA | dim |
@@ -234,20 +244,28 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
     closed they stay dark.
   * Brightness = the `R-EXT` current × the PWM duty. The chips never see
     their `OE` move.
-  * The P-MOSFET must carry the light test: 44 × 28 mA ≈ 1.2 A.
-* **Output voltage and short detection.** The TLC5927 flags an LED as
-  shorted when the voltage on its output, with the channel on, is above
-  2.4–3.1 V (2.6 V typical). It clears below 2.2 V. The datasheet only says
-  this is reported in Special mode, not that anything is switched off.
-  But with anodes at 5 V and the chip regulating at 28 mA, an amber or
-  green LED (V_F ≈ 2.0–2.2 V) leaves ~2.8–3.0 V on the output, inside that
-  window. A white one (V_F ≈ 3 V) leaves ~2 V. At 56 Ω the output is
-  saturated and sits much lower. This matches the lock-up hitting the amber
-  chip first. It is a **correlation, not an explanation**: measure the
-  output voltage of a lit amber LED at 680 Ω before drawing anything. If it
-  is in the window, keep the outputs below 2.2 V on the new board, either
-  with the anode rail lower than 5 V, a small series resistor per LED, or
-  the TLC5926, which is the same chip without short detection.
+  * The P-MOSFET must carry the light test: 44 × 19 mA ≈ 0.85 A.
+* **A failed driver: U8.** With 1 kΩ on all four chips, U6, U7 and U5
+  worked, and U8, the first chip of `ANN_UPPER`, did not:
+  * every LED on it lit once and then the chip stopped updating its
+    outputs until a power cycle, while still passing data on to U5;
+  * OUT8–OUT11, the FUEL fault LEDs, never lit at all, even as the first
+    command after power-up.
+
+  Everything around it measured normal: GND 0 Ω, VDD 5.0 V steady, `R-EXT`
+  1.23 V, `OE` 0 V. Every output sat at 3.5 V at rest, the same on the FUEL
+  LEDs as on the working GPWS and BATT ones, so the LEDs were sound.
+  **Replacing U8 with a new TLC5927 fixed it**: two full test cycles, every
+  LED on every pass. The most likely cause is the original 56–156 Ω
+  `R-EXT`, which held its outputs at the 120 mA maximum, plus the >100 mA
+  tests on it. That cannot be proven, but nothing else set U8 apart.
+* **Short detection is ruled out.** The TLC5927 flags an LED as shorted
+  when its output sits above 2.4–3.1 V with the channel on. At the
+  currents used here, amber and green LEDs leave about 3 V on their
+  outputs, inside that window, and that looked like a cause for a while.
+  But U5 drives several amber LEDs in the same conditions and never locked,
+  and a new U8 fixed the problem without any change to the voltages. Nothing
+  in the new design needs to keep the outputs below the window.
 
 ### Backlight dimming
 
@@ -470,14 +488,28 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 
 ## Before drawing
 
-1. ~~R-EXT value~~ — 680 Ω on all four TLC5927.
-2. **Korry LED rating.** Confirm they take 28 mA, or pick 820 Ω / 1 kΩ.
-3. **Output voltage of a lit amber LED at 680 Ω**, against the 2.4–3.1 V
-   short-detect window (see *Output voltage and short detection*).
-4. **Backlight LED V_F.** Measure one, to set the single-string resistor.
-5. **Inner panel outlines.** Take them from SketchUp, with the same
+1. ~~R-EXT value~~ — 1 kΩ on all four TLC5927, ~19 mA, within the 25 mA
+   limit set for the Korry LEDs.
+2. **Hot-plug re-check with the new U8.** Push the barrel into a live
+   adapter a few times. If the annunciators always come up, the lock-up was
+   the faulty U8, and the TLC5927 reset (item 6) can go. If not, it is a
+   power-up problem and stays in the design.
+3. **Backlight LED V_F.** Measure one, to set the single-string resistor.
+4. **Inner panel outlines.** Take them from SketchUp, with the same
    clearance as today's outer edge.
-6. **Mainboard outline.** Measure the free floor of the lower-left case part.
-7. **TLC5927 reset.** Decide whether the firmware-controlled VDD switch goes
-   in. If an oscilloscope is at hand, capture +5V while the barrel is pushed
-   into a live adapter.
+5. **Mainboard outline.** Measure the free floor of the lower-left case part.
+6. **TLC5927 reset.** Decide after item 2. If an oscilloscope is at hand,
+   capture +5V while the barrel is pushed into a live adapter.
+
+## Lessons carried into the next version
+
+* **Draw the part that is fitted.** The schematic says DM13A, but the
+  board carries TLC5927. They are pin-compatible, with different current
+  formulas and a different `OE`. The new schematic uses the TLC5927 symbol,
+  with the manufacturer part number in the BOM.
+* **Size `R-EXT` from the TLC5927 formula**, 1.25 V / R × 15, and stay inside
+  160 Ω–1.9 kΩ. The original 56 Ω + 0–100 Ω trimmer sat past the chip's
+  limit over its whole travel.
+* **`OE` stays hard-wired to GND.** It is the mode pin, so it gets no PWM,
+  no pull-up and no test point that could be touched by accident.
+* **Spares are at hand:** about twenty TLC5927 from the same Digi-Key order.
