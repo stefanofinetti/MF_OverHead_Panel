@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "5cc1b527-f8a3-4262-a97f-ae40be974cb3")
+	(uuid "91be6063-6cdd-4562-bc98-caa698095d14")
 	(paper "A3")
 	(title_block
 		(title "APU section board")
@@ -1550,6 +1550,39 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Power flags"
+		(exclude_from_sim no)
+		(at 30.48 228.6 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "1709d3af-2799-449c-9b7a-0881fa7e1dc0")
+	)
+	(text "Switches"
+		(exclude_from_sim no)
+		(at 30.48 48.26 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "181ee9ac-5eca-48b6-8169-8f8aa191cd8f")
+	)
+	(text "Ribbon and backlight connectors"
+		(exclude_from_sim no)
+		(at 30.48 152.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "2f95d2b0-fb60-47e4-898f-623e0b2739e6")
+	)
 	(text "APU section board (v2). Switches, annunciator and backlight LEDs at their v1 coordinates.\nAnnunciator anodes on +5V_LED, cathodes down the ribbon to the TLC5927 outputs on the mainboard (no\nresistors: the TLC5927 sinks a set current). Backlight on +9V_BL, return switched on the mainboard.\nJ1 pinout as docs/board-split.md. Korry: pin 1 contact, pin 2 common (GND), as v1."
 		(exclude_from_sim no)
 		(at 30.48 20.32 0)
@@ -1559,105 +1592,92 @@
 			)
 			(justify left)
 		)
-		(uuid "467fb4da-18d1-4407-824c-c08c32d72bca")
+		(uuid "4fc7d4f3-1ebc-4dd8-a301-4f8e6505807a")
 	)
-	(no_connect
-		(at 44.45 57.15)
-		(uuid "19af15dc-c91c-4cd3-ada9-a455a5a66c4b")
-	)
-	(no_connect
-		(at 44.45 74.93)
-		(uuid "1cccf220-5f41-4d11-9430-605026dcd8b8")
-	)
-	(no_connect
-		(at 44.45 77.47)
-		(uuid "1d7a3ef8-166b-4a17-9050-881797d04109")
-	)
-	(no_connect
-		(at 335.28 73.66)
-		(uuid "3235af06-371f-4e93-93b5-2b4224cc761d")
-	)
-	(no_connect
-		(at 44.45 52.07)
-		(uuid "40882863-0391-4056-b5b3-9b79a50f236d")
-	)
-	(no_connect
-		(at 44.45 72.39)
-		(uuid "4e704a4e-4482-482d-ba3c-5ccd79c14ca6")
-	)
-	(no_connect
-		(at 57.15 72.39)
-		(uuid "5842116f-ad25-4a63-a2f9-44a73f3326c1")
-	)
-	(no_connect
-		(at 335.28 53.34)
-		(uuid "5e0bbeeb-2d3c-4ecd-9e64-1ddca49ab783")
-	)
-	(no_connect
-		(at 44.45 54.61)
-		(uuid "7409fcd5-c6b0-4aab-82d7-9818bf8aad67")
-	)
-	(no_connect
-		(at 335.28 114.3)
-		(uuid "7c8865d4-8e38-4ff9-a9ce-5026de2d9157")
-	)
-	(no_connect
-		(at 335.28 93.98)
-		(uuid "a0957399-1f02-457c-84bf-4da09f2bf64a")
-	)
-	(no_connect
-		(at 57.15 52.07)
-		(uuid "af07e5c4-4e6b-43b1-818b-30c4d5b3993e")
-	)
-	(global_label "APU_START_SW"
-		(shape passive)
-		(at 57.15 77.47 0)
-		(fields_autoplaced yes)
+	(text "Backlight strings"
+		(exclude_from_sim no)
+		(at 215.9 48.26 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 2 2)
 			)
 			(justify left)
 		)
-		(uuid "0445290a-9d36-41aa-bd26-5b8878123991")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
+		(uuid "54e10f21-2fec-445f-9cf9-91b4ac9b482d")
 	)
-	(global_label "BL_RET"
-		(shape passive)
-		(at 193.04 54.61 270)
-		(fields_autoplaced yes)
+	(text "Mounting holes, as v1"
+		(exclude_from_sim no)
+		(at 246.38 152.4 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 2 2)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "0d8fc11f-e58a-4c2e-b72d-6993e604d0c4")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.04 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+		(uuid "7e64e1f7-3129-4198-b9d2-c0dc09e18177")
+	)
+	(text "Annunciators (anode on +5V_LED, cathode to the TLC5927)"
+		(exclude_from_sim no)
+		(at 114.3 48.26 0)
+		(effects
+			(font
+				(size 2 2)
 			)
+			(justify left)
 		)
+		(uuid "e32e5f0b-5b95-4b59-94a8-bc226e8469c9")
+	)
+	(no_connect
+		(at 44.45 67.31)
+		(uuid "28ab85cd-50aa-407b-be57-9e3a6c0ad432")
+	)
+	(no_connect
+		(at 57.15 64.77)
+		(uuid "338ebdfc-42e8-455a-b72b-74f6174167e2")
+	)
+	(no_connect
+		(at 279.4 175.26)
+		(uuid "3c3225c7-776c-4e23-a62f-44e56627d739")
+	)
+	(no_connect
+		(at 254 175.26)
+		(uuid "5f44e4e4-ce4e-47bf-a912-582e8215bdb6")
+	)
+	(no_connect
+		(at 44.45 105.41)
+		(uuid "76553b22-7c84-4163-901b-8a348bd8514e")
+	)
+	(no_connect
+		(at 304.8 175.26)
+		(uuid "79ae8c69-19f2-43aa-bb01-ddd04b456821")
+	)
+	(no_connect
+		(at 44.45 69.85)
+		(uuid "7c0465f7-499a-4dc6-830b-3b099821be89")
+	)
+	(no_connect
+		(at 44.45 64.77)
+		(uuid "859c7220-7955-4f0b-a8d9-054e7f55df33")
+	)
+	(no_connect
+		(at 44.45 102.87)
+		(uuid "993169b9-1bb5-4c3d-b9f7-2c3bcfb790e1")
+	)
+	(no_connect
+		(at 57.15 102.87)
+		(uuid "a0c4f0fc-f9f4-4b7f-923e-13a267c307c2")
+	)
+	(no_connect
+		(at 330.2 175.26)
+		(uuid "a9bf1b80-42df-42f4-bc18-7f6d98a5e27a")
+	)
+	(no_connect
+		(at 44.45 107.95)
+		(uuid "f06848af-550f-4376-ab0d-fdc2cd077a8f")
 	)
 	(global_label "+5V_LED"
 		(shape passive)
-		(at 125.73 71.12 0)
+		(at 101.6 241.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1665,400 +1685,9 @@
 			)
 			(justify left)
 		)
-		(uuid "1b8c4cbe-721d-477a-8de0-c5d7b0c0ae18")
+		(uuid "0374d52e-576b-4110-aea8-644a922b4d06")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL2_MID"
-		(shape passive)
-		(at 118.11 172.72 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2b040871-2fde-466e-bca1-e048fe741c6c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_BL"
-		(shape passive)
-		(at 259.08 101.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3a29e857-4a80-4efd-800c-734f9a574686")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 259.08 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL2_R"
-		(shape passive)
-		(at 193.04 67.31 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3ada017f-217e-4128-bf43-69b552a14d06")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.04 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "APU_MASTER_SW"
-		(shape passive)
-		(at 271.78 45.72 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "43254f9f-fdb1-4c6e-9625-b902636e4fcf")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 271.78 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LED_APU_START_ON"
-		(shape passive)
-		(at 259.08 53.34 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "45bb7c7e-6c4d-451d-b188-aeb18dc8086b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 259.08 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL_RET"
-		(shape passive)
-		(at 259.08 104.14 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4d15238c-3600-49c4-9aed-0a04958c5498")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 259.08 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "APU_START_SW"
-		(shape passive)
-		(at 259.08 48.26 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4f04f570-c3db-4023-b5be-2ec6b8698768")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 259.08 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+5V_LED"
-		(shape passive)
-		(at 330.2 71.12 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "54de457b-0774-4ffe-b9a4-692138fa3385")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 330.2 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL3_R"
-		(shape passive)
-		(at 193.04 87.63 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "55da9566-7877-4963-a89d-82fdf49f758d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.04 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_BL"
-		(shape passive)
-		(at 125.73 132.08 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5e78829e-482c-431f-bf30-ae946cdcb431")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_BL"
-		(shape passive)
-		(at 330.2 91.44 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6005506c-46a5-4509-ae02-259c63061396")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 330.2 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL3_R"
-		(shape passive)
-		(at 118.11 213.36 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "61e808a2-7a96-4b11-90d0-686814572969")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "APU_MASTER_SW"
-		(shape passive)
-		(at 57.15 57.15 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "68d9a865-7710-4b1a-9798-160e6697f8b5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL1_MID"
-		(shape passive)
-		(at 125.73 152.4 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6c3f983a-168b-4515-9bbb-55906cc8fba5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LED_APU_MASTER_ON"
-		(shape passive)
-		(at 118.11 71.12 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6cb3ed9d-5942-4aae-a198-1db4fd899e64")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL_RET"
-		(shape passive)
-		(at 193.04 95.25 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7f6fd6c3-4b4c-4963-9efe-94d1e8dc3237")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.04 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LED_APU_MASTER_ON"
-		(shape passive)
-		(at 259.08 50.8 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8eb0bf24-3718-4ce0-894f-8d8d089d1345")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 259.08 50.8 0)
+			(at 101.6 241.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2071,7 +1700,7 @@
 	)
 	(global_label "LED_APU_AVAIL"
 		(shape passive)
-		(at 271.78 53.34 0)
+		(at 156.21 99.06 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2079,262 +1708,9 @@
 			)
 			(justify left)
 		)
-		(uuid "9c9afc7b-1672-4b98-a2d1-78a0e3f291a8")
+		(uuid "047e11a7-2137-4f7b-8792-11fb5ad55494")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 271.78 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+5V_LED"
-		(shape passive)
-		(at 125.73 50.8 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a571fc8b-5d3b-4948-89d9-bcc2851eef96")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL2_R"
-		(shape passive)
-		(at 118.11 193.04 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a68939fb-3e07-4977-941d-9c51f0a424ce")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 193.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LED_APU_MASTER_FAULT"
-		(shape passive)
-		(at 271.78 50.8 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "add49d79-2869-490f-bb06-c8db115b197d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 271.78 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+5V_LED"
-		(shape passive)
-		(at 125.73 111.76 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b16c49f2-5169-4722-bb14-ffdeda6d20dd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL_RET"
-		(shape passive)
-		(at 193.04 74.93 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c80fd077-b929-4be8-b562-d16962176e63")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.04 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LED_APU_START_ON"
-		(shape passive)
-		(at 118.11 111.76 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "cde2b134-1d60-4bea-9c56-1a927c2c5578")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+9V_BL"
-		(shape passive)
-		(at 125.73 213.36 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ce9208a8-28da-4748-8dd8-f1ed0ab276ac")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LED_APU_AVAIL"
-		(shape passive)
-		(at 118.11 91.44 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d89706f5-1cda-42a7-a3f0-4694ff46261e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "LED_APU_MASTER_FAULT"
-		(shape passive)
-		(at 118.11 50.8 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "da68b497-7f89-4b34-8e92-6129f6d4dfba")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL1_R"
-		(shape passive)
-		(at 193.04 46.99 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "da890c31-ef48-4b41-9e4e-8c232bf3ef32")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.04 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "BL_RET"
-		(shape passive)
-		(at 330.2 111.76 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ded0084f-6d08-42a2-acfd-8a77f36ee1b3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 330.2 111.76 0)
+			(at 156.21 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2347,17 +1723,40 @@
 	)
 	(global_label "BL1_MID"
 		(shape passive)
-		(at 118.11 132.08 180)
+		(at 232.41 63.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "e292dfbf-e17d-4277-8e41-f58708a2ce56")
+		(uuid "0784d711-08eb-43f3-afad-90733c374a35")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 132.08 0)
+			(at 232.41 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BL2_R"
+		(shape passive)
+		(at 270.51 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "09302a26-f389-42f0-bcec-63087264b3f6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 270.51 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2370,7 +1769,7 @@
 	)
 	(global_label "+9V_BL"
 		(shape passive)
-		(at 125.73 172.72 0)
+		(at 152.4 241.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2378,9 +1777,354 @@
 			)
 			(justify left)
 		)
-		(uuid "ea3a69f8-9e80-48c8-a63b-47ca40205ccf")
+		(uuid "0b21f0e9-fc89-45a2-89e5-1a4ff50764f7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 172.72 0)
+			(at 152.4 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_BL"
+		(shape passive)
+		(at 185.42 177.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "11f20b55-9f3e-494f-bcb2-6a016540dde5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 185.42 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LED_APU_MASTER_ON"
+		(shape passive)
+		(at 71.12 177.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "127048a2-5418-4c99-a8dd-9c5f8e114ff0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 71.12 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 83.82 182.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "14b48474-5d85-4710-803c-712a546611dc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 83.82 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "APU_MASTER_SW"
+		(shape passive)
+		(at 57.15 69.85 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "179a1ae0-a5d1-4beb-8c21-efd6e9d6e455")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 57.15 105.41 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1c1c9945-049c-4b3b-99b2-964a5615233a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BL_RET"
+		(shape passive)
+		(at 270.51 99.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "334c9c50-13da-410d-a05e-f5f7c2216a7d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 270.51 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LED_APU_MASTER_FAULT"
+		(shape passive)
+		(at 83.82 177.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "33a78bbb-ca22-482c-ae61-d733a5f3f920")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 83.82 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BL_RET"
+		(shape passive)
+		(at 203.2 241.3 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "34d20044-35ca-4836-8bd3-e0e06fa1fd8e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.2 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 57.15 67.31 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3d7370bf-b49d-4b27-808a-dc9ff5399c2c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BL3_R"
+		(shape passive)
+		(at 262.89 99.06 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "45a35b1a-0222-404c-a28d-527ff8484fbd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 262.89 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LED_APU_START_ON"
+		(shape passive)
+		(at 156.21 116.84 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4b314cba-1a46-4908-9182-a31fa39ecccf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 156.21 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "LED_APU_START_ON"
+		(shape passive)
+		(at 71.12 180.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4bfa973b-cf36-4a94-8f34-ba1d5a1a1f91")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 71.12 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+5V_LED"
+		(shape passive)
+		(at 148.59 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "50e596db-1dec-43ae-8f00-0f8fb41e1761")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 148.59 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "BL3_R"
+		(shape passive)
+		(at 232.41 99.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "518764ba-3136-472e-bead-7afbc2bc9df2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 232.41 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+9V_BL"
+		(shape passive)
+		(at 224.79 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5193b27d-ba80-4c45-99c0-f94768484801")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 224.79 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2393,7 +2137,7 @@
 	)
 	(global_label "BL2_MID"
 		(shape passive)
-		(at 125.73 193.04 0)
+		(at 232.41 81.28 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2401,9 +2145,9 @@
 			)
 			(justify left)
 		)
-		(uuid "eb550c07-29fa-4114-990c-3ce676da6f5d")
+		(uuid "6baea848-7e8c-45df-a657-f82bd5f20c69")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 193.04 0)
+			(at 232.41 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2414,32 +2158,9 @@
 			)
 		)
 	)
-	(global_label "+5V_LED"
+	(global_label "BL1_MID"
 		(shape passive)
-		(at 125.73 91.44 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fb667679-5092-4ff0-b83c-b3d33ba33ea0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.73 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "+5V_LED"
-		(shape passive)
-		(at 259.08 55.88 180)
+		(at 262.89 63.5 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2447,9 +2168,32 @@
 			)
 			(justify right)
 		)
-		(uuid "ffb311ae-df0c-47b8-baf9-c79269949c39")
+		(uuid "7166cb84-9c49-499d-ab9d-0b7eb6fcbfb6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 259.08 55.88 0)
+			(at 262.89 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 83.82 175.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "79257339-edf5-438f-95bd-b4b155981b18")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 83.82 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2462,7 +2206,30 @@
 	)
 	(global_label "BL1_R"
 		(shape passive)
-		(at 118.11 152.4 180)
+		(at 270.51 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "79f90d89-a982-4bd8-9858-89d2cb146c6a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 270.51 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+5V_LED"
+		(shape passive)
+		(at 148.59 63.5 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2470,9 +2237,9 @@
 			)
 			(justify right)
 		)
-		(uuid "ffeb9042-d4ad-434d-9850-24add115d932")
+		(uuid "7a0faafb-c70f-4023-9046-7968cafe273c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.11 152.4 0)
+			(at 148.59 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2483,1592 +2250,423 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 264.16 101.6 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0620fb96-1ef0-4cbc-a93c-d5ec0b67d48f")
-		(property "Reference" "J2"
-			(at 264.16 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "BL_RET"
+		(shape passive)
+		(at 308.61 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "Backlight"
-			(at 264.16 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical"
-			(at 264.16 101.6 0)
+		(uuid "86207492-1ea1-43fd-837a-e0541af5a16d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 308.61 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 264.16 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "JST PH. Pin 1 +9V_BL, pin 2 BL_RET, to screw terminal J607 on the mainboard. New on v2"
-			(at 264.16 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9ca309d3-1d21-42bf-a036-43643882502c")
-		)
-		(pin "2"
-			(uuid "69d9d69f-7184-4f7e-babd-8dc56341f866")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "J2")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:R")
-		(at 193.04 50.8 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "129840fd-ba64-4953-88e8-27e4a15415c8")
-		(property "Reference" "R1"
-			(at 193.04 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "+5V_LED"
+		(shape passive)
+		(at 148.59 116.84 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "150"
-			(at 193.04 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 193.04 50.8 0)
+		(uuid "8cfb1156-49f6-4538-bae6-eea80c16ccdf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 148.59 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight, string 1. v1: R22"
-			(at 193.04 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c145b568-7fe9-4ed3-8917-4971d8c87d63")
-		)
-		(pin "2"
-			(uuid "aad09c4c-1566-44ea-9043-b3e287fcbcf2")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "R1")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 335.28 50.8 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1571b3a2-a646-4e86-8dfe-7a947ab29570")
-		(property "Reference" "H1"
-			(at 335.28 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "LED_APU_AVAIL"
+		(shape passive)
+		(at 83.82 180.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "M3"
-			(at 335.28 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
-			(at 335.28 50.8 0)
+		(uuid "9106d81d-4b54-4f6c-93d3-97623c7de600")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 83.82 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 335.28 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Panel screw into the case insert. v1: H1"
-			(at 335.28 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7ceb9d17-2728-4185-9317-611ccacacd3d")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "H1")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 335.28 111.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1e8f4371-aa5a-4b59-84d1-14bdec7ae732")
-		(property "Reference" "H4"
-			(at 335.28 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "APU_START_SW"
+		(shape passive)
+		(at 71.12 175.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "M3"
-			(at 335.28 116.84 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
-			(at 335.28 111.76 0)
+		(uuid "94e90ebd-1ff9-4d4a-b00d-eabcdb74ea03")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 71.12 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 335.28 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Panel screw into the case insert. v1: H4"
-			(at 335.28 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e6a74efa-87a9-4240-ae70-6b7386b6a209")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "H4")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 335.28 152.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "210984bd-e344-4f71-9598-1caf1ef2246c")
-		(property "Reference" "H6"
-			(at 335.28 147.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "BL2_R"
+		(shape passive)
+		(at 300.99 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "M2.5"
-			(at 335.28 157.48 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 335.28 152.4 0)
+		(uuid "97d81dac-7221-4df0-bbb0-b4eca338af3c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 300.99 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 335.28 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "As v1. v1: H65"
-			(at 335.28 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "H6")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 335.28 132.08 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "21339e59-c3d3-4b32-bbbe-3b2665555fea")
-		(property "Reference" "H5"
-			(at 335.28 127 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "+9V_BL"
+		(shape passive)
+		(at 224.79 99.06 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "M2.5"
-			(at 335.28 137.16 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 335.28 132.08 0)
+		(uuid "9ea900c5-0a51-4b29-bb77-c376089240d6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 224.79 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 335.28 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "As v1. v1: H70"
-			(at 335.28 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "H5")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "OVHD:Korry_PS-7054DVB-6PN")
-		(at 50.8 71.12 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "25a4eaa5-ab2e-472d-bdfb-a6cc68540336")
-		(property "Reference" "SW2"
-			(at 50.8 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "APU_START_SW"
+		(shape passive)
+		(at 57.15 107.95 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "APU START"
-			(at 50.8 76.2 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "OVHD:G-Switch_PS-7054DVB-6PN"
-			(at 50.8 71.12 0)
+		(uuid "b2ecdfcc-581d-4a6f-a86d-5e8cf90e9430")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "D29 on the ATmega. v1: SW2"
-			(at 50.8 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e57e3aed-d0c8-455c-ad72-ebb43a96b9ad")
-		)
-		(pin "2"
-			(uuid "e98ce11b-2d35-4d48-bf64-06ddfac0ccdc")
-		)
-		(pin "3"
-			(uuid "0b04bf2b-3aa8-4c9f-bcb9-bee073472636")
-		)
-		(pin "4"
-			(uuid "a59e92d0-bab1-458f-8049-15491878db62")
-		)
-		(pin "5"
-			(uuid "ab33ee73-8106-4fec-a953-ea75bd5b5e77")
-		)
-		(pin "6"
-			(uuid "8a25ec65-518a-4f1f-8b7d-1e856b90b5b1")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "SW2")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 121.92 152.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "37b3bb02-b16c-4a06-beb2-4da9bc2afafe")
-		(property "Reference" "D6"
-			(at 121.92 147.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "+5V_LED"
+		(shape passive)
+		(at 148.59 99.06 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "LED"
-			(at 121.92 157.48 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
-			(at 121.92 152.4 0)
+		(uuid "be58cfe7-851e-42fa-b60e-6a9357b49cf9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 148.59 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight, string 1. v1: D32"
-			(at 121.92 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "38ae276e-008a-4bb3-af58-468e8edba6cd")
-		)
-		(pin "2"
-			(uuid "5bfd85fe-081b-4986-8225-4034549393bd")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "D6")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "power:GND")
-		(at 330.2 50.8 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3caafa09-f53a-4fff-bb7f-b6afdbcea6ed")
-		(property "Reference" "#PWR4cb3007"
-			(at 330.2 57.15 0)
+	(global_label "APU_MASTER_SW"
+		(shape passive)
+		(at 83.82 172.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c37b626c-9188-41c2-b443-2accf93c4b7c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 330.2 54.61 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 330.2 50.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "95218086-c0fb-44b9-b456-9f05e4d932e2")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#PWR4cb3007")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 121.92 91.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "450e173e-50a6-41ec-8351-e44d4f508ee1")
-		(property "Reference" "D3"
-			(at 121.92 86.36 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "+9V_BL"
+		(shape passive)
+		(at 224.79 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "green"
-			(at 121.92 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "OVHD:LED_Rectangular_W3.9mm_H1.8mm_FlatTop"
-			(at 121.92 91.44 0)
+		(uuid "c3a846e3-bc2f-4885-8f28-2368bbb96e30")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 224.79 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "START AVAIL, ANN_UPPER bit 24 (U504, was U5). v1: D128"
-			(at 121.92 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "720f705e-bd9c-490a-9ccc-51c6ddc36f60")
-		)
-		(pin "2"
-			(uuid "99701817-5fce-498b-8a97-c6633c2952a8")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "D3")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:R")
-		(at 193.04 91.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "46d6780b-0f3f-4ae3-8877-11621221eb24")
-		(property "Reference" "R3"
-			(at 193.04 86.36 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "BL_RET"
+		(shape passive)
+		(at 185.42 180.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "470"
-			(at 193.04 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 193.04 91.44 0)
+		(uuid "c43a7cd5-c5fa-4f7e-a5a4-4e48a8c14a72")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 185.42 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Single-LED string: R = V / (2 I) + 75 ohm, same current as a pair of LEDs with 150 ohm. New on v2"
-			(at 193.04 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fb410ae9-02ba-44f4-a536-92c1d7f52fb6")
-		)
-		(pin "2"
-			(uuid "75c3d21e-020e-4fa1-9efe-ab7851210623")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "R3")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:R")
-		(at 193.04 71.12 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "49dd3554-c41c-4a58-85c4-e088e46ba726")
-		(property "Reference" "R2"
-			(at 193.04 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "BL_RET"
+		(shape passive)
+		(at 308.61 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "150"
-			(at 193.04 76.2 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 193.04 71.12 0)
+		(uuid "c72a4a56-6b8c-42e8-8cef-c4a6ba31dd59")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 308.61 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight, string 2. v1: R23"
-			(at 193.04 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6a36ec27-41e5-4500-abc1-6b99cdf2abf6")
-		)
-		(pin "2"
-			(uuid "e91d57d5-f232-4336-b641-394de3495fef")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "R2")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 121.92 50.8 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4ea424d2-257e-4ced-bb1a-2a46e8569ac0")
-		(property "Reference" "D1"
-			(at 121.92 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "LED_APU_MASTER_FAULT"
+		(shape passive)
+		(at 156.21 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "amber"
-			(at 121.92 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "OVHD:LED_Rectangular_W3.9mm_H1.8mm_FlatTop"
-			(at 121.92 50.8 0)
+		(uuid "ce45d6ce-9d92-4afd-b010-9cecfe9cd7cd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 156.21 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "MASTER SW FAULT, ANN_UPPER bit 23 (U504, was U5). v1: D178"
-			(at 121.92 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "93024790-28c1-4a14-a9d8-ed977a151e0f")
-		)
-		(pin "2"
-			(uuid "f9e3f373-f88e-47e9-856f-35c146a430be")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "D1")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 121.92 172.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5b52c638-3115-4073-ac98-4c89f4528876")
-		(property "Reference" "D7"
-			(at 121.92 167.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "GND"
+		(shape passive)
+		(at 71.12 172.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "LED"
-			(at 121.92 177.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
-			(at 121.92 172.72 0)
+		(uuid "d1720bb4-53da-4fd1-80af-34140107c6fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 71.12 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight, string 2. v1: D33"
-			(at 121.92 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e70db9f9-44a3-4779-b172-b5a367aec258")
-		)
-		(pin "2"
-			(uuid "c457ce58-aefa-4d11-bedc-75e15cf95f86")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "D7")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 335.28 71.12 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5f2b2641-f5db-4d21-bffa-81a45ed2cc0d")
-		(property "Reference" "H2"
-			(at 335.28 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "LED_APU_MASTER_ON"
+		(shape passive)
+		(at 156.21 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "M3"
-			(at 335.28 76.2 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
-			(at 335.28 71.12 0)
+		(uuid "d1f4570a-8c28-4e45-a823-cdefca7ae3ae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 156.21 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 335.28 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Panel screw into the case insert. v1: H2"
-			(at 335.28 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0f05d851-cc8e-4de3-8673-61bd02118a98")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "H2")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "power:GND")
-		(at 271.78 48.26 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5fbd512d-c2c4-4172-8851-e91713c8c0b9")
-		(property "Reference" "#PWR4cb3004"
-			(at 271.78 54.61 0)
+	(global_label "+5V_LED"
+		(shape passive)
+		(at 71.12 182.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e0eb9c1d-b40e-4abe-8032-74ba81ec5f95")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 71.12 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 271.78 52.07 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 271.78 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 271.78 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 271.78 48.26 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7e636d9c-a526-4a73-b3a4-8c2aaee1721b")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#PWR4cb3004")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 121.92 132.08 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6e7f37c4-3c85-4324-9420-d0bf237e9b04")
-		(property "Reference" "D5"
-			(at 121.92 127 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "BL2_MID"
+		(shape passive)
+		(at 262.89 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "LED"
-			(at 121.92 137.16 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
-			(at 121.92 132.08 0)
+		(uuid "eaf70fa8-d2a0-4244-b3fc-1bfa5e38e96a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 262.89 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight, string 1. v1: D31"
-			(at 121.92 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d94355ff-55fb-4569-83f8-611492ddf8e2")
-		)
-		(pin "2"
-			(uuid "8c108b7d-6f8b-47ca-84f2-38e64f7794a4")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "D5")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "power:GND")
-		(at 57.15 54.61 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6ed68404-7d73-43cf-ba8d-b92d1c327f9d")
-		(property "Reference" "#PWR4cb3001"
-			(at 57.15 60.96 0)
+	(global_label "BL1_R"
+		(shape passive)
+		(at 300.99 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f888a61f-511a-4e75-a743-ee1af3742149")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 300.99 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 58.42 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 57.15 54.61 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7582ca8c-b993-493f-b30b-d689c8e477ba")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#PWR4cb3001")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 271.78 55.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "71f98c4f-c7dd-49f0-9673-a5414687b5e1")
-		(property "Reference" "#PWR4cb3005"
-			(at 271.78 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 271.78 59.69 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 271.78 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 271.78 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 271.78 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "be0ab9b0-6405-4d5d-bfb8-19fd106568dd")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#PWR4cb3005")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_02x05_Odd_Even")
-		(at 264.16 50.8 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7e61114e-4275-4932-9eb0-f0df527f9ccf")
-		(property "Reference" "J1"
-			(at 264.16 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "APU ribbon"
-			(at 264.16 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical_SMD"
-			(at 264.16 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 264.16 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Shrouded, keyed. Straight 10-way ribbon to J707 on the mainboard, pin 1 to pin 1. New on v2"
-			(at 264.16 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c7bb1764-207b-47f3-bed4-0f94266e142c")
-		)
-		(pin "2"
-			(uuid "67583981-87c6-4c59-8e8e-f5aad27909f2")
-		)
-		(pin "3"
-			(uuid "f5ee03bc-045d-49d4-9f31-a40066b4b8c1")
-		)
-		(pin "4"
-			(uuid "b7f1073f-a523-4481-8934-644430d9b393")
-		)
-		(pin "5"
-			(uuid "c5de9de7-dbca-4c84-a35c-f289a30d60ae")
-		)
-		(pin "6"
-			(uuid "e9e2e18d-9322-420c-951b-7bd1b4611f9a")
-		)
-		(pin "7"
-			(uuid "6769deb2-b1e2-4279-bbf8-127ac04b4e44")
-		)
-		(pin "8"
-			(uuid "66ffdcea-095c-4cc2-9a89-0436f1cede57")
-		)
-		(pin "9"
-			(uuid "1356b5e9-0289-4c36-86db-af0f821f3915")
-		)
-		(pin "10"
-			(uuid "5bc25ab1-f728-4515-97c8-543e9631b893")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "J1")
-					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 330.2 111.76 0)
+		(at 152.4 241.3 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4076,9 +2674,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "89c05639-0286-471b-ae5b-cc9629cb93e3")
-		(property "Reference" "#FLG4cb3010"
-			(at 330.2 109.855 0)
+		(uuid "10b8ed44-34a7-42ff-ac34-d101b73d401d")
+		(property "Reference" "#FLG5d14004"
+			(at 152.4 239.395 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4089,7 +2687,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 330.2 107.95 0)
+			(at 152.4 237.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4099,7 +2697,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 330.2 111.76 0)
+			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4110,7 +2708,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 330.2 111.76 0)
+			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4121,7 +2719,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 330.2 111.76 0)
+			(at 152.4 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4131,407 +2729,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "47fdeca5-79d3-4fd0-9392-c332222c0118")
+			(uuid "89bdd47f-5fce-4505-ba69-182424d54d8b")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#FLG4cb3010")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "OVHD:Korry_PS-7054DVB-6PN")
-		(at 50.8 50.8 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "99059be9-5ee3-499e-a8ae-fd1528169ff4")
-		(property "Reference" "SW1"
-			(at 50.8 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "APU MASTER SW"
-			(at 50.8 55.88 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "OVHD:G-Switch_PS-7054DVB-6PN"
-			(at 50.8 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "D28 on the ATmega. v1: SW1"
-			(at 50.8 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a251b6b0-6cda-4176-bc26-77004f5979b9")
-		)
-		(pin "2"
-			(uuid "1a34ebfa-62f1-4a0e-b20b-892dc68962c1")
-		)
-		(pin "3"
-			(uuid "27736607-99e5-4c5f-b3bb-3bc63ff05c93")
-		)
-		(pin "4"
-			(uuid "bdf5de66-b3c8-4f6d-a13b-2dde674e0a36")
-		)
-		(pin "5"
-			(uuid "1d2bf2f9-8b0f-4b85-9341-4ba595e3f43b")
-		)
-		(pin "6"
-			(uuid "6a990f17-bac0-4dac-b208-74e3afa975da")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 259.08 45.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "99e7f72c-758c-4ca5-82b7-e3c9f704f95a")
-		(property "Reference" "#PWR4cb3003"
-			(at 259.08 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 259.08 49.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 259.08 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 259.08 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 259.08 45.72 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "20734ad5-37bc-4a2b-9462-e7c4cae2fe9b")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#PWR4cb3003")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 121.92 213.36 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a298d247-0480-4606-ae0c-77d0fa53306a")
-		(property "Reference" "D9"
-			(at 121.92 208.28 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 121.92 218.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
-			(at 121.92 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Backlight, single LED. On v1 it was paired with D149, now on SIGNS. v1: D148"
-			(at 121.92 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8f7b98ca-015f-41eb-bd81-f6e0321ade15")
-		)
-		(pin "2"
-			(uuid "eb11afe1-467f-460c-bcc1-8c39c3701092")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "D9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 330.2 50.8 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a315d66a-1d08-47ec-b601-e110ab57dc93")
-		(property "Reference" "#FLG4cb3006"
-			(at 330.2 48.895 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 330.2 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 330.2 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 330.2 50.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "33cb57ae-380a-4f9c-97d3-b44d1efd91bd")
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#FLG4cb3006")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 335.28 193.04 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a4f72202-a19d-4ade-8979-61d6d5d13b25")
-		(property "Reference" "H8"
-			(at 335.28 187.96 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M2.5"
-			(at 335.28 198.12 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 335.28 193.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 335.28 193.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "As v1. v1: H71"
-			(at 335.28 193.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "H8")
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "#FLG5d14004")
 					(unit 1)
 				)
 			)
@@ -4539,7 +2742,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 335.28 91.44 0)
+		(at 304.8 172.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4547,29 +2750,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "af0a6c64-142b-431e-bf50-bceb613ac5ef")
+		(uuid "2f2e9c75-c86d-4780-a73c-661cd4eeac45")
 		(property "Reference" "H3"
-			(at 335.28 86.36 0)
+			(at 307.34 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "M3"
-			(at 335.28 96.52 0)
+			(at 307.34 172.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
-			(at 335.28 91.44 0)
+			(at 304.8 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4580,7 +2785,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 335.28 91.44 0)
+			(at 304.8 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4591,7 +2796,7 @@
 			)
 		)
 		(property "Description" "Panel screw into the case insert. v1: H3"
-			(at 335.28 91.44 0)
+			(at 304.8 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4602,11 +2807,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "74995e00-156d-4833-99d7-f869516761c2")
+			(uuid "d61c4a3f-223e-47a4-89e9-c945ddd0b420")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
 					(reference "H3")
 					(unit 1)
 				)
@@ -4614,8 +2819,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 57.15 74.93 0)
+		(lib_id "Device:R")
+		(at 304.8 63.5 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4623,10 +2828,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b29b2fbb-ef63-443b-aa0f-40575b2995a1")
-		(property "Reference" "#PWR4cb3002"
-			(at 57.15 81.28 0)
-			(hide yes)
+		(uuid "2fac8476-f24f-4433-969e-061b5ea846ab")
+		(property "Reference" "R1"
+			(at 304.8 60.579 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4635,8 +2839,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 57.15 78.74 0)
+		(property "Value" "150"
+			(at 304.8 66.421 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4645,8 +2849,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 57.15 74.93 0)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 304.8 63.5 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4657,7 +2861,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 74.93 0)
+			(at 304.8 63.5 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4667,8 +2871,9 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 57.15 74.93 0)
+		(property "Description" "Backlight, string 1. v1: R22"
+			(at 304.8 63.5 90)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4678,20 +2883,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "2b586e79-8f42-4172-93e6-6ff578864a35")
+			(uuid "bf82c23d-0c7f-4538-9c38-b325ff5f7c62")
+		)
+		(pin "2"
+			(uuid "074203ad-5eb6-4fa8-9622-af423eb86554")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#PWR4cb3002")
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "R1")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 330.2 91.44 0)
+		(lib_id "Device:R")
+		(at 304.8 81.28 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4699,9 +2907,88 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b7f6f82d-486c-4c7c-8e78-70f912b5cd2d")
-		(property "Reference" "#FLG4cb3009"
-			(at 330.2 89.535 0)
+		(uuid "35f86380-6432-4504-be3a-d515a0f56435")
+		(property "Reference" "R2"
+			(at 304.8 78.359 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "150"
+			(at 304.8 84.201 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 304.8 81.28 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 304.8 81.28 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight, string 2. v1: R23"
+			(at 304.8 81.28 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e064a1cd-2a06-4747-a6ac-3a32a2a675a4")
+		)
+		(pin "2"
+			(uuid "02b4dbe1-e6bd-4e3f-8074-33eaf40afa95")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 50.8 241.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3b58c914-3b39-477c-b9a6-3e95ee0c75ef")
+		(property "Reference" "#FLG5d14001"
+			(at 50.8 239.395 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4712,7 +2999,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 330.2 87.63 0)
+			(at 50.8 237.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4722,7 +3009,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 330.2 91.44 0)
+			(at 50.8 241.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4733,7 +3020,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 330.2 91.44 0)
+			(at 50.8 241.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4744,7 +3031,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 330.2 91.44 0)
+			(at 50.8 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4754,50 +3041,52 @@
 			)
 		)
 		(pin "1"
-			(uuid "fb61bbda-bba8-4576-a7f1-07d7487231d7")
+			(uuid "7188fbf6-533d-4910-83be-6410fcf5dbab")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#FLG4cb3009")
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "#FLG5d14001")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 121.92 71.12 0)
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 254 172.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "bba6e5b7-e5a3-4965-bd78-ff30ed1e5077")
-		(property "Reference" "D2"
-			(at 121.92 66.04 0)
+		(uuid "3f4f9d47-b4a6-49b2-8a4e-009c6814e233")
+		(property "Reference" "H1"
+			(at 256.54 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "blue"
-			(at 121.92 76.2 0)
+		(property "Value" "M3"
+			(at 256.54 172.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "OVHD:LED_Rectangular_W3.9mm_H1.8mm_FlatTop"
-			(at 121.92 71.12 0)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
+			(at 254 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4808,7 +3097,83 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 71.12 0)
+			(at 254 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Panel screw into the case insert. v1: H1"
+			(at 254 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "44e20523-bd75-46c5-817a-8af53a246c50")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 152.4 81.28 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "418932ae-74f2-4347-aeea-0aaa1bbf9654")
+		(property "Reference" "D2"
+			(at 154.051 77.089 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "blue"
+			(at 154.051 84.455 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OVHD:LED_Rectangular_W3.9mm_H1.8mm_FlatTop"
+			(at 152.4 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4819,7 +3184,7 @@
 			)
 		)
 		(property "Description" "MASTER SW ON, ANN_LOWER bit 17 (U502, was U7). v1: D130"
-			(at 121.92 71.12 0)
+			(at 152.4 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4830,14 +3195,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "909d3186-349e-4967-92d4-bd69ec3de561")
+			(uuid "dc455e9a-c368-4602-8ed6-4030f9e21faa")
 		)
 		(pin "2"
-			(uuid "1b2ff409-cc1e-462e-a712-38e87f4b8766")
+			(uuid "c9615def-1459-4aa0-8bac-babfc6bc6c8d")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
 					(reference "D2")
 					(unit 1)
 				)
@@ -4846,7 +3211,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 121.92 193.04 0)
+		(at 228.6 81.28 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4854,9 +3219,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "cd468c84-9459-411e-804b-06161bb960ab")
-		(property "Reference" "D8"
-			(at 121.92 187.96 0)
+		(uuid "459d7ab9-a040-4076-9cb1-46e74b403189")
+		(property "Reference" "D7"
+			(at 230.251 77.089 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4866,7 +3231,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 121.92 198.12 0)
+			(at 230.251 84.455 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4876,7 +3241,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
-			(at 121.92 193.04 0)
+			(at 228.6 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4887,7 +3252,244 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 193.04 0)
+			(at 228.6 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight, string 2. v1: D33"
+			(at 228.6 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0468e29c-6c83-4412-879a-29eeced730b1")
+		)
+		(pin "2"
+			(uuid "d52ce25e-ff5c-49a4-ab89-9ce2f5fc83de")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 152.4 63.5 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4f446e83-6bb1-4b88-b9ce-b4ebce94f83d")
+		(property "Reference" "D1"
+			(at 154.051 59.309 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "amber"
+			(at 154.051 66.675 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OVHD:LED_Rectangular_W3.9mm_H1.8mm_FlatTop"
+			(at 152.4 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "MASTER SW FAULT, ANN_UPPER bit 23 (U504, was U5). v1: D178"
+			(at 152.4 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a39f9a3e-10ec-49cd-bc39-aeb4a645fd71")
+		)
+		(pin "2"
+			(uuid "d6fdbaaa-3090-45dd-b38d-a8ae24619cb8")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 190.5 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "611f526a-438d-424e-9875-332d0581d9f0")
+		(property "Reference" "J2"
+			(at 190.5 174.625 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Backlight"
+			(at 190.5 183.515 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical"
+			(at 190.5 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "JST PH. Pin 1 +9V_BL, pin 2 BL_RET, to screw terminal J607 on the mainboard. New on v2"
+			(at 190.5 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6b1d1e89-e20b-45ad-91b7-2b489b9e7636")
+		)
+		(pin "2"
+			(uuid "cbf6374d-f7cb-4958-bd52-89dc252f5812")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 266.7 81.28 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "692a0c73-8a09-4e6f-af52-55b0d306dbc9")
+		(property "Reference" "D8"
+			(at 268.351 77.089 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 268.351 84.455 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+			(at 266.7 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4898,7 +3500,7 @@
 			)
 		)
 		(property "Description" "Backlight, string 2. v1: D34"
-			(at 121.92 193.04 0)
+			(at 266.7 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4909,14 +3511,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "cff969af-414f-4c8e-b28f-6adf63f4ee12")
+			(uuid "f65572c1-5546-4295-bbe4-c55065cb1124")
 		)
 		(pin "2"
-			(uuid "c7623604-6e10-4a4e-a66d-7ef0480e233f")
+			(uuid "043a77d8-ec59-4038-9518-c14712b537ef")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
 					(reference "D8")
 					(unit 1)
 				)
@@ -4924,19 +3526,18 @@
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 330.2 71.12 0)
+		(lib_id "Mechanical:MountingHole")
+		(at 330.2 198.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "d49be34c-7180-4e26-8929-8cb03d60e32e")
-		(property "Reference" "#FLG4cb3008"
-			(at 330.2 69.215 0)
-			(hide yes)
+		(uuid "6b189af7-2d6c-4f5e-80df-f8793a423164")
+		(property "Reference" "H8"
+			(at 330.2 194.945 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4945,8 +3546,8 @@
 				)
 			)
 		)
-		(property "Value" "PWR_FLAG"
-			(at 330.2 67.31 0)
+		(property "Value" "M2.5"
+			(at 330.2 201.295 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4955,8 +3556,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 330.2 71.12 0)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 330.2 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4967,7 +3568,342 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 330.2 71.12 0)
+			(at 330.2 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "As v1. v1: H71"
+			(at 330.2 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "H8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 266.7 63.5 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "76a70203-8799-4a99-b5a9-810d7f0c8884")
+		(property "Reference" "D6"
+			(at 268.351 59.309 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 268.351 66.675 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+			(at 266.7 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight, string 1. v1: D32"
+			(at 266.7 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a7b9f131-9310-446e-a0e2-baeea4bfb5e1")
+		)
+		(pin "2"
+			(uuid "2ade0a38-41c4-4d9d-89a9-8536be1fc621")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 152.4 99.06 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7cfd71e1-5379-4961-b36e-80f84e66a122")
+		(property "Reference" "D3"
+			(at 154.051 94.869 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "green"
+			(at 154.051 102.235 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OVHD:LED_Rectangular_W3.9mm_H1.8mm_FlatTop"
+			(at 152.4 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "START AVAIL, ANN_UPPER bit 24 (U504, was U5). v1: D128"
+			(at 152.4 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2ff1faed-b0db-4a75-b005-ac96c1409610")
+		)
+		(pin "2"
+			(uuid "e90a765f-aed4-4ac6-8645-d233f44420f0")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x05_Odd_Even")
+		(at 76.2 177.8 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8411fb14-d24a-476d-b54b-ae4071370511")
+		(property "Reference" "J1"
+			(at 77.47 169.545 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "APU ribbon"
+			(at 77.47 186.055 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical_SMD"
+			(at 76.2 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Shrouded, keyed. Straight 10-way ribbon to J707 on the mainboard, pin 1 to pin 1. New on v2"
+			(at 76.2 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "681f748c-0c7a-4326-b617-33841991baec")
+		)
+		(pin "2"
+			(uuid "5a05d0ea-70ce-4ca6-b99c-eacf37d7d0f5")
+		)
+		(pin "3"
+			(uuid "68bceb89-488d-4a50-88da-c2e5152dfc80")
+		)
+		(pin "4"
+			(uuid "9f3cba1a-f18f-445b-bb6d-f33436624b5e")
+		)
+		(pin "5"
+			(uuid "3639eb2c-0c21-488c-8256-114fbc0c8697")
+		)
+		(pin "6"
+			(uuid "a63d8183-91b0-4022-8a44-4563fee894bd")
+		)
+		(pin "7"
+			(uuid "7be3e775-40fe-451f-a67c-eb516f796dc6")
+		)
+		(pin "8"
+			(uuid "cb816a81-d4b3-4d78-8680-ad44b73c515c")
+		)
+		(pin "9"
+			(uuid "938cc60a-8fa8-4d12-8220-643f463be864")
+		)
+		(pin "10"
+			(uuid "6fb2b196-2ede-451e-85b5-8866d9b3bc14")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 50.8 241.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8bf26161-8d18-400f-90a4-607a274c44ac")
+		(property "Reference" "#PWR5d14002"
+			(at 50.8 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 50.8 245.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 241.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4978,7 +3914,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 330.2 71.12 0)
+			(at 50.8 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4988,30 +3924,30 @@
 			)
 		)
 		(pin "1"
-			(uuid "64657c74-1b30-49dd-890e-68bcc5c6830a")
+			(uuid "d312e0f2-b4c7-40f9-8ffb-8096c0a09675")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "#FLG4cb3008")
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "#PWR5d14002")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 335.28 172.72 0)
+		(lib_id "Device:LED")
+		(at 228.6 99.06 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "d7dbf6e6-e4fe-4023-ba5b-618e3b5bb155")
-		(property "Reference" "H7"
-			(at 335.28 167.64 0)
+		(uuid "8e145149-bf9f-478e-8390-8ddef68f507a")
+		(property "Reference" "D9"
+			(at 230.251 94.869 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5020,8 +3956,8 @@
 				)
 			)
 		)
-		(property "Value" "M2.5"
-			(at 335.28 177.8 0)
+		(property "Value" "LED"
+			(at 230.251 102.235 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5030,8 +3966,8 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 335.28 172.72 0)
+		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+			(at 228.6 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5042,7 +3978,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 335.28 172.72 0)
+			(at 228.6 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5052,8 +3988,8 @@
 				)
 			)
 		)
-		(property "Description" "As v1. v1: H66"
-			(at 335.28 172.72 0)
+		(property "Description" "Backlight, single LED. On v1 it was paired with D149, now on SIGNS. v1: D148"
+			(at 228.6 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5062,19 +3998,25 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(pin "1"
+			(uuid "5b15e964-198d-4bae-ac2a-ca120337aa41")
+		)
+		(pin "2"
+			(uuid "29ce9a44-0790-42f1-9bec-e104960554a8")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
-					(reference "H7")
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "D9")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 121.92 111.76 0)
+		(lib_id "Device:R")
+		(at 266.7 99.06 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5082,9 +4024,164 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "fed892e0-954e-4cd3-89b7-8d2f2ec9c782")
+		(uuid "9c11d0b0-6ded-42c8-a27a-07696baf93d8")
+		(property "Reference" "R3"
+			(at 266.7 96.139 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "470"
+			(at 266.7 101.981 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 266.7 99.06 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.7 99.06 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Single-LED string: R = V / (2 I) + 75 ohm, same current as a pair of LEDs with 150 ohm. New on v2"
+			(at 266.7 99.06 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "57146ffc-fa13-4cee-b89d-cb1a10c637d3")
+		)
+		(pin "2"
+			(uuid "864f6d13-8a6f-4c93-9c23-57e6245afa71")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 203.2 241.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9e1a339d-6642-432a-b94f-7a2ad2fb4934")
+		(property "Reference" "#FLG5d14005"
+			(at 203.2 239.395 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 203.2 237.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 203.2 241.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7ebce31d-bd57-4f54-8f6b-b46bed3e1b50")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "#FLG5d14005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 152.4 116.84 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a4f47fa0-8bd3-4f17-8d7c-4013ca3723c6")
 		(property "Reference" "D4"
-			(at 121.92 106.68 0)
+			(at 154.051 112.649 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5094,7 +4191,7 @@
 			)
 		)
 		(property "Value" "blue"
-			(at 121.92 116.84 0)
+			(at 154.051 120.015 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5104,7 +4201,7 @@
 			)
 		)
 		(property "Footprint" "OVHD:LED_Rectangular_W3.9mm_H1.8mm_FlatTop"
-			(at 121.92 111.76 0)
+			(at 152.4 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5115,7 +4212,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 111.76 0)
+			(at 152.4 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5126,7 +4223,7 @@
 			)
 		)
 		(property "Description" "START ON, ANN_LOWER bit 24 (U502, was U7). v1: D4"
-			(at 121.92 111.76 0)
+			(at 152.4 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5137,15 +4234,727 @@
 			)
 		)
 		(pin "1"
-			(uuid "b8dd8693-087a-4710-93e3-6d28f6ce5928")
+			(uuid "c33e5756-0d48-4fcb-b825-49e86fd797f6")
 		)
 		(pin "2"
-			(uuid "85f2b153-5acd-4ae7-9c52-753d593e7d82")
+			(uuid "8c001786-8b6b-4c4f-8d6b-482a7ed510fa")
 		)
 		(instances
 			(project "Section_APU"
-				(path "/5cc1b527-f8a3-4262-a97f-ae40be974cb3"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
 					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OVHD:Korry_PS-7054DVB-6PN")
+		(at 50.8 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a51624f4-c489-4e7a-9f1f-8b81e7d146af")
+		(property "Reference" "SW2"
+			(at 50.8 99.695 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "APU START"
+			(at 50.8 111.125 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OVHD:G-Switch_PS-7054DVB-6PN"
+			(at 50.8 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "D29 on the ATmega. v1: SW2"
+			(at 50.8 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ece2635b-ebfb-4193-b03e-13ef85072df1")
+		)
+		(pin "2"
+			(uuid "bc4bdb1a-7ea5-452f-9cf7-a4ce001b30b4")
+		)
+		(pin "3"
+			(uuid "fdb01f28-c2cf-4333-8eaa-4fecd147a251")
+		)
+		(pin "4"
+			(uuid "e9cbdfe0-68ad-4d4e-8dd0-892008b3b093")
+		)
+		(pin "5"
+			(uuid "8cb93d50-4f74-4cdb-8045-5221a00ca51d")
+		)
+		(pin "6"
+			(uuid "ef25a266-c88c-4b64-9e35-3a1112f96535")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 330.2 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a65ec8b9-48cd-48e2-a3eb-0d06f3dd37b7")
+		(property "Reference" "H4"
+			(at 332.74 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M3"
+			(at 332.74 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
+			(at 330.2 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Panel screw into the case insert. v1: H4"
+			(at 330.2 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "856650e4-8808-4371-a226-a6fd4421a710")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "OVHD:Korry_PS-7054DVB-6PN")
+		(at 50.8 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b576846e-6a31-4cdc-9492-3adeb32fa1cc")
+		(property "Reference" "SW1"
+			(at 50.8 61.595 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "APU MASTER SW"
+			(at 50.8 73.025 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "OVHD:G-Switch_PS-7054DVB-6PN"
+			(at 50.8 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "D28 on the ATmega. v1: SW1"
+			(at 50.8 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f344db7c-04db-4141-9fed-b1906095e21f")
+		)
+		(pin "2"
+			(uuid "16a87f0f-b218-41aa-9e1a-681d5b737a49")
+		)
+		(pin "3"
+			(uuid "87153aa8-9b32-438f-97ab-0bc735bb5f8a")
+		)
+		(pin "4"
+			(uuid "c9df604f-0791-46ea-af1d-5f1421c96302")
+		)
+		(pin "5"
+			(uuid "ad9368f1-57fd-4d9f-bd61-15394edce30e")
+		)
+		(pin "6"
+			(uuid "ffc2afff-d6fc-4184-9094-30c35b2a92ba")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 228.6 63.5 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b61cce62-9fbd-4e33-be09-16d46dd78cbc")
+		(property "Reference" "D5"
+			(at 230.251 59.309 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 230.251 66.675 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+			(at 228.6 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Backlight, string 1. v1: D31"
+			(at 228.6 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b10da6c0-b337-4b76-9f7d-685970b9b6f9")
+		)
+		(pin "2"
+			(uuid "5d17506b-984b-4d73-82cb-0e3c98125587")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 304.8 198.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bbaa5c51-5c6d-462f-a457-9f16288d2f96")
+		(property "Reference" "H7"
+			(at 304.8 194.945 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2.5"
+			(at 304.8 201.295 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 304.8 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 304.8 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "As v1. v1: H66"
+			(at 304.8 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "H7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 254 198.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c54e4d4e-24da-4531-812e-0280450b0f4c")
+		(property "Reference" "H5"
+			(at 254 194.945 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2.5"
+			(at 254 201.295 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 254 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "As v1. v1: H70"
+			(at 254 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "H5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 279.4 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c77bab41-39a8-48b5-b234-b0daabda3ef7")
+		(property "Reference" "H2"
+			(at 281.94 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M3"
+			(at 281.94 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
+			(at 279.4 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 279.4 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Panel screw into the case insert. v1: H2"
+			(at 279.4 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b945c51c-164e-482d-a309-6e4386a39599")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 279.4 198.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e599c8b4-55dc-4f33-9c49-fa28108fb1d3")
+		(property "Reference" "H6"
+			(at 279.4 194.945 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2.5"
+			(at 279.4 201.295 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 279.4 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 279.4 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "As v1. v1: H65"
+			(at 279.4 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "H6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 101.6 241.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f010b353-170e-4f6c-8189-736c8828856c")
+		(property "Reference" "#FLG5d14003"
+			(at 101.6 239.395 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 101.6 237.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 101.6 241.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0d0573f5-ba9c-4c0d-827c-164edc8c0168")
+		)
+		(instances
+			(project "Section_APU"
+				(path "/91be6063-6cdd-4562-bc98-caa698095d14"
+					(reference "#FLG5d14003")
 					(unit 1)
 				)
 			)

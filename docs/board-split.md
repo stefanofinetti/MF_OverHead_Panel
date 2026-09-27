@@ -344,6 +344,10 @@ the ribbon, cathodes back down the ribbon to their TLC5927 output.
 * **Parts:** everything from v1 stays at its v1 coordinates, and the build
   script checks every pad against the v1 board. New parts (the IDC header,
   the JST PH and any new resistor) go on the back.
+* **Sheet:** each board is moved by a whole number of millimetres onto the
+  middle of its A4 sheet, and its grid origin is set to where v1's (0, 0)
+  now lies. With coordinates relative to the grid origin, KiCad shows the v1
+  positions. The offset is in the title block (APU: v2 = v1 + (−54, −80) mm).
 * **Connectors:** SMD, on the back, on the edge nearest the mainboard:
   `IDC-Header_2xNN_P2.54mm_Vertical_SMD` and
   `JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical` (pin 1 `+9V_BL`, pin 2
