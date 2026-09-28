@@ -1951,6 +1951,17 @@
 			(uuid "c1fa1a6a-e7e1-45f4-a5c4-0a403e0b5db9")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+			(offset
+				(xyz -0.6 5.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 180 0 0)
+			)
+		)
 	)
 	(footprint "MountingHole:MountingHole_2.7mm_M2.5"
 		(layer "F.Cu")
@@ -2442,6 +2453,17 @@
 			(uuid "4f81ddb8-e4f9-40d0-81da-aa9acdf569a0")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+			(offset
+				(xyz -0.6 5.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 180 0 0)
+			)
+		)
 	)
 	(footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
 		(layer "F.Cu")
@@ -4949,6 +4971,17 @@
 			(uuid "29b3124e-a175-4ae6-9761-36abf9285ef7")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+			(offset
+				(xyz -0.6 5.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 180 0 0)
+			)
+		)
 	)
 	(footprint "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
 		(layer "F.Cu")
@@ -6852,9 +6885,9 @@
 			(uuid "26b1ec5b-8550-4266-a3d1-8c38ef10a98a")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical.step"
+		(model "${KIPRJMOD}/../Libraries/3dmodels/B2B-PH-SM4-TB.STEP"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 0 2.5)
 			)
 			(scale
 				(xyz 1 1 1)

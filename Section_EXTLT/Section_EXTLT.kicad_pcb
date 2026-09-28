@@ -1307,6 +1307,17 @@
 			(uuid "5627f3e5-7977-45d2-86c3-b5f08d5f2850")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_100SPxT1B4M2xE.stp"
+			(offset
+				(xyz 4.7 0 -25)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
 		(layer "F.Cu")
@@ -2313,6 +2324,17 @@
 			(uuid "57c4f6fc-4e39-4800-ac56-2c3e3de698df")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_100SPxT1B4M2xE.stp"
+			(offset
+				(xyz 4.7 0 -25)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "OVHD:Toggle_Switch_100SP1T1B4M2QE"
 		(layer "F.Cu")
@@ -2719,6 +2741,17 @@
 			(uuid "9a15cbfc-d50e-43b6-b20c-f124da96b038")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_100SPxT1B4M2xE.stp"
+			(offset
+				(xyz 4.7 0 -25)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 		(layer "F.Cu")
@@ -6015,6 +6048,17 @@
 			(uuid "2979a46d-5b7f-4a1b-be44-cfea8e3496ba")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_100SPxT1B4M2xE.stp"
+			(offset
+				(xyz 4.7 0 -25)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
 		(layer "F.Cu")
@@ -7070,6 +7114,17 @@
 			(uuid "47b52987-0560-4e57-8fdc-f3425d2c01d2")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_100SPxT1B4M2xE.stp"
+			(offset
+				(xyz 4.7 0 -25)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
 		(layer "F.Cu")
@@ -7685,6 +7740,17 @@
 			(uuid "ed9e3b90-3bb8-4880-b55a-9435991d5c70")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_100SPxT1B4M2xE.stp"
+			(offset
+				(xyz 4.7 0 -25)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 		(layer "F.Cu")
@@ -10394,6 +10460,17 @@
 			(uuid "c6bbfdbd-91bd-4763-8326-97c86d80423f")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_100SPxT1B4M2xE.stp"
+			(offset
+				(xyz 4.7 0 -25)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad_TopBottom"
 		(layer "F.Cu")
@@ -12294,6 +12371,17 @@
 			(uuid "9b4785c8-0612-4c51-a58b-ca003626c665")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_100SPxT1B4M2xE.stp"
+			(offset
+				(xyz 4.7 0 -25)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 		(layer "F.Cu")
@@ -13840,9 +13928,9 @@
 			(uuid "79223c36-cc06-4a45-a8ff-c04b8007dba6")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical.step"
+		(model "${KIPRJMOD}/../Libraries/3dmodels/B2B-PH-SM4-TB.STEP"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 0 2.5)
 			)
 			(scale
 				(xyz 1 1 1)

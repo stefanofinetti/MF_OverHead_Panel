@@ -2576,6 +2576,17 @@
 			(uuid "cd47f1c8-aaa6-4ed3-8dd8-7697d4a95149")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+			(offset
+				(xyz -0.6 5.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 180 0 0)
+			)
+		)
 	)
 	(footprint "OVHD:LED_Rectangular_W3.9mm_H1.8mm_FlatTop"
 		(layer "F.Cu")
@@ -5826,6 +5837,17 @@
 			(uuid "a2ab13cd-81c9-4c00-b50d-87e7ef84689b")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+			(offset
+				(xyz -0.6 5.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 180 0 0)
+			)
+		)
 	)
 	(footprint "OVHD:G-Switch_PS-7054DVB-6PN"
 		(layer "F.Cu")
@@ -5987,6 +6009,17 @@
 			(uuid "b2b166fa-6074-4512-8721-61d5bfdf0c5a")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+			(offset
+				(xyz -0.6 5.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 180 0 0)
+			)
+		)
 	)
 	(footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
 		(layer "F.Cu")
@@ -6368,6 +6401,17 @@
 			(uuid "2c2f38e3-5a1e-459c-a210-702dac5dbf78")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+			(offset
+				(xyz -0.6 5.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 180 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 		(layer "B.Cu")
@@ -7009,9 +7053,9 @@
 			(uuid "607a66ad-7456-48ee-9515-2dfba4e2cc31")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical.step"
+		(model "${KIPRJMOD}/../Libraries/3dmodels/B2B-PH-SM4-TB.STEP"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 0 2.5)
 			)
 			(scale
 				(xyz 1 1 1)

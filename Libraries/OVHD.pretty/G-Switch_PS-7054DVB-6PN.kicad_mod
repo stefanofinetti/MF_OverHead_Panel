@@ -139,4 +139,15 @@
 		(uuid "6c9e4efc-f169-4b60-848d-af1b73cf5553")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+		(offset
+			(xyz -0.6 5.5 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 180 0 0)
+		)
+	)
 )
