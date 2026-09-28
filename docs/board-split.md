@@ -92,7 +92,13 @@ conductor against the 400 pF I2C allows, so anything up to 40 cm is fine.
 
 ## The mainboard
 
-About **150 × 90 mm**, 2 layers, on the floor of the lower-left case part.
+**137 × 89 mm**, 2 layers, on the floor of the lower-left case part, between
+the four pillars that carry the section boards. Measured on
+`OVHD_PANEL_LOWER_LEFT_CASE_BLACK.stl`, the floor there is free over
+141 × 93.5 mm. That leaves 2 mm all round and no change to the pillars. Four
+M3 holes, 4 mm from the corners, for bosses with heat-set inserts in the
+reprinted floor. With today's case there are 27 mm from the floor to the
+underside of the section boards; the reprint will raise that to 30–35 mm.
 
 ### What moves onto it
 
@@ -302,15 +308,56 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
 ### Connectors on the mainboard
 
 * 8 shrouded IDC headers: 10, 14, 14, 16, 16, 20, 20 and 26 pins, 136 in all
-* 9 screw terminals, 2-pole, 5.08 mm: one for the 9 V in, eight for the
-  backlight (pin 1 `+9V_BL`, pin 2 `BL_RET`, the switched return)
+* 9 screw terminals, 2-pole: one 5.08 mm for the 9 V in, eight 3.5 mm
+  (Phoenix PT 1,5/2-3,5) for the backlight (pin 1 `+9V_BL`, pin 2 `BL_RET`,
+  the switched return)
 * USB-B for the extension
 * Optional, if space allows: an unfitted SIP pull-up network next to each
   header, to fit only if a long ribbon ever shows bouncing inputs
 
-150 × 90 mm has about 480 mm of edge. The headers, terminals and USB-B take
-about 340 mm of it. That fits, but tightly. If it does not fit with generous
-spacing, group the backlight terminals in fours, or make the board bigger.
+### Layout
+
+In v1 coordinates the board sits at x 32–169, y 134.5–223.5, under EXT LT
+and the lower edge of GPWS. The layout is drawn in that frame, so each part
+of it can be checked against the section boards above.
+
+* **Left edge, towards the case wall:** the 9 V terminal, the power input
+  and the MIC29302 at the top; USB-B, CH340G, TPS2115A, ISP header and JP1
+  below.
+* **Top, on the GPWS side:** the eight ribbon headers in three rows, pin 1
+  on the left, each labelled with the board it goes to.
+* **Middle:** the ATmega2560 with its crystal, the PCA9548A with the 3.3 V
+  regulator and the address switch, and the four TLC5927 in a 2 × 2 block.
+* **Front edge:** the eight backlight terminals, labelled, with + and −,
+  wire entry towards the edge; the IRLIZ44N lying flat beside them.
+* **Bottom side:** the small 1206 parts of the dense groups, each under its
+  chip: MCU decoupling, TLC5927 R-EXT and capacitors, CLK/LE/SDI series
+  resistors, I2C pull-ups, CH340G parts, supply-switch resistors. Everything
+  else is on top.
+* **Overhead clearance:** EXT LT's J1 and J2 hang over the mainboard. They
+  sit above the TLC5927 block, where nothing is taller than a SOIC, and not
+  above any ribbon header, where the two plugs would meet.
+* **Silkscreen:** every part has its value or part number on the side it is
+  on, the TLC5927 are marked with their LED colour, and the terminals and
+  headers with their board. The texts are placed by script, clear of pads,
+  of each other and of the edge.
+* **Copper:** GND poured on both layers. Track widths:
+  * 0.8 mm for `VIN_RAW`, `+9V`, `+9V_BL`, `BL_RET`;
+  * 0.5 mm for `+9V_REG` and `+5V_LED`;
+  * 0.35 mm for `5V_EXT` and `VBUS`, the widest that enters the TPS2115A's
+    0.65 mm pins (about 1 A);
+  * 0.25 mm with 0.2 mm clearance for the rest. Some escapes between TQFP and
+    SOIC pins are 0.19 mm; the minimum is set to 0.15 mm, within JLCPCB's
+    0.127 mm.
+
+**Status:** `Mainboard/OVHD_Mainboard.kicad_pcb`.
+* 126 parts, 68 of them on the bottom.
+* Routed with Freerouting: 3813 track segments, 367 vias.
+* DRC with every warning on: 0, nothing unconnected, no schematic-parity
+  issues.
+* Every pin of the eight ribbon headers and the eight backlight terminals
+  was checked against J1 and J2 of its section board: all 152 carry the
+  same net on the same pin number.
 
 ### Schematic status
 
