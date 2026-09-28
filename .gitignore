@@ -1,3 +1,8 @@
-# KiCad backups of the v2 boards stay local
-Mainboard/*-backups/
-Section_*/*-backups/
+# KiCad: backups, autosaves, local history and lock files stay local
+*-backups/
+.history/
+_autosave-*
+~*.lck
+# FreeCAD sources and their backups stay out of the repo
+*.FCStd
+*.FCBak
