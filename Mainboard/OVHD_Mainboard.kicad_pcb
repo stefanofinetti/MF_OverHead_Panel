@@ -7877,7 +7877,7 @@
 			(uuid "a0bc0be3-9cb8-4c22-8342-4bba4dbbcacf")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_THT.3dshapes/TO-220F-3_Horizontal_TabDown.step"
+		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_THT.3dshapes/TO-220-3_Horizontal_TabDown.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -8240,7 +8240,7 @@
 			(uuid "552d3f79-01e4-40ca-8e5d-fa42bf117e20")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_EuroQuartz_MQ-4Pin_7.0x5.0mm.step"
+		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_WE_12SMX-4Pin_7.0x5.0mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9354,7 +9354,7 @@
 			(uuid "7acc24b0-c6ae-44a2-b472-1154531aa62e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_EuroQuartz_MQ-4Pin_7.0x5.0mm.step"
+		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_WE_12SMX-4Pin_7.0x5.0mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11813,7 +11813,7 @@
 			(uuid "40d644d4-088d-4eab-a6d9-572774899a64")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_Bourns_MF-RHT200.step"
+		(model "${KIPRJMOD}/../Libraries/3dmodels/Fuse_Bourns_MF-RHT200.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -15066,15 +15066,15 @@
 			(uuid "4b68e2bd-b591-4dab-8574-3ceaf680bf91")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_USB.3dshapes/USB_B_OST_USB-B1HSxx_Horizontal.step"
+		(model "${KIPRJMOD}/../Libraries/3dmodels/USB_B_SameSky_UJ2-BH-1-TH.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 13.9 -1.2 0.5)
 			)
 			(scale
-				(xyz 1 1 1)
+				(xyz 0.95 0.95 0.95)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -90 0 -90)
 			)
 		)
 	)
@@ -21361,7 +21361,7 @@
 			(uuid "560a3a2d-7b47-4bf6-b434-4c80e5f0aaf8")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_Bourns_MF-RHT200.step"
+		(model "${KIPRJMOD}/../Libraries/3dmodels/Fuse_Bourns_MF-RHT200.step"
 			(offset
 				(xyz 0 0 0)
 			)
