@@ -7,6 +7,8 @@ light and display, and the firmware for its three OLED displays.
 The panel covers **ADIRS**, **AIR COND**, **ANTI ICE**, **APU**, **ELEC**,
 **EXT LT**, **FUEL**, **GPWS** and **SIGNS**.
 
+![The overhead panel as printed, from the 3D model](docs/images/overhead_panel.png)
+
 ## v2 in short
 
 v1 is one four-layer board, 313 × 206 mm, behind the whole panel. It works,
@@ -84,6 +86,8 @@ ribbon.
 
 137 × 89 mm, two layers, GND poured on both. The chips and connectors are on
 top, and the small 1206 parts of the dense groups are underneath their chip.
+
+![The v2 mainboard, rendered by KiCad](Mainboard/images/mainboard_3d.png)
 
 * **Microcontroller:** ATmega2560 with a CH340G for USB. MobiFlight sees it
   as a Mega.
@@ -174,6 +178,15 @@ with these changes:
 * **NO SMOKING:** v1 read it on the toggle's other contact, and the
   MobiFlight row was inverted to make up for it. v2 reads it like every
   other toggle, so **remove the inversion** on that row.
+
+## Known issues
+
+* **The ADIRS panel labels its rotaries in the wrong order.** The printed
+  panel reads ADR 1, ADR 2, ADR 3 from left to right. On the A320 the order
+  is IR 1, IR 3, IR 2, and that is how the board is wired, on v1 and v2
+  alike: the middle rotary is IR 3 and the right one is IR 2. The `.mfmc`
+  follows the board. Only the printed labels are wrong, so read the middle
+  knob as 3 and the right one as 2 until the panel is reprinted.
 
 ## Software
 
