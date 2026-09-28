@@ -1,7 +1,9 @@
 # Splitting the mainboard — architecture
 
-Status: **design on paper**. Nothing in `Kicad Files/` has been changed. This
-is the plan to review before a new KiCad project is started.
+Status: **drawn and routed** (September 2026). The mainboard and the eight
+section boards are in their own KiCad projects, each with ERC, DRC and
+schematic parity clean. Nothing has been ordered yet, and the firmware
+changes are still to do. `Kicad Files/` is v1, unchanged.
 
 ## Why
 
@@ -111,7 +113,7 @@ Everything on today's board that belongs to no panel:
   ISP programmer powers the MCU alone while the bootloader is burned.
 * MIC29302, AMS1117
 * PCA9548A with the three-way address DIP switch (today under ADIRS)
-* The four TLC5927 (today spread over several panels; the schematic calls them DM13A)
+* The four TLC5927 (today spread over several panels; the v1 schematic calls them DM13A)
 
 ### Power
 
@@ -380,7 +382,7 @@ Parts chosen while drawing, open to review:
 | Anode and TLC5927 supply switches | AO3401A (SOT-23) driven by BS170 (TO-92), 10k / 100R / 100k |
 | Backlight dimmer | IRLIZ44N, 100R gate, 10k pull-down |
 | Annunciator drivers | TLC5927IDWR, DW24-M footprint, R-EXT 1k, 1k series on CLK/LE/SDI |
-| Ribbons | shrouded IDC headers 2x5 to 2x13; backlight on 5.08 mm 2-pole terminals |
+| Ribbons | shrouded IDC headers 2x5 to 2x13; backlight on 3.5 mm 2-pole terminals (Phoenix PT 1,5/2-3,5) |
 
 ## Section boards
 
@@ -530,7 +532,7 @@ left to right, and the `.mfmc` names follow the aircraft.
 | 23 | RT 2 FAULT — U16 | | 24 | +5V_LED |
 | 25 | +5V_LED | | 26 | GND |
 
-Two anode pins: 14 LEDs are about 210 mA in a light test. The PCB labels the
+Two anode pins: 14 LEDs at ~19 mA are about 270 mA in a light test. The PCB labels the
 centre-tank pumps `L_XFER` and `R_XFER`, and the `.mfmc` and the project
 call them CTR TK PUMP 1 and 2. They are the same switches.
 
@@ -626,9 +628,10 @@ the NO SMOKING row.** The three-position toggles keep both contacts on the
 same pins as v1, contact 1 up and contact 3 down.
 
 **Toggle parts in the BOM.** The v1 schematic gives all eleven toggles the
-E-Switch MPN 100SP1T1B4M2QE, which is not what is fitted. The v2 BOM lists
-them as generic three-terminal PCB-pin lever toggles, from AliExpress and
-fitted by hand, not orderable from JLCPCB:
+E-Switch MPN 100SP1T1B4M2QE, which is not what is fitted. The v2 schematic
+gives them no part number; only the footprint name, kept from v1, still
+carries the E-Switch one. They are generic three-terminal PCB-pin lever
+toggles, from AliExpress and fitted by hand, not orderable from JLCPCB:
 
 * ON-OFF-ON (5): LDG L, LDG R, NOSE, NAV & LOGO, EMER EXIT LT
 * ON-OFF (6): WING, BEACON, STROBE, RWY TURN, SEAT BELTS, NO SMOKING
