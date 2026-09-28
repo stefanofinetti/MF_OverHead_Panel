@@ -5,6 +5,18 @@ The v2 board under the ELEC panel. It carries the panel's switches, annunciator 
 * **PCB:** 177.5 × 39.5 mm, 2 layers, 1.6 mm. Every v1 hole is kept.
 * **Status:** routed with Freerouting. ERC, DRC and schematic parity are clean. Not yet ordered.
 
+![ELEC board, 3D view](images/elec_3d.png)
+
+**Top**, the panel side:
+
+![ELEC, top](images/elec_top.png)
+
+**Bottom**, with the connectors:
+
+![ELEC, bottom](images/elec_bottom.png)
+
+Rendered by KiCad from the board file. The bottom is seen from below, so it is mirrored against the top.
+
 ## Connectors
 
 Both are new on v2 and sit on the **back**, so nothing new stands proud of the front.

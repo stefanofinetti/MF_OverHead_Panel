@@ -5,6 +5,18 @@ The v2 board under the AIR COND panel. It carries the panel's switches, annuncia
 * **PCB:** 150.5 × 39 mm, 2 layers, 1.6 mm. Every v1 hole is kept.
 * **Status:** routed with Freerouting. ERC, DRC and schematic parity are clean. Not yet ordered.
 
+![AIR COND board, 3D view](images/aircond_3d.png)
+
+**Top**, the panel side:
+
+![AIR COND, top](images/aircond_top.png)
+
+**Bottom**, with the connectors:
+
+![AIR COND, bottom](images/aircond_bottom.png)
+
+Rendered by KiCad from the board file. The bottom is seen from below, so it is mirrored against the top.
+
 ## Connectors
 
 Both are new on v2 and sit on the **back**, so nothing new stands proud of the front.

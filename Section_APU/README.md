@@ -5,6 +5,14 @@ The v2 board under the APU panel. It carries the panel's switches, annunciator L
 * **PCB:** 39 × 79.5 mm, 2 layers, 1.6 mm. Every v1 hole is kept.
 * **Status:** routed with Freerouting. ERC, DRC and schematic parity are clean. Not yet ordered.
 
+![APU board, 3D view](images/apu_3d.png)
+
+| Top: the panel side | Bottom: the connectors |
+|---|---|
+| ![APU, top](images/apu_top.png) | ![APU, bottom](images/apu_bottom.png) |
+
+Rendered by KiCad from the board file. The bottom is seen from below, so it is mirrored against the top.
+
 ## Connectors
 
 Both are new on v2 and sit on the **back**, so nothing new stands proud of the front.

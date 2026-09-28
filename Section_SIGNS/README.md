@@ -5,6 +5,18 @@ The v2 board under the SIGNS and ANTI ICE (`OVHD_PANEL_SIGNS`) panel. It carries
 * **PCB:** 108.5 × 79.5 mm, 2 layers, 1.6 mm. Every v1 hole is kept.
 * **Status:** routed with Freerouting. ERC, DRC and schematic parity are clean. Not yet ordered.
 
+![SIGNS board, 3D view](images/signs_3d.png)
+
+**Top**, the panel side:
+
+![SIGNS, top](images/signs_top.png)
+
+**Bottom**, with the connectors:
+
+![SIGNS, bottom](images/signs_bottom.png)
+
+Rendered by KiCad from the board file. The bottom is seen from below, so it is mirrored against the top.
+
 ## Connectors
 
 Both are new on v2 and sit on the **back**, so nothing new stands proud of the front.

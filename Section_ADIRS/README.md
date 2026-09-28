@@ -5,6 +5,18 @@ The v2 board under the ADIRS panel. It carries the panel's switches, annunciator
 * **PCB:** 132.5 × 81.5 mm, 2 layers, 1.6 mm. Every v1 hole is kept.
 * **Status:** routed with Freerouting. ERC, DRC and schematic parity are clean. Not yet ordered.
 
+![ADIRS board, 3D view](images/adirs_3d.png)
+
+**Top**, the panel side:
+
+![ADIRS, top](images/adirs_top.png)
+
+**Bottom**, with the connectors:
+
+![ADIRS, bottom](images/adirs_bottom.png)
+
+Rendered by KiCad from the board file. The bottom is seen from below, so it is mirrored against the top. The ADR rotaries have no 3D model yet and show as pads only.
+
 ## Connectors
 
 Both are new on v2 and sit on the **back**, so nothing new stands proud of the front.

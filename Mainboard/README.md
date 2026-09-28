@@ -13,6 +13,19 @@ and backlight wires. The reasoning behind every choice is in
 * **Status:** routed with Freerouting. ERC, DRC (every warning on) and
   schematic parity are clean. Not yet ordered.
 
+![Mainboard, 3D view](images/mainboard_3d.png)
+
+**Top**, with the chips and connectors:
+
+![Mainboard, top](images/mainboard_top.png)
+
+**Bottom**, with the small 1206 parts under their chips:
+
+![Mainboard, bottom](images/mainboard_bottom.png)
+
+Rendered by KiCad from the board file. The bottom is seen from below, so it
+is mirrored against the top.
+
 ## Schematic
 
 | Sheet | What is on it |
