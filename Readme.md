@@ -1,6 +1,6 @@
 # Overhead Panel
 
-A compact Airbus A319/320/321/330 overhead panel for MobiFlight: 3D-printed
+A compact Airbus A319/320/321 overhead panel for MobiFlight: 3D-printed
 panels and Korry-style push buttons, the boards that carry every switch,
 light and display, and the firmware for its three OLED displays.
 
