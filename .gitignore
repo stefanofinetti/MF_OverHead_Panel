@@ -1,0 +1,3 @@
+# KiCad backups of the v2 boards stay local
+Mainboard/*-backups/
+Section_*/*-backups/
