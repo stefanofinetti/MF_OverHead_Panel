@@ -86,10 +86,10 @@ has its latch on D27, clock on D26 and data on D25, as on v1.
 | D45 | Q501/Q502, the annunciator anode rail `+5V_LED` | annunciators dark |
 | D46 | Q503/Q504, the TLC5927 supply | TLC5927 unpowered |
 
-D44 and D45 are plain MobiFlight PWM outputs. D46 belongs to the `SF_OVHD`
-custom device, which powers the chips up after the board has started.
-**That firmware change is not written yet**, so for now the annunciators
-stay dark on this board.
+D44 and D45 are plain MobiFlight PWM outputs, `BL_PWM` and `ANN_PWM` in the
+`.mfmc`. D46 belongs to the `SF_OVHD` custom device, from firmware 1.2.0. It
+powers the chips up after the board has started, and again on message 5. See
+[the firmware readme](../SF_OVHD/README.md#annunciator-power-up-d46).
 
 ## Assembly notes
 

@@ -6,7 +6,7 @@
       "Type": "SF_OVHD",
       "Author": "Stefano Finetti",
       "URL": "https://github.com/stefanofinetti/MF_OverHead_Panel",
-      "Version" : "1.0.5"
+      "Version" : "1.2.0"
     },
     "Config": {
       "Pins": [],
@@ -43,6 +43,11 @@
         "id": 4,
         "label": "Brightness",
         "description": "0-100, the contrast of all three displays. Until it is first sent they keep their default"
+      },
+      {
+        "id": 5,
+        "label": "Reset annunciators",
+        "description": "Any value: the four TLC5927 lose their supply for 0.3 s (D46), then the annunciators are written again"
       }
 
     ]

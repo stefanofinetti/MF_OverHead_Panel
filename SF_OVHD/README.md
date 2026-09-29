@@ -1,13 +1,19 @@
 # SF OVHD — firmware
 
 MobiFlight firmware for the overhead panel mainboard. It is standard
-MobiFlight for the ATmega2560, plus one custom device, `SF_OVHD`, that
-drives the three OLED displays: the BATT 1 and BATT 2 voltmeters and the
-ADIRS display.
+MobiFlight for the ATmega2560, plus one custom device, `SF_OVHD`. The custom
+device does two things:
+
+* it drives the three OLED displays: the BATT 1 and BATT 2 voltmeters and
+  the ADIRS display;
+* on the v2 mainboard, it powers up the four TLC5927 annunciator drivers,
+  through D46, once the board has started. See
+  [Annunciator power-up](#annunciator-power-up-d46).
 
 The 49 switches and the annunciator lights do not go through the custom
 device. They are plain MobiFlight buttons and output shifters, configured in
-the Connector like on any other board.
+the Connector like on any other board. The two dimmers are plain MobiFlight
+PWM outputs.
 
 ## Installing
 
@@ -18,9 +24,25 @@ the Connector like on any other board.
 3. Flash the board from the Connector. It shows up as **SF OVHD Mega**.
 4. Load the module config `SF OVHD Mainboard.mfmc`, which comes with the
    package. It has every switch, both annunciator chains (`ANN_UPPER` and
-   `ANN_LOWER`) and the custom device at 0x71, on the pins the board uses.
+   `ANN_LOWER`), the two dimmer outputs and the custom device at 0x71, on
+   the pins the board uses.
 5. In your MobiFlight project, bind the switches and annunciators to your
-   aircraft, and send the display values with the messages below.
+   aircraft, drive the two dimmers, and send the display values with the
+   messages below.
+
+## Dimmers
+
+Two PWM outputs in the `.mfmc`, driven like any MobiFlight output with PWM
+on, 0–255:
+
+| Output | Pin | Dims | At 0, undriven or in power saving |
+|---|---|---|---|
+| `BL_PWM` | D44 | the backlight of the eight section boards (IRLIZ44N on their common return) | backlight off |
+| `ANN_PWM` | D45 | the annunciators (AO3401A on their anode rail, `+5V_LED`) | annunciators dark |
+
+Typically `BL_PWM` follows INTEG LT and `ANN_PWM` the ANN LT BRT/DIM
+switch. **With neither bound, the backlight and the annunciators stay dark.**
+They are on the v2 mainboard only; on v1, D44 and D45 are not connected.
 
 ## Messages
 
@@ -33,6 +55,7 @@ In the Connector, an output of type *Custom Device* on `SF OVHD` can send:
 | 2 | Adirs message | shown as text, e.g. `On Batt` |
 | 3 | Light test | `1` shows the test picture on all three displays, `0` goes back to the values |
 | 4 | Brightness | `0`–`100`, the contrast of all three displays |
+| 5 | Reset annunciators | any value: the four TLC5927 lose their supply for 0.3 s, then both chains are written again. See [Annunciator power-up](#annunciator-power-up-d46) |
 
 The Connector also sends two messages of its own. Both switch all three
 displays off, since a picture left standing for hours burns into an OLED:
@@ -59,6 +82,41 @@ A few details worth knowing:
   dimmer but still plainly lit. After a new module config is uploaded, the
   displays start again at the default until the Connector sends the value
   once more.
+
+## Annunciator power-up (D46)
+
+The TLC5927 has no reset pin. On a hot-plugged 9 V supply it can start in a
+bad state and keep it until its supply goes away. On the v2 mainboard the
+chips' supply, `+5V_TLC`, goes through a switch on **D46** (`TLC_PWR_EN`):
+high = powered. Undriven, the switch stays off, so the chips get no supply
+until the firmware gives it.
+
+When the custom device starts, which happens every time the board boots or a
+module config is uploaded, it:
+
+1. pulls CLK, LE and SDI of both chains (D22–D27) low. A CMOS input held
+   high feeds an unpowered chip through its protection diode, and the core's
+   output shifter leaves LE high after every update;
+2. drives D46 low, so the chips are unpowered;
+3. after 300 ms drives D46 high;
+4. after another 20 ms writes both chains again, with what the Connector
+   last set, or all dark in power saving.
+
+Message 5 runs the same sequence on demand. It does not block the loop: the
+steps run from the custom device's `update()`, every 10 ms
+(`MF_CUSTOMDEVICE_HAS_UPDATE`, `MF_CUSTOMDEVICE_POLL_MS=10`). Annunciator
+commands that arrive meanwhile are kept, and written once the chips are back.
+The pins are fixed in `SF_OVHD/TLCSupply.cpp` and must match the `.mfmc`.
+
+* **The 300 ms are generous on purpose.** `+5V_TLC` has no bleed resistor:
+  its 10.4 µF discharge only through the chips' own supply current, and the
+  TLC5927 datasheet gives no reset threshold.
+* **D46 is not in the `.mfmc`, and the package's `board.json` does not
+  offer it,** so the Connector cannot give it to another device.
+* **The Connector cannot bring the annunciators up with stock MobiFlight
+  firmware** on v2. Nothing would drive D46.
+* **On v1 the sequence is harmless:** D46 is not connected there, and the
+  chains only see their lines held low for 0.3 s at startup.
 
 ## Displays and address
 
@@ -101,19 +159,19 @@ environment variable, so the syntax differs per shell:
 ```
 rem cmd.exe
 rmdir /s /q _build _dist
-set "VERSION=1.1.0" && pio run -e SF_OVHD_mega
+set "VERSION=1.2.0" && pio run -e SF_OVHD_mega
 ```
 
 ```
 # PowerShell
 Remove-Item -Recurse -Force _build, _dist -ErrorAction SilentlyContinue
-$env:VERSION = "1.1.0"; pio run -e SF_OVHD_mega
+$env:VERSION = "1.2.0"; pio run -e SF_OVHD_mega
 ```
 
 ```
 # bash
 rm -rf _build _dist
-VERSION=1.1.0 pio run -e SF_OVHD_mega
+VERSION=1.2.0 pio run -e SF_OVHD_mega
 ```
 
 The result is the installable ZIP in `_dist/`.
@@ -166,7 +224,7 @@ What this project does instead:
 * **`build_unflags` turns off the device families the panel does not
   have**: segment displays, character LCD, steppers, servos, analog inputs,
   input shifters and both multiplexers. Output shifters stay on, because the
-  annunciators are DM13A chains. Buttons, encoders and outputs are core
+  annunciators are TLC5927 chains. Buttons, encoders and outputs are core
   and always present. To get a family back, delete its line in
   `SF_OVHD/sf_ovhd_platformio.ini`.
 * **No `String` anywhere.** The values from the Connector live in fixed
@@ -181,6 +239,7 @@ The result uses about 50% of the RAM and 16% of the flash.
 | File | |
 |---|---|
 | `SF_OVHD/SF_OVHD.cpp`, `.h` | the three displays: drawing, messages, channels |
+| `SF_OVHD/TLCSupply.cpp`, `.h` | the TLC5927 power-up on D46 |
 | `SF_OVHD/OLEDInterface.h` | one interface over the SSD1306 and SH1106 drivers |
 | `SF_OVHD/MFCustomDevice.cpp`, `.h` | the glue to the MobiFlight core, as in the template |
 | `SF_OVHD/Fonts/` | GFX fonts. Two are used, DSEG14 Modern 20 pt and, from Adafruit GFX, FreeSans 18 pt |

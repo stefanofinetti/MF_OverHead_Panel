@@ -1,4 +1,5 @@
 #include "SF_OVHD.h"
+#include "TLCSupply.h"
 #include <Fonts/FreeSans18pt7b.h>                // ADIRS, from Adafruit GFX
 #include "Fonts/DSEG14Modern_Regular20pt7b.h"  // BATT 1 and 2, https://github.com/keshikan/DSEG via https://rop.nl/truetype2gfx/
 
@@ -25,6 +26,10 @@ SF_OVHD::SF_OVHD()
 
 void SF_OVHD::attach(uint8_t addrI2C)
 {
+    // Power the annunciator drivers up first, whatever happens to the displays
+    // below: the board and its 5 V are up by now. update() finishes the cycle.
+    TLCSupply::powerCycle();
+
     _addrI2C = addrI2C;
     Wire.begin();
     Wire.setClock(400000);
@@ -89,6 +94,12 @@ void SF_OVHD::set(int16_t messageID, char *message)
         Put in your code to enter this mode (e.g. clear a display)
 
     ********************************************************************************** */
+    // The annunciator drivers do not depend on the displays
+    if (messageID == 5) {
+        TLCSupply::powerCycle();
+        return;
+    }
+
     // attach() gives up without a display driver, and then there is nothing to draw on
     if (!_initialised)
         return;
@@ -137,10 +148,12 @@ void SF_OVHD::set(int16_t messageID, char *message)
     }
 }
 
-// Only called with -DMF_CUSTOMDEVICE_HAS_UPDATE, which is off: the displays are
-// redrawn when a value arrives and at no other time.
+// Called every MF_CUSTOMDEVICE_POLL_MS. It only finishes a power cycle of the
+// annunciator drivers: the displays are redrawn when a value arrives and at no
+// other time.
 void SF_OVHD::update()
 {
+    TLCSupply::update();
 }
 
 /* ************************************************************************************************

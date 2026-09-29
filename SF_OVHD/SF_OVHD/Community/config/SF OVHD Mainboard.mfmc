@@ -13,6 +13,8 @@
   <Button Name="R_LDG_LIGHT_RETR" Pin="13" />
   <ShiftRegister Name="ANN_UPPER" LatchPin="27" ClockPin="26" DataPin="25" NumModules="4" />
   <ShiftRegister Name="ANN_LOWER" LatchPin="23" ClockPin="24" DataPin="22" NumModules="4" />
+  <Output Name="BL_PWM" Pin="44" />
+  <Output Name="ANN_PWM" Pin="45" />
   <Button Name="ANTI_ICE_ENG2_SW" Pin="56" />
   <Button Name="APU_BLEED_SW" Pin="61" />
   <Button Name="PACKS_1_SW" Pin="41" />

@@ -2,8 +2,8 @@
 
 Status: **drawn and routed** (September 2026). The mainboard and the eight
 section boards are in their own KiCad projects, each with ERC, DRC and
-schematic parity clean. Nothing has been ordered yet, and the firmware
-changes are still to do. `Kicad Files/` is v1, unchanged.
+schematic parity clean. Nothing has been ordered yet. The firmware side is
+in `SF_OVHD` 1.2.0. `Kicad Files/` is v1, unchanged.
 
 ## Why
 
@@ -664,13 +664,19 @@ The v1 footprint stays, since they fit it.
 
 * **The pin map does not change,** and the two dimmers are plain
   MobiFlight outputs, which are core.
-* **`SF_OVHD` gains one job: powering the TLC5927 up.** In `attach()` it pulls
-  the two chains' CLK, LE and SDI (D22–D27) low, drives D46 low, waits a
-  few tens of milliseconds, then drives D46 high. D46 must not appear in
-  the `.mfmc`: the custom device owns it. A message that repeats the
-  sequence on demand is optional.
-* **The `.mfmc` gains two outputs**, D44 (backlight) and D45 (annunciators),
-  both PWM.
+* **`SF_OVHD` gains one job: powering the TLC5927 up.** Done in 1.2.0
+  (`SF_OVHD/TLCSupply.cpp`). When the custom device starts, it pulls the two
+  chains' CLK, LE and SDI (D22–D27) low and drives D46 low. 300 ms later it
+  drives D46 high, and 20 ms after that it writes both chains again. Message 5
+  repeats the sequence on demand. The steps run from the custom device's
+  `update()`, so the loop is never blocked. D46 is not in the `.mfmc`, and
+  the package's `board.json` no longer offers it: the custom device owns it.
+  * The 300 ms are generous because `+5V_TLC` has no bleed resistor. Its
+    10.4 µF discharge only through the chips' own supply current, and the
+    datasheet gives no reset threshold. Worth checking on the first board:
+    `+5V_TLC` during a reset, with a scope if one is at hand.
+* **The `.mfmc` gains two outputs,** `BL_PWM` on D44 (backlight) and
+  `ANN_PWM` on D45 (annunciators), both PWM. Done in 1.2.0.
 * **The MobiFlight project gains two output rows** for them, typically
   INTEG LT for D44 and ANN LT BRT/DIM for D45. The OLEDs already have
   message 4. None of the existing 96 rows changes.

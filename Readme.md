@@ -33,8 +33,8 @@ joined by ribbon cables. All nine are two-layer, 1.6 mm boards.
 **Status (September 2026):** all nine boards are drawn and routed. ERC,
 DRC and schematic parity are clean, and every ribbon and backlight pin was
 checked against the board at the other end. **Nothing has been ordered or
-built yet.** The firmware changes v2 needs, and the reprinted case floor,
-are still to do. v1 is the board that has been built and tested. It is
+built yet.** The firmware v2 needs is in `SF_OVHD` 1.2.0. The reprinted
+case floor is still to do. v1 is the board that has been built and tested. It is
 kept in `Kicad Files/` as the reference the v2 boards were cut from, **not
 to be built**: build v2.
 
@@ -164,14 +164,12 @@ test with all 44 annunciators lit adds about 1 A.
 The pin map is the same, so the v1 module config and project keep working,
 with these changes:
 
-* **The firmware must power the TLC5927 up.** The `SF_OVHD` custom device
-  has to pull CLK, LE and SDI of both chains (D22–D27) low, then switch D46
-  off and on. **This is not in the firmware yet.** Until it is, the
-  annunciators stay dark on v2. The same is true with the stock MobiFlight
-  firmware.
-* **Two new outputs in the `.mfmc`:** D44 (backlight) and D45
-  (annunciators), both PWM. D46 must not be in the `.mfmc`, because the
-  custom device owns it.
+* **Flash `SF_OVHD` 1.2.0 or later.** Its custom device powers the TLC5927
+  up through D46 once the board has started. With older or stock MobiFlight
+  firmware the annunciators stay dark on v2.
+* **Load the module config from the 1.2.0 package.** It adds two PWM outputs,
+  `BL_PWM` on D44 (backlight) and `ANN_PWM` on D45 (annunciators). D46 is not
+  in it, because the custom device owns it.
 * **Two new rows in the MobiFlight project** to drive them, typically INTEG
   LT for D44 and ANN LT BRT/DIM for D45. At 0, or with the Connector
   closed, the backlight and the annunciators are dark.
