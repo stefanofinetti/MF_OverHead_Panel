@@ -1,7 +1,9 @@
 # Splitting the mainboard — architecture
 
-Status: **design on paper**. Nothing in `Kicad Files/` has been changed. This
-is the plan to review before a new KiCad project is started.
+Status: **drawn and routed** (September 2026). The mainboard and the eight
+section boards are in their own KiCad projects, each with ERC, DRC and
+schematic parity clean. Nothing has been ordered yet, and the firmware
+changes are still to do. `Kicad Files/` is v1, unchanged.
 
 ## Why
 
@@ -22,8 +24,8 @@ panels.
 | Section boards | Cut out of the current layout: outline, **every hole**, every switch and LED at the same coordinates |
 | Thickness | 1.6 mm, JLCPCB's standard, as today. The board is the spacer between panel and case |
 | Layers | 2 on every board |
-| Data | One shrouded, keyed IDC header per section board, ribbon straight through, pin 1 to pin 1 |
-| Backlight | A 2-pole screw terminal per section board, AWG wire, dimmed on the mainboard |
+| Data | One shrouded, keyed IDC header per section board, ribbon straight through, pin 1 to pin 1. SMD header on the section boards |
+| Backlight | A 2-pin JST PH (SMD) per section board, AWG wire to a 2-pole screw terminal on the mainboard, dimmed there |
 | Connectors | On the **back** of the section boards only. Nothing new may stand proud of the front |
 | Mainboard | On the floor of the lower-left case part, towards the centre of the case |
 | USB | A ready-made panel-mount USB-B extension at the case wall; USB-B stays on the mainboard |
@@ -38,6 +40,9 @@ the same screws in the same inserts.
 
 * **Holes:** every hole of today's board is kept on the section board it
   falls in, at the same position, whether or not its purpose is known.
+* **Seams:** the v1 board has them drawn on `User.Drawings`: x = 154 and
+  x = 181 / 223 mm, y = 60, 102 and 144 mm. Each section board's inner
+  edges are those lines moved 1.5 mm inwards.
 * **Outline:** each section board keeps today's outer edge where it has
   one, since the current board already fits the case there. The new inner
   edges are cut along the seams between panels, on the current layout.
@@ -89,7 +94,13 @@ conductor against the 400 pF I2C allows, so anything up to 40 cm is fine.
 
 ## The mainboard
 
-About **150 × 90 mm**, 2 layers, on the floor of the lower-left case part.
+**137 × 89 mm**, 2 layers, on the floor of the lower-left case part, between
+the four pillars that carry the section boards. Measured on
+`OVHD_PANEL_LOWER_LEFT_CASE_BLACK.stl`, the floor there is free over
+141 × 93.5 mm. That leaves 2 mm all round and no change to the pillars. Four
+M3 holes, 4 mm from the corners, for bosses with heat-set inserts in the
+reprinted floor. With today's case there are 27 mm from the floor to the
+underside of the section boards; the reprint will raise that to 30–35 mm.
 
 ### What moves onto it
 
@@ -102,7 +113,7 @@ Everything on today's board that belongs to no panel:
   ISP programmer powers the MCU alone while the bootloader is burned.
 * MIC29302, AMS1117
 * PCA9548A with the three-way address DIP switch (today under ADIRS)
-* The four TLC5927 (today spread over several panels; the schematic calls them DM13A)
+* The four TLC5927 (today spread over several panels; the v1 schematic calls them DM13A)
 
 ### Power
 
@@ -130,7 +141,7 @@ Everything on today's board that belongs to no panel:
   MIC29302. On USB alone the annunciators stay dark, like the backlight,
   and the logic keeps working.
 * **Two fuses, one per branch**, as on the FCU PSU: the backlight branch
-  (~0.7 A, measured) and the regulator branch (~1 A in a light test). A
+  (~1.1 A at 17 mA per string) and the regulator branch (~1 A in a light test). A
   fault on one does not take down the other.
 * The MIC29302 dissipates well under 1 W in normal use, with a handful of
   annunciators lit. In a light test it is ~3 W, about 3.2 V across it at
@@ -247,8 +258,22 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
 * **Why the trimmer never worked:** over its whole travel, 56–156 Ω asks
   for more than 120 mA. The chip sits at its own limit, so turning the
   trimmer changes nothing, and the LEDs ran far above their rating.
-* **The 100 nF on `R-EXT`:** the TLC5927 datasheet does not call for one.
-  Footprint kept, not fitted.
+* **No capacitor on `R-EXT`, and no pads for one.** The v1 board has
+  100 nF from each `R-EXT` pin to GND (C17, C19, C21, C23). The datasheet's
+  application circuit (Figure 17) has only the resistor there. With 1 kΩ
+  on `R-EXT`, the capacitor made the chip fail as soon as a second or third
+  output of the same chip turned on:
+  * the outputs dropped from ~15 mA to under 1 mA, too little for the bench
+    supply to show, and stayed there until a power cycle;
+  * VDD (5.0 V), `R-EXT` (1.2 V) and `OE` (0 V) read the same before and
+    after, and the chip was cold;
+  * it happened with firmware 1.1.0 (core 3.1.4) and with 1.0.5 (core
+    2.5.1), with the Connector's binary and its old string commands alike.
+
+  Found on 29 September 2026. With C17 removed, U6 kept all 16 outputs on at
+  full brightness. In the same test U7, which still had C21, dimmed. With
+  the old 56 Ω the capacitor did no harm. The v2 mainboard has no capacitor
+  and no pads for one on `R-EXT`.
 * **`OE` stays tied to GND, hard.** On the TLC5927, `OE` is also the mode
   pin. A one-clock-wide pulse on it, sampled by `CLK`, switches the chip
   into Special mode. There `LE` writes the configuration latch instead of
@@ -299,15 +324,79 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
 ### Connectors on the mainboard
 
 * 8 shrouded IDC headers: 10, 14, 14, 16, 16, 20, 20 and 26 pins, 136 in all
-* 9 screw terminals, 2-pole, 5.08 mm: one for the 9 V in, eight for the
-  backlight (pin 1 `+9V_BL`, pin 2 `BL_RET`, the switched return)
+* 9 screw terminals, 2-pole: one 5.08 mm for the 9 V in, eight 3.5 mm
+  (Phoenix PT 1,5/2-3,5) for the backlight (pin 1 `+9V_BL`, pin 2 `BL_RET`,
+  the switched return)
 * USB-B for the extension
 * Optional, if space allows: an unfitted SIP pull-up network next to each
   header, to fit only if a long ribbon ever shows bouncing inputs
 
-150 × 90 mm has about 480 mm of edge. The headers, terminals and USB-B take
-about 340 mm of it. That fits, but tightly. If it does not fit with generous
-spacing, group the backlight terminals in fours, or make the board bigger.
+### Layout
+
+In v1 coordinates the board sits at x 32–169, y 134.5–223.5, under EXT LT
+and the lower edge of GPWS. The layout is drawn in that frame, so each part
+of it can be checked against the section boards above.
+
+* **Left edge, towards the case wall:** the 9 V terminal, the power input
+  and the MIC29302 at the top; USB-B, CH340G, TPS2115A, ISP header and JP1
+  below.
+* **Top, on the GPWS side:** the eight ribbon headers in three rows, pin 1
+  on the left, each labelled with the board it goes to.
+* **Middle:** the ATmega2560 with its crystal, the PCA9548A with the 3.3 V
+  regulator and the address switch, and the four TLC5927 in a 2 × 2 block.
+* **Front edge:** the eight backlight terminals, labelled, with + and −,
+  wire entry towards the edge; the IRLIZ44N lying flat beside them.
+* **Bottom side:** the small 1206 parts of the dense groups, each under its
+  chip: MCU decoupling, TLC5927 R-EXT and VDD capacitors, CLK/LE/SDI series
+  resistors, I2C pull-ups, CH340G parts, supply-switch resistors. Everything
+  else is on top.
+* **Overhead clearance:** EXT LT's J1 and J2 hang over the mainboard. They
+  sit above the TLC5927 block, where nothing is taller than a SOIC, and not
+  above any ribbon header, where the two plugs would meet.
+* **Silkscreen:** every part has its value or part number on the side it is
+  on, the TLC5927 are marked with their LED colour, and the terminals and
+  headers with their board. The texts are placed by script, clear of pads,
+  of each other and of the edge.
+* **Copper:** GND poured on both layers. Track widths:
+  * 0.8 mm for `VIN_RAW`, `+9V`, `+9V_BL`, `BL_RET`;
+  * 0.5 mm for `+9V_REG` and `+5V_LED`;
+  * 0.35 mm for `5V_EXT` and `VBUS`, the widest that enters the TPS2115A's
+    0.65 mm pins (about 1 A);
+  * 0.25 mm with 0.2 mm clearance for the rest. Some escapes between TQFP and
+    SOIC pins are 0.19 mm; the minimum is set to 0.15 mm, within JLCPCB's
+    0.127 mm.
+
+**Status:** `Mainboard/OVHD_Mainboard.kicad_pcb`.
+* 122 parts, 64 of them on the bottom.
+* Routed with Freerouting: 3802 track segments, 367 vias.
+* DRC with every warning on: 0, nothing unconnected, no schematic-parity
+  issues.
+* Every pin of the eight ribbon headers and the eight backlight terminals
+  was checked against J1 and J2 of its section board: all 152 carry the
+  same net on the same pin number.
+
+### Schematic status
+
+The mainboard schematic is drawn: `Mainboard/OVHD_Mainboard`, seven sheets
+(Power, USB and supply, MCU, I2C, Annunciators, Connectors), 122 parts,
+labels on pins rather than wires. ERC: no errors, no warnings. The exported
+netlist was checked against this document: every `.mfmc` button runs from
+its v1 ATmega pin to exactly one ribbon pin, every annunciator from its
+TLC5927 output to exactly one ribbon pin, and all 136 IDC pins match the
+pinout tables below.
+
+Parts chosen while drawing, open to review:
+
+| Where | Part |
+|---|---|
+| 9 V input | 1N5822 reverse diode (as the FCU PSU), SMBJ12CA TVS, 470 µF 25 V electrolytic |
+| Fuses | MF-RHT200 on both branches (backlight, regulator) |
+| 5 V | MIC29302WU, 3.6k / 1.2k as v1 |
+| Supply selector, USB, ISP, JP1, 3.3 V | the FCU mainboard's circuit, pin for pin |
+| Anode and TLC5927 supply switches | AO3401A (SOT-23) driven by BS170 (TO-92), 10k / 100R / 100k |
+| Backlight dimmer | IRLIZ44N, 100R gate, 10k pull-down |
+| Annunciator drivers | TLC5927IDWR, DW24-M footprint, R-EXT 1k, 1k series on CLK/LE/SDI |
+| Ribbons | shrouded IDC headers 2x5 to 2x13; backlight on 3.5 mm 2-pole terminals (Phoenix PT 1,5/2-3,5) |
 
 ## Section boards
 
@@ -316,13 +405,59 @@ with their resistors. It has no ICs, and the annunciator LEDs have no
 resistors, because the TLC5927 is a current sink. Anodes go to `+5V_LED` from
 the ribbon, cathodes back down the ribbon to their TLC5927 output.
 
+### Layout rules and status
+
+* **Parts:** everything from v1 stays at its v1 coordinates, and the build
+  script checks every pad against the v1 board. New parts (the IDC header,
+  the JST PH and any new resistor) go on the back.
+* **Sheet:** each board is moved by a whole number of millimetres onto the
+  middle of its A4 sheet, and its grid origin is set to where v1's (0, 0)
+  now lies. With coordinates relative to the grid origin, KiCad shows the v1
+  positions. The offset is in the title block (APU: v2 = v1 + (−54, −80) mm).
+* **Connectors:** SMD, on the back, on the edge nearest the mainboard:
+  `IDC-Header_2xNN_P2.54mm_Vertical_SMD` and
+  `JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical` (pin 1 `+9V_BL`, pin 2
+  `BL_RET`). Keep them at least ~4 mm from a mounting hole, where the case
+  insert bears on the back.
+* **Silkscreen:** everything needed to solder the board without the
+  schematic goes on the silkscreen of the side the part is on:
+  * `K` at every backlight LED cathode, and the annunciator colour and
+    function (`FAULT amber`, `ON blue`, `AVAIL green`);
+  * resistor values;
+  * pin 1 of the Korry and the IDC;
+  * `+` and `-` at the JST;
+  * the mainboard connector each cable goes to.
+* **Libraries:** `Libraries/OVHD.pretty` and `Libraries/OVHD.kicad_sym`
+  hold the custom parts every board shares. The footprints are extracted
+  from the v1 board, because three of their four source libraries are no
+  longer installed: Korry G-Switch PS-7054DVB-6PN, the rectangular
+  annunciator LED, the ADR rotary and the toggle. The symbols (Korry,
+  toggle) come from the v1 schematic, with every pin made passive.
+* **Rules:** 2 layers, 1.6 mm. Tracks are 0.3 mm, or 0.6 mm for `GND`,
+  `+5V_LED`, `+9V_BL` and `BL_RET`. Clearance is 0.25 mm and vias
+  0.8/0.4 mm. Routed with Freerouting 2.4.1 (Java 25 or later), then
+  checked with KiCad DRC.
+
+| Board | Status |
+|---|---|
+| APU | `Section_APU/`, the trial board. Schematic 24 parts, ERC 0. PCB 39 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. J1 (2x5) and J2 on the left edge, towards the mainboard. D148 is a single-LED string with R3 330 Ω on the back |
+| GPWS | `Section_GPWS/`. Schematic 38 parts, ERC 0. PCB 159.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 6 annunciators, 4 strings of two and D139 on its own with R5 330 Ω (its v1 partner D140 and resistor R75 go to EXT LT). J1 (2x7) and J2 along the top edge on the right: the bottom band, nearer the mainboard, is taken by the Korry pins, the annunciator LEDs and the frame holes, and a 2x7 shroud does not fit there |
+| AIR COND | `Section_AIRCOND/`. Schematic 46 parts, ERC 0. PCB 150.5 × 39 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 4 Korry, 8 annunciators, 6 strings of two and D142 on its own: its v1 resistor R76 is on this board, so it stays where it is and becomes 330 Ω (its v1 partner D141 goes to SIGNS). R57 belongs to D73's string and moves to ELEC. J1 (2x8) and J2 along the top edge on the left, the side nearest the mainboard |
+| EXT LT | `Section_EXTLT/`. Schematic 61 parts, ERC 0. PCB 159.5 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 8 toggles (LDG LIGHT L/R, NOSE LIGHT and NAV & LOGO on both contacts 1 and 3), 15 strings of two and D140 on its own with R16 330 Ω on the back (its v1 partners D139 and R75 were on GPWS). No annunciators, so no `+5V_LED` on this ribbon. J1 (2x7) and J2 at the right, over the mainboard |
+| ADIRS | `Section_ADIRS/`. Schematic 41 parts, ERC 0. PCB 132.5 × 81.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 3 ADR rotaries (positions 1 OFF, 2 NAV, 3 ATT, common on pin 9), GND CTL Korry and its annunciator, 9 strings of two, and J3, the ADIRS OLED socket, where it was. **The middle rotary is IR 3 and the right one IR 2**, as on the A320 and in the `.mfmc`: the copper says so, although the v1 footprints were labelled the other way round. J1 (2x10) and J2 on the back between ADR 1 and ADR 3 |
+| FUEL | `Section_FUEL/`. Schematic 55 parts, ERC 0. PCB 177.5 × 40 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 7 Korry, 14 annunciators, 7 strings of two. Three of them had their resistor across the seam, on the ELEC side (R66, R64, R61): each gets a new 150 Ω on the back beside its LEDs (R2, R4, R7). The seam with ELEC is inset 1 mm instead of 1.5, because D102 and D104 sit 2 mm from it. J1 (2x13) and J2 on the back along the top edge, left of the middle M3 hole |
+| ELEC | `Section_ELEC/`. Schematic 35 parts, ERC 0. PCB 177.5 × 39.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 3 Korry, 5 annunciators, 5 strings of two; D72/D73 had R57 across the seam on AIR COND and gets a new 150 Ω (R5) on the back. The BATT 1 and BATT 2 OLED sockets stay where they were (J3 on PCA9548A channel 0, J4 on channel 1, checked on the copper). J1 (2x10) and J2 on the back, top edge, left end |
+| SIGNS | `Section_SIGNS/`. Schematic 57 parts, ERC 0. PCB 108.5 × 79.5 mm, routed, DRC 0, 0 unconnected, 0 schematic-parity issues. 3 ANTI ICE Korry, SEAT BELTS and NO SMOKING read on contact 1 (NO SMOKING was on contact 3 on v1: drop its inversion in MobiFlight), EMER EXIT LT on contacts 1 and 3, 6 annunciators, 10 strings of two, and D141 + D149 as a new pair on R79 (their v1 partners D142 and D148 are on AIR COND and APU). J1 (2x8) and J2 on the back along the left edge, towards the mainboard |
+
 ### Backlight strings
 
 Today there are 61 strings, each of 2 LEDs and one 150 Ω resistor on 9 V.
-Measured on the current board, everything but the annunciators draws
-0.76–0.81 A from the 9 V supply. The logic accounts for roughly 0.1 A of
-that (estimated, not measured), so the backlight takes about **0.7 A, or
-~11 mA per string**. It will vary with the supply and the temperature.
+A pair on 150 Ω runs at **17 mA** (Stefano's figure for the current
+board). 63 strings on v2 make **~1.1 A** of backlight. (The 0.76–0.81 A
+measured on the bench for the whole board is not reliable enough to size
+anything on.) With ~1 A on the regulator branch in a light test, the worst
+case is ~2.1 A, within the 3 A of the 9 V adapter. The MF-RHT200 on the
+backlight branch holds 2 A.
 
 The split changes three things:
 
@@ -333,24 +468,22 @@ The split changes three things:
   gets one single-LED string on 9 V. For the same current as a pair, and so
   the same brightness, R = V / (2·I) + 75 Ω, which follows from
   V = 2·V_F + 150 Ω·I for the pair. With the rail at ~8.6 V after the reverse
-  diode and ~11 mA per string, that is ~466 Ω: **470 Ω**. At 10 mA or 13 mA
-  it would be 505 or 406 Ω, so the brightness stays within about 15%. To
-  confirm it, measure the voltage across one 150 Ω with the backlight on:
-  divided by 150, it gives the exact string current.
+  diode and 17 mA per string, that is ~328 Ω: **330 Ω**. (An earlier draft
+  used 470 Ω, from an estimated 11 mA per string, which was wrong.)
 * **Four strings have both LEDs on one panel but their resistor across the
   seam**: R57, R61, R64 and R66. The resistor moves next to its LEDs.
 
 | Board | Strings | Backlight current ≈ |
 |---|---|---|
-| ADIRS | 9 | 100 mA |
-| FUEL | 7 | 80 mA |
-| ELEC | 5 | 55 mA |
-| GPWS | 4 + 1 single | 55 mA |
-| AIR COND | 6 + 1 single | 80 mA |
-| EXT LT | 15 + 1 single | 180 mA |
-| APU | 2 + 1 single | 35 mA |
-| SIGNS | 11 | 120 mA |
-| **Total** | **63** | **~0.7 A** |
+| ADIRS | 9 | 155 mA |
+| FUEL | 7 | 120 mA |
+| ELEC | 5 | 85 mA |
+| GPWS | 4 + 1 single | 85 mA |
+| AIR COND | 6 + 1 single | 120 mA |
+| EXT LT | 15 + 1 single | 270 mA |
+| APU | 2 + 1 single | 50 mA |
+| SIGNS | 11 | 185 mA |
+| **Total** | **63** | **~1.1 A** |
 
 22–24 AWG is ample for the largest.
 
@@ -370,9 +503,11 @@ Conventions:
   *n* of `ANN_UPPER` (latch D27, clock D26, data D25): U8 carries bits 0–15
   (amber) and U5 bits 16–31 (green and amber).
 
-All 49 inputs were checked against the current board, from the switch pad to
-the ATmega pin, and agree with the `.mfmc`. The 44 annunciator bits were
-checked against the driver outputs and agree with the MobiFlight project.
+All 49 inputs and all 44 annunciators were checked by **following the copper**
+of the as-built board: the project as sent to JLCPCB on 3 March 2025,
+restored in `Kicad Files/`. Net names were not trusted, because schematic and
+copper disagree in places. Every button in the `.mfmc` reaches exactly one
+switch contact, and every annunciator bit reaches exactly one LED.
 
 #### ADIRS — 20 pins
 
@@ -411,7 +546,7 @@ left to right, and the `.mfmc` names follow the aircraft.
 | 23 | RT 2 FAULT — U16 | | 24 | +5V_LED |
 | 25 | +5V_LED | | 26 | GND |
 
-Two anode pins: 14 LEDs are about 210 mA in a light test. The PCB labels the
+Two anode pins: 14 LEDs at ~19 mA are about 270 mA in a light test. The PCB labels the
 centre-tank pumps `L_XFER` and `R_XFER`, and the `.mfmc` and the project
 call them CTR TK PUMP 1 and 2. They are the same switches.
 
@@ -485,12 +620,37 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
 |---|---|---|---|---|
 | 1 | GND | | 2 | ANTI ICE WING — D54 |
 | 3 | ANTI ICE ENG 1 — D55 | | 4 | ANTI ICE ENG 2 — D56 |
-| 5 | SEAT BELTS — D19 | | 6 | NO SMOKING — D5 |
+| 5 | SEAT BELTS — D19 (contact 1) | | 6 | NO SMOKING — D5 (contact 1) |
 | 7 | EMER EXIT LT ON — D2 | | 8 | EMER EXIT LT OFF — D3 |
 | 9 | GND | | 10 | WING ON — L18 |
 | 11 | WING FAULT — U21 | | 12 | ENG 1 ON — L19 |
 | 13 | ENG 1 FAULT — U20 | | 14 | ENG 2 ON — L20 |
 | 15 | ENG 2 FAULT — U22 | | 16 | +5V_LED |
+
+SEAT BELTS and NO SMOKING are on-off toggles, so they need one contact
+each. The v1 copper wires both contacts of each: SEAT BELTS contact 1 to D19
+and contact 3 to D18, NO SMOKING contact 1 to D38 and contact 3 to D5. The
+v1 schematic calls the unused ones `…_OFF`, but they are not buttons. v2
+keeps only contact 1 of each. EMER EXIT LT, NAV & LOGO, NOSE and
+both LDG lights really have three positions, and keep both contacts.
+
+**Lever up closes contact 1, the lower pin, on every toggle.** Every
+single-contact toggle is read on contact 1. On v1 NO SMOKING alone was read
+on contact 3 (D5), and the MobiFlight row was inverted to make up for it.
+On v2 D5 moves to contact 1. **When moving to v2, remove the inversion on
+the NO SMOKING row.** The three-position toggles keep both contacts on the
+same pins as v1, contact 1 up and contact 3 down.
+
+**Toggle parts in the BOM.** The v1 schematic gives all eleven toggles the
+E-Switch MPN 100SP1T1B4M2QE, which is not what is fitted. The v2 schematic
+gives them no part number; only the footprint name, kept from v1, still
+carries the E-Switch one. They are generic three-terminal PCB-pin lever
+toggles, from AliExpress and fitted by hand, not orderable from JLCPCB:
+
+* ON-OFF-ON (5): LDG L, LDG R, NOSE, NAV & LOGO, EMER EXIT LT
+* ON-OFF (6): WING, BEACON, STROBE, RWY TURN, SEAT BELTS, NO SMOKING
+
+The v1 footprint stays, since they fit it.
 
 ### Free resources
 
@@ -521,8 +681,8 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
    limit set for the Korry LEDs.
 2. ~~Hot-plug re-check with the new U8~~ — still dead on a hot plug, so
    the TLC5927 power-up switch is in the design.
-3. ~~Backlight LED V_F~~ — not needed: the single-LED strings get 470 Ω,
-   worked out from the pair. Optional check: the voltage across one 150 Ω.
+3. ~~Backlight LED V_F~~ — not needed: the single-LED strings get 330 Ω,
+   worked out from the pair at 17 mA.
 4. ~~Inner panel outlines~~ — not needed. The outer edges are today's PCB
    outline, which already fits the case. The inner cuts follow the panel
    seams on the current layout, where nothing crosses the PCB plane, and
@@ -544,6 +704,10 @@ Top row first, then bottom row. No annunciators and no `+5V_LED`.
   limit over its whole travel.
 * **`OE` stays hard-wired to GND.** It is the mode pin, so it gets no PWM,
   no pull-up and no test point that could be touched by accident.
+* **Nothing but the resistor on `R-EXT`.** A capacitor there, on the v1
+  board, made the chips drop their outputs to under 1 mA as soon as two or
+  three were on together. Follow the datasheet's application circuit, and
+  test several outputs on together, not only the sequential test.
 * **The annunciator drivers need a clean power-up.** On a hot-plugged
   supply they can come up with frozen outputs. The new board powers them
   from the firmware, after the rest of the board is up.

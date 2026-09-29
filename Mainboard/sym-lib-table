@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "TPS2115A")(type "KiCad")(uri "${KIPRJMOD}/TPS2115A.kicad_sym")(options "")(descr "Power mux for the supply selector, from the FCU mainboard."))
+  (lib (name "TLC5927")(type "KiCad")(uri "${KIPRJMOD}/TLC5927.kicad_sym")(options "")(descr "TI TLC5927IDWR, from the Digi-Key download. The part actually fitted on the annunciator chains."))
+)

@@ -1,0 +1,153 @@
+(footprint "G-Switch_PS-7054DVB-6PN"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Korry push-button, G-Switch PS-7054DVB-6PN (2 poles, 6 pins). From the v1 board.")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "77cb353b-695f-4257-ba28-cd412444e62d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "G-Switch_PS-7054DVB-6PN"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "9c8f6f19-8d93-41ea-ab28-64f52562b058")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "55c9045c-62e4-45ca-9a54-7f822d913e1b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9f343d0a-90b8-4e14-9ab3-96bc147f0443")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -4 -9)
+		(end 3 -2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "4c03578d-f4ab-41a3-b6d9-b4b69d849d8a")
+	)
+	(fp_text user "1"
+		(at -4.8 -8 0)
+		(layer "F.SilkS")
+		(uuid "4c51a65d-7d9e-472b-9f5c-4b5e2d7e7829")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "b71a2648-ea58-4410-8719-de46f09669da")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -2.6 -8)
+		(size 1.524 1.524)
+		(drill 0.762)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dc7e6ab6-cf4c-40d5-b4ba-8f0ba77c5e32")
+	)
+	(pad "2" thru_hole circle
+		(at -0.6 -8)
+		(size 1.524 1.524)
+		(drill 0.762)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "2bae2303-2022-47ba-b21f-f8597296bfeb")
+	)
+	(pad "3" thru_hole circle
+		(at 1.4 -8)
+		(size 1.524 1.524)
+		(drill 0.762)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fae72a38-ce47-49ca-a38a-1cad655e3e7e")
+	)
+	(pad "4" thru_hole circle
+		(at 1.4 -3)
+		(size 1.524 1.524)
+		(drill 0.762)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "df71131b-dccb-4458-bebb-9d374dcbf845")
+	)
+	(pad "5" thru_hole circle
+		(at -0.6 -3)
+		(size 1.524 1.524)
+		(drill 0.762)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "7577aad0-1c31-40df-b50f-16e5b49b04d2")
+	)
+	(pad "6" thru_hole circle
+		(at -2.6 -3)
+		(size 1.524 1.524)
+		(drill 0.762)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6c9e4efc-f169-4b60-848d-af1b73cf5553")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/../Libraries/3dmodels/141_TL2285xx.stp"
+		(offset
+			(xyz -0.6 5.5 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 180 0 0)
+		)
+	)
+)

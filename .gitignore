@@ -1,0 +1,8 @@
+# KiCad: backups, autosaves, local history and lock files stay local
+*-backups/
+.history/
+_autosave-*
+~*.lck
+# FreeCAD sources and their backups stay out of the repo
+*.FCStd
+*.FCBak

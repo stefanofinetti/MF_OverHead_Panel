@@ -2794,10 +2794,6 @@
 		(uuid "6569534f-7d49-44c1-8fb1-8db06cc2c919")
 	)
 	(no_connect
-		(at 146.05 66.04)
-		(uuid "673c78b8-f2e4-4d3f-82f4-5789cdd6e8ea")
-	)
-	(no_connect
 		(at 140.97 106.68)
 		(uuid "78884a6e-2af2-46da-a0dc-ba6b0878959a")
 	)
@@ -2840,6 +2836,10 @@
 	(no_connect
 		(at 168.91 106.68)
 		(uuid "b38456fb-2cb3-4e5d-9a6d-62391f1c04de")
+	)
+	(no_connect
+		(at 158.75 66.04)
+		(uuid "c460989a-a92a-4e62-91be-ef120c046929")
 	)
 	(no_connect
 		(at 138.43 66.04)
@@ -3807,28 +3807,6 @@
 			)
 		)
 	)
-	(global_label "NOSMOKING_SIGN"
-		(shape input)
-		(at 158.75 66.04 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5daad1d0-aa38-45c0-ad10-c6bcfde01a2b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 158.75 46.5447 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "LCH2"
 		(shape input)
 		(at 72.39 66.04 90)
@@ -4115,6 +4093,28 @@
 			)
 		)
 	)
+	(global_label "NOSMOKING_ON"
+		(shape input)
+		(at 146.05 66.04 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "85276424-b911-4242-be5f-72922a44121b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 146.05 48.2985 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "STROBE_ON"
 		(shape input)
 		(at 120.65 66.04 90)
@@ -4313,7 +4313,7 @@
 			)
 		)
 	)
-	(global_label "SEATBELTS_SIGN"
+	(global_label "SEATBELTS_ON"
 		(shape input)
 		(at 133.35 66.04 90)
 		(fields_autoplaced yes)
@@ -4325,7 +4325,7 @@
 		)
 		(uuid "a6fc9b57-b594-4611-8b84-8d3eef947d74")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 133.35 47.6335 90)
+			(at 133.35 49.3873 90)
 			(effects
 				(font
 					(size 1.27 1.27)

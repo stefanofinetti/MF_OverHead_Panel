@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "TLC5927")(type "KiCad")(uri "${KIPRJMOD}/TLC5927.pretty")(options "")(descr "SOIC-24W DW24-M land pattern (most material), for hand soldering."))
+)
