@@ -9,7 +9,7 @@ and backlight wires. The reasoning behind every choice is in
 * **PCB:** 137 × 89 mm, 2 layers, 1.6 mm, GND poured on both sides.
 * **Fixing:** four M3 holes, 4 mm in from the corners, for bosses with
   heat-set inserts in the reprinted case floor.
-* **Parts:** 126. 68 of them are on the bottom.
+* **Parts:** 122. 64 of them are on the bottom.
 * **Status:** routed with Freerouting. ERC, DRC (every warning on) and
   schematic parity are clean. Not yet ordered.
 
@@ -71,6 +71,9 @@ has its latch on D27, clock on D26 and data on D25, as on v1.
 * **`R-EXT` is a fixed 1 kΩ (R501–R504):** I = 1.25 V / R × 15 ≈ 19 mA
   per LED. If you ever change it, stay between ~160 Ω and ~1.9 kΩ, the
   chip's range at power-up.
+* **Nothing else on `R-EXT`,** above all no capacitor. On the v1 board a
+  100 nF there made the chips drop their outputs as soon as two or three
+  were on together. See the design document.
 * **`OE` is tied hard to GND.** On the TLC5927 it is also the mode pin, so
   it must never get PWM.
 * **1 kΩ in series on CLK, LE and SDI (R511–R520),** at the chips' end.
@@ -90,12 +93,10 @@ stay dark on this board.
 
 ## Assembly notes
 
-* **C511–C514 are not fitted** (DNP on the silkscreen). They are spare pads
-  for a 100 nF on `R-EXT`, which the TLC5927 datasheet does not call for.
 * **Bottom side:** the 1206 parts of the dense groups, each under its chip:
   * the MCU and CH340G decoupling and crystal parts;
   * the I2C pull-ups;
-  * the TLC5927 `R-EXT` resistors, capacitors and series resistors;
+  * the TLC5927 `R-EXT` resistors, VDD capacitors and series resistors;
   * the resistors of the three MOSFET switches;
   * the MIC29302 feedback divider and capacitors.
 

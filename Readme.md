@@ -138,8 +138,7 @@ top, and the small 1206 parts of the dense groups are underneath their chip.
    7 × 5 mm crystals, generous spacing. Values, polarity, pin 1 and `K`
    marks are on the silkscreen of the side each part is on, so no
    schematic is needed at the bench. The per-board readmes list what to
-   watch for, starting with C511–C514 on the mainboard, which are **not
-   fitted**.
+   watch for.
 5. **Cable it:**
    * one straight IDC ribbon per board, pin 1 to pin 1, from J1 on the
      section board to its J70x;
@@ -187,6 +186,11 @@ with these changes:
   alike: the middle rotary is IR 3 and the right one is IR 2. The `.mfmc`
   follows the board. Only the printed labels are wrong, so read the middle
   knob as 3 and the right one as 2 until the panel is reprinted.
+* **v1 board: remove C17, C19, C21 and C23** if its `R-EXT` resistors are
+  1 kΩ. They are 100 nF from each TLC5927's `R-EXT` pin to GND. With them
+  fitted, a chip drops all its outputs to under 1 mA as soon as two or three
+  are on together, and stays that way until a power cycle. The v2 mainboard
+  has no such capacitors.
 
 ## Software
 

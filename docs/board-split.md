@@ -258,8 +258,22 @@ the schematic say DM13A. Everything below comes from the TLC5927 datasheet
 * **Why the trimmer never worked:** over its whole travel, 56–156 Ω asks
   for more than 120 mA. The chip sits at its own limit, so turning the
   trimmer changes nothing, and the LEDs ran far above their rating.
-* **The 100 nF on `R-EXT`:** the TLC5927 datasheet does not call for one.
-  Footprint kept, not fitted.
+* **No capacitor on `R-EXT`, and no pads for one.** The v1 board has
+  100 nF from each `R-EXT` pin to GND (C17, C19, C21, C23). The datasheet's
+  application circuit (Figure 17) has only the resistor there. With 1 kΩ
+  on `R-EXT`, the capacitor made the chip fail as soon as a second or third
+  output of the same chip turned on:
+  * the outputs dropped from ~15 mA to under 1 mA, too little for the bench
+    supply to show, and stayed there until a power cycle;
+  * VDD (5.0 V), `R-EXT` (1.2 V) and `OE` (0 V) read the same before and
+    after, and the chip was cold;
+  * it happened with firmware 1.1.0 (core 3.1.4) and with 1.0.5 (core
+    2.5.1), with the Connector's binary and its old string commands alike.
+
+  Found on 29 September 2026. With C17 removed, U6 kept all 16 outputs on at
+  full brightness. In the same test U7, which still had C21, dimmed. With
+  the old 56 Ω the capacitor did no harm. The v2 mainboard has no capacitor
+  and no pads for one on `R-EXT`.
 * **`OE` stays tied to GND, hard.** On the TLC5927, `OE` is also the mode
   pin. A one-clock-wide pulse on it, sampled by `CLK`, switches the chip
   into Special mode. There `LE` writes the configuration latch instead of
@@ -333,7 +347,7 @@ of it can be checked against the section boards above.
 * **Front edge:** the eight backlight terminals, labelled, with + and −,
   wire entry towards the edge; the IRLIZ44N lying flat beside them.
 * **Bottom side:** the small 1206 parts of the dense groups, each under its
-  chip: MCU decoupling, TLC5927 R-EXT and capacitors, CLK/LE/SDI series
+  chip: MCU decoupling, TLC5927 R-EXT and VDD capacitors, CLK/LE/SDI series
   resistors, I2C pull-ups, CH340G parts, supply-switch resistors. Everything
   else is on top.
 * **Overhead clearance:** EXT LT's J1 and J2 hang over the mainboard. They
@@ -353,8 +367,8 @@ of it can be checked against the section boards above.
     0.127 mm.
 
 **Status:** `Mainboard/OVHD_Mainboard.kicad_pcb`.
-* 126 parts, 68 of them on the bottom.
-* Routed with Freerouting: 3813 track segments, 367 vias.
+* 122 parts, 64 of them on the bottom.
+* Routed with Freerouting: 3802 track segments, 367 vias.
 * DRC with every warning on: 0, nothing unconnected, no schematic-parity
   issues.
 * Every pin of the eight ribbon headers and the eight backlight terminals
@@ -364,7 +378,7 @@ of it can be checked against the section boards above.
 ### Schematic status
 
 The mainboard schematic is drawn: `Mainboard/OVHD_Mainboard`, seven sheets
-(Power, USB and supply, MCU, I2C, Annunciators, Connectors), 126 parts,
+(Power, USB and supply, MCU, I2C, Annunciators, Connectors), 122 parts,
 labels on pins rather than wires. ERC: no errors, no warnings. The exported
 netlist was checked against this document: every `.mfmc` button runs from
 its v1 ATmega pin to exactly one ribbon pin, every annunciator from its
@@ -690,6 +704,10 @@ The v1 footprint stays, since they fit it.
   limit over its whole travel.
 * **`OE` stays hard-wired to GND.** It is the mode pin, so it gets no PWM,
   no pull-up and no test point that could be touched by accident.
+* **Nothing but the resistor on `R-EXT`.** A capacitor there, on the v1
+  board, made the chips drop their outputs to under 1 mA as soon as two or
+  three were on together. Follow the datasheet's application circuit, and
+  test several outputs on together, not only the sequential test.
 * **The annunciator drivers need a clean power-up.** On a hot-plugged
   supply they can come up with frozen outputs. The new board powers them
   from the firmware, after the rest of the board is up.
