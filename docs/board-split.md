@@ -367,8 +367,8 @@ of it can be checked against the section boards above.
     0.127 mm.
 
 **Status:** `Mainboard/OVHD_Mainboard.kicad_pcb`.
-* 122 parts, 64 of them on the bottom.
-* Routed with Freerouting: 3802 track segments, 367 vias.
+* 123 parts, 65 of them on the bottom.
+* Routed with Freerouting: 3803 track segments, 367 vias.
 * DRC with every warning on: 0, nothing unconnected, no schematic-parity
   issues.
 * Every pin of the eight ribbon headers and the eight backlight terminals
@@ -378,7 +378,7 @@ of it can be checked against the section boards above.
 ### Schematic status
 
 The mainboard schematic is drawn: `Mainboard/OVHD_Mainboard`, seven sheets
-(Power, USB and supply, MCU, I2C, Annunciators, Connectors), 122 parts,
+(Power, USB and supply, MCU, I2C, Annunciators, Connectors), 123 parts,
 labels on pins rather than wires. ERC: no errors, no warnings. The exported
 netlist was checked against this document: every `.mfmc` button runs from
 its v1 ATmega pin to exactly one ribbon pin, every annunciator from its
@@ -393,7 +393,7 @@ Parts chosen while drawing, open to review:
 | Fuses | MF-RHT200 on both branches (backlight, regulator) |
 | 5 V | MIC29302WU, 3.6k / 1.2k as v1 |
 | Supply selector, USB, ISP, JP1, 3.3 V | the FCU mainboard's circuit, pin for pin |
-| Anode and TLC5927 supply switches | AO3401A (SOT-23) driven by BS170 (TO-92), 10k / 100R / 100k |
+| Anode and TLC5927 supply switches | AO3401A (SOT-23) driven by BS170 (TO-92), 10k / 100R / 100k; R527 4.7k bleeding `+5V_TLC` |
 | Backlight dimmer | IRLIZ44N, 100R gate, 10k pull-down |
 | Annunciator drivers | TLC5927IDWR, DW24-M footprint, R-EXT 1k, 1k series on CLK/LE/SDI |
 | Ribbons | shrouded IDC headers 2x5 to 2x13; backlight on 3.5 mm 2-pole terminals (Phoenix PT 1,5/2-3,5) |
@@ -671,10 +671,11 @@ The v1 footprint stays, since they fit it.
   repeats the sequence on demand. The steps run from the custom device's
   `update()`, so the loop is never blocked. D46 is not in the `.mfmc`, and
   the package's `board.json` no longer offers it: the custom device owns it.
-  * The 300 ms are generous because `+5V_TLC` has no bleed resistor. Its
-    10.4 µF discharge only through the chips' own supply current, and the
-    datasheet gives no reset threshold. Worth checking on the first board:
-    `+5V_TLC` during a reset, with a scope if one is at hand.
+  * R527, 4.7 kΩ from `+5V_TLC` to GND, bleeds the rail's 10.4 µF with a
+    time constant of 49 ms. After 300 ms about 10 mV are left.
+    The datasheet gives no reset threshold, so the chips go all the way to
+    0 V. It costs about 1 mA while they are on. Worth checking on the first
+    board: `+5V_TLC` during a reset, with a scope if one is at hand.
 * **The `.mfmc` gains two outputs,** `BL_PWM` on D44 (backlight) and
   `ANN_PWM` on D45 (annunciators), both PWM. Done in 1.2.0.
 * **The MobiFlight project gains two output rows** for them, typically

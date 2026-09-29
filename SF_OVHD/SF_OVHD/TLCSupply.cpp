@@ -17,9 +17,9 @@ namespace TLCSupply
     // core's output shifter leaves LE high after every update.
     const uint8_t SIGNAL_PINS[] = {22, 23, 24, 25, 26, 27};
 
-    // +5V_TLC has no bleed resistor. Its 10.4 uF (C501-C505) discharge only through
-    // the chips' own supply current, and the datasheet gives no reset threshold,
-    // so the off time is generous.
+    // R527 (4.7k) bleeds the 10.4 uF on +5V_TLC (C501-C505): a time constant of
+    // 49 ms, so after 300 ms the chips are down to about 10 mV. The
+    // datasheet gives no reset threshold, so the chips get the whole way to 0 V.
     const uint16_t OFF_MS = 300;
 
     // margin for the supply to rise through the AO3401A before the chains are

@@ -108,9 +108,10 @@ steps run from the custom device's `update()`, every 10 ms
 commands that arrive meanwhile are kept, and written once the chips are back.
 The pins are fixed in `SF_OVHD/TLCSupply.cpp` and must match the `.mfmc`.
 
-* **The 300 ms are generous on purpose.** `+5V_TLC` has no bleed resistor:
-  its 10.4 µF discharge only through the chips' own supply current, and the
-  TLC5927 datasheet gives no reset threshold.
+* **300 ms take the chips all the way to 0 V.** R527, 4.7 kΩ, bleeds the
+  10.4 µF on `+5V_TLC`: a time constant of 49 ms, so after 300 ms about
+  10 mV are left. The TLC5927 datasheet gives no reset threshold, so
+  nothing shorter is relied on.
 * **D46 is not in the `.mfmc`, and the package's `board.json` does not
   offer it,** so the Connector cannot give it to another device.
 * **The Connector cannot bring the annunciators up with stock MobiFlight

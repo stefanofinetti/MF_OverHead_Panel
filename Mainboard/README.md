@@ -9,7 +9,7 @@ and backlight wires. The reasoning behind every choice is in
 * **PCB:** 137 × 89 mm, 2 layers, 1.6 mm, GND poured on both sides.
 * **Fixing:** four M3 holes, 4 mm in from the corners, for bosses with
   heat-set inserts in the reprinted case floor.
-* **Parts:** 122. 64 of them are on the bottom.
+* **Parts:** 123. 65 of them are on the bottom.
 * **Status:** routed with Freerouting. ERC, DRC (every warning on) and
   schematic parity are clean. Not yet ordered.
 
