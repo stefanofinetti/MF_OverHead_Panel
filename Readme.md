@@ -35,7 +35,8 @@ DRC and schematic parity are clean, and every ribbon and backlight pin was
 checked against the board at the other end. **Nothing has been ordered or
 built yet.** The firmware changes v2 needs, and the reprinted case floor,
 are still to do. v1 is the board that has been built and tested. It is
-kept in `Kicad Files/`.
+kept in `Kicad Files/` as the reference the v2 boards were cut from, **not
+to be built**: build v2.
 
 ## What is in the repository
 
@@ -50,7 +51,7 @@ kept in `Kicad Files/`.
 | `STL Files/FaceDown_Printing/` | The APU panel redesigned to print face down. The other panels will follow |
 | `STL Files/Levers/` | The exterior light levers and the paddle knobs |
 | `3D Files/` | The SketchUp sources for the panel, the Korry buttons and the support |
-| `Kicad Files/` | **v1**: the single big board, as sent to JLCPCB on 3 March 2025 |
+| `Kicad Files/` | **v1**, for reference only: the single big board, as sent to JLCPCB on 3 March 2025. Do not build it |
 
 `OverheadPanel.zip` is an older snapshot of `Kicad Files/` from January
 2025, kept for reference.
@@ -186,11 +187,6 @@ with these changes:
   alike: the middle rotary is IR 3 and the right one is IR 2. The `.mfmc`
   follows the board. Only the printed labels are wrong, so read the middle
   knob as 3 and the right one as 2 until the panel is reprinted.
-* **v1 board: remove C17, C19, C21 and C23** if its `R-EXT` resistors are
-  1 kΩ. They are 100 nF from each TLC5927's `R-EXT` pin to GND. With them
-  fitted, a chip drops all its outputs to under 1 mA as soon as two or three
-  are on together, and stays that way until a power cycle. The v2 mainboard
-  has no such capacitors.
 
 ## Software
 
